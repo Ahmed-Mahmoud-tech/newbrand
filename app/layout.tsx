@@ -120,7 +120,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="ar" dir="rtl">
             <head>
                 <meta name="theme-color" content="#0b1622" />
-                <link rel="icon" href="/favicon.ico" sizes="any" />
+                <link rel="icon" href="/images/favicon.ico" sizes="any" />
             </head>
             <body
                 className={`${tajawal.variable} ${ibmPlexSansArabic.variable} ${ibmPlexMono.variable}`}
