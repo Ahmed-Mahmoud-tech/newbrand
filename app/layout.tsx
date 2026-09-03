@@ -34,18 +34,21 @@ export const metadata: Metadata = {
         template: '%s | GateVerse',
     },
     description:
-        'GateVerse: جولات افتراضية ثلاثية الأبعاد للعقارات السكنية والتجارية ، مصر. تصوير 20 ج.م/م² واستضافة 200 ج.م/شهر لكل 200 م². تسليم خلال 48 ساعة.',
+        'GateVerse تحوّل عقارك لجولة تفاعلية ثلاثية الأبعاد — عميلك يتجوّل في كل زاوية ويقيس المساحات من موبايله قبل الزيارة. معاينات جادة فقط، رابط دائم، وتسليم خلال 48 ساعة.',
     keywords: [
-        'جولة افتراضية',
         'جولة افتراضية ثلاثية الأبعاد',
-        'تصوير عقاري 360',
-        'مصر',
-        'عقارات',
-        'virtual tour Alexandria Egypt',
-        '3D virtual tour Egypt',
-        'real estate photography Alexandria',
+        'جولة افتراضية عقارية',
+        'جولة 360 درجة',
+        'معاينة افتراضية',
+        'تصوير عقاري 3D',
+        'عقارات مصر',
+        'virtual tour Egypt',
+        '3D virtual tour real estate',
+        'interactive property tour',
+        'real estate photography Egypt',
         'GateVerse',
-        'جولة افتراضية عقارات مصر',
+        'جولة تفاعلية عقارات',
+        'معاينة عقار اونلاين',
     ],
     authors: [{ name: 'GateVerse', url: SITE_URL }],
     creator: 'GateVerse',
@@ -62,14 +65,14 @@ export const metadata: Metadata = {
         siteName: 'GateVerse',
         title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد ',
         description:
-            'جولات افتراضية ثلاثية الأبعاد. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
+            'جولات 3D تفاعلية تُحوّل عقارك لتجربة حضور رقمية — معاينات جادة فقط، قياسات تفاعلية، روابط دائمة، وتوافق مع كل الأجهزة.',
     },
 
     /* ── Twitter / X card ── */
     twitter: {
         card: 'summary_large_image',
         title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد',
-        description: 'جولات افتراضية، مصر. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
+        description: 'حوّل عقارك لجولة تفاعلية 3D — عميلك يتجوّل ويقيس من موبايله. تسليم خلال 48 ساعة.',
         creator: '@gateverse',
     },
 
