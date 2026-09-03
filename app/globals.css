@@ -467,7 +467,7 @@ section {
   font-size: 0.95rem;
 }
 
-/* ── Portfolio — Matterport iframes ── */
+/* ── Portfolio — Virtual tour iframes ── */
 .port-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

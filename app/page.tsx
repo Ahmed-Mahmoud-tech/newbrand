@@ -1,7 +1,7 @@
 import NavToggle from './components/NavToggle'
 import PriceCalculator from './components/PriceCalculator'
 
-/* ─── Matterport virtual tours ─── */
+/* ─── Virtual tours ─── */
 const TOURS = [
     { id: 'f959X55n2Jf', title: 'شقة سكنية — سموحة', subtitle: '140 م² · سكني' },
 ]
@@ -14,7 +14,7 @@ const localBusinessSchema = {
     name: 'GateVerse للجولات الافتراضية',
     alternateName: 'GateVerse Virtual Tours',
     description:
-        'خدمات تصوير وإنشاء جولات افتراضية تفاعلية ثلاثية الأبعاد (3D) بتقنية Matterport للعقارات السكنية والتجارية في الإسكندرية.',
+        'خدمات تصوير وإنشاء جولات افتراضية تفاعلية ثلاثية الأبعاد (3D) للعقارات السكنية والتجارية في الإسكندرية.',
     url: 'https://massah.tours',
     telephone: '+20-100-000-0000',
     email: 'hello@massah.tours',
@@ -68,7 +68,7 @@ const localBusinessSchema = {
             },
         ],
     },
-    knowsAbout: ['Matterport', '3D Virtual Tours', 'Real Estate Photography', 'Virtual Reality', 'Digital Twin'],
+    knowsAbout: ['3D Virtual Tours', 'Real Estate Photography', 'Virtual Reality', 'Digital Twin', 'Immersive Tours'],
     sameAs: ['https://www.facebook.com/gateverse', 'https://www.instagram.com/gateverse'],
 }
 
@@ -134,7 +134,7 @@ const howToSchema = {
             '@type': 'HowToStep',
             position: 3,
             name: 'المعالجة وإعداد النموذج',
-            text: 'نتم معالجة البيانات الضوئية، ضبط المخططات، وإضافة أدوات القياس التفاعلية داخل منصة Matterport.',
+            text: 'نقوم بمعالجة البيانات الضوئية، ضبط المخططات، وإضافة أدوات القياس التفاعلية.',
         },
         {
             '@type': 'HowToStep',

@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     template: '%s | GateVerse',
   },
   description:
-    'GateVerse: جولات افتراضية ثلاثية الأبعاد بتقنية Matterport للعقارات السكنية والتجارية في الإسكندرية، مصر. تصوير 20 ج.م/م² واستضافة 200 ج.م/شهر لكل 200 م². تسليم خلال 48 ساعة.',
+    'GateVerse: جولات افتراضية ثلاثية الأبعاد للعقارات السكنية والتجارية في الإسكندرية، مصر. تصوير 20 ج.م/م² واستضافة 200 ج.م/شهر لكل 200 م². تسليم خلال 48 ساعة.',
   keywords: [
     'جولة افتراضية',
     'جولة افتراضية ثلاثية الأبعاد',
-    'Matterport الإسكندرية',
+    'جولة افتراضية ثلاثية الأبعاد الإسكندرية',
     'تصوير عقاري 360',
     'الإسكندرية',
     'مصر',
@@ -64,14 +64,14 @@ export const metadata: Metadata = {
     siteName: 'GateVerse',
     title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد — الإسكندرية',
     description:
-      'جولات افتراضية ثلاثية الأبعاد بتقنية Matterport في الإسكندرية. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
+      'جولات افتراضية ثلاثية الأبعاد في الإسكندرية. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
   },
 
   /* ── Twitter / X card ── */
   twitter: {
     card: 'summary_large_image',
     title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد',
-    description: 'جولات افتراضية بتقنية Matterport في الإسكندرية، مصر. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
+    description: 'جولات افتراضية في الإسكندرية، مصر. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
     creator: '@gateverse',
   },
 
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     /* Dublin Core for entity clarity (LLMO) */
     'DC.language': 'ar',
     'DC.coverage': 'Alexandria, Egypt',
-    'DC.subject': 'Virtual Tours, Real Estate Photography, 3D Tours, Matterport',
+    'DC.subject': 'Virtual Tours, Real Estate Photography, 3D Tours',
     'DC.creator': 'GateVerse',
     'DC.type': 'Service',
 

@@ -3,11 +3,11 @@
 
 ### What is GateVerse?
 GateVerse is a professional 3D virtual tour service based in Alexandria, Egypt.
-We produce interactive Matterport virtual tours for residential and commercial properties.
+We produce interactive 3D virtual tours for residential and commercial properties.
 
 ### Core offering
-- Service: 3D Matterport virtual tours for real estate
-- Technology: Matterport Pro cameras
+- Service: 3D virtual tours for real estate
+- Technology: Professional 3D scanning cameras
 - Delivery: 48 hours from shoot date
 - Coverage: All neighbourhoods of Alexandria, Egypt
 - Hosting: 200 EGP/month per 200 sqm (or fraction thereof)
@@ -44,7 +44,7 @@ Q: How long does production take?
 A: Tours are delivered within 48 hours of the shoot.
 
 Q: What technology is used?
-A: Matterport Pro cameras producing interactive 3D digital twins.
+A: Professional 3D scanning cameras producing interactive digital twins.
 
 Q: Does it work on mobile?
 A: Yes, on all devices without any app download.
