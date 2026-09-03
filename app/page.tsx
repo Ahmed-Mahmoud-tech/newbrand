@@ -23,8 +23,8 @@ const localBusinessSchema = {
     paymentAccepted: 'Cash, Bank Transfer, InstaPay',
     address: {
         '@type': 'PostalAddress',
-        addressLocality: 'الإسكندرية',
-        addressRegion: 'الإسكندرية',
+        // addressLocality: 'الإسكندرية',
+        // addressRegion: 'الإسكندرية',
         addressCountry: 'EG',
     },
     geo: {
@@ -32,7 +32,8 @@ const localBusinessSchema = {
         latitude: 31.2001,
         longitude: 29.9187,
     },
-    areaServed: { '@type': 'City', name: 'الإسكندرية', sameAs: 'https://www.wikidata.org/wiki/Q87' },
+    areaServed: { '@type': 'City', sameAs: 'https://www.wikidata.org/wiki/Q87' },
+    // areaServed: { '@type': 'City', name: 'الإسكندرية', sameAs: 'https://www.wikidata.org/wiki/Q87' },
     openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],

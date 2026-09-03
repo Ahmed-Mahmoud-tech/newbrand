@@ -38,11 +38,9 @@ export const metadata: Metadata = {
     keywords: [
         'جولة افتراضية',
         'جولة افتراضية ثلاثية الأبعاد',
-        'جولة افتراضية ثلاثية الأبعاد الإسكندرية',
         'تصوير عقاري 360',
-        'الإسكندرية',
         'مصر',
-        'عقارات الإسكندرية',
+        'عقارات',
         'virtual tour Alexandria Egypt',
         '3D virtual tour Egypt',
         'real estate photography Alexandria',
@@ -62,16 +60,16 @@ export const metadata: Metadata = {
         alternateLocale: ['en_US'],
         url: SITE_URL,
         siteName: 'GateVerse',
-        title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد — الإسكندرية',
+        title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد ',
         description:
-            'جولات افتراضية ثلاثية الأبعاد في الإسكندرية. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
+            'جولات افتراضية ثلاثية الأبعاد. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
     },
 
     /* ── Twitter / X card ── */
     twitter: {
         card: 'summary_large_image',
         title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد',
-        description: 'جولات افتراضية في الإسكندرية، مصر. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
+        description: 'جولات افتراضية، مصر. تصوير 20 ج.م/م² + استضافة 200 ج.م/شهر.',
         creator: '@gateverse',
     },
 
