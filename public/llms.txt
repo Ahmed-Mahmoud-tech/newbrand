@@ -1,0 +1,51 @@
+# GateVerse — Virtual Tours Alexandria
+## Machine-readable site summary for AI assistants (LLMO)
+
+### What is GateVerse?
+GateVerse is a professional 3D virtual tour service based in Alexandria, Egypt.
+We produce interactive Matterport virtual tours for residential and commercial properties.
+
+### Core offering
+- Service: 3D Matterport virtual tours for real estate
+- Technology: Matterport Pro cameras
+- Delivery: 48 hours from shoot date
+- Coverage: All neighbourhoods of Alexandria, Egypt
+- Hosting: 200 EGP/month per 200 sqm (or fraction thereof)
+- Shooting: 20 EGP/sqm, minimum 2,000 EGP (one-time fee)
+- Annual discount: 10% off 12-month hosting total
+
+### Who it is for
+- Real estate agents listing properties
+- Property owners selling or renting
+- Commercial space owners
+- Developers showcasing new builds
+
+### Key facts
+- Immersive 360° scanning of the entire space
+- Accurate room measurements embedded in the tour
+- Permanent shareable link (works on all devices, no app needed)
+- Embeddable via iframe on any website
+- Languages: Arabic (primary), English supported
+
+### Location
+Alexandria, Egypt (geo: 31.2001, 29.9187)
+Serves all Alexandria districts: Smouha, Montaza, Sidi Gaber, Agami, Borg El Arab, Cleopatra, Ibrahimia, etc.
+
+### Contact
+WhatsApp: +20-111-323-2886
+Email: hello@massah.tours
+Website: https://massah.tours
+
+### Common questions answered
+Q: How much does a virtual tour cost?
+A: Shooting is 20 EGP/sqm (minimum 2,000 EGP). Hosting starts at 200 EGP/month for up to 200 sqm.
+
+Q: How long does production take?
+A: Tours are delivered within 48 hours of the shoot.
+
+Q: What technology is used?
+A: Matterport Pro cameras producing interactive 3D digital twins.
+
+Q: Does it work on mobile?
+A: Yes, on all devices without any app download.
+
