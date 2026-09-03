@@ -14,7 +14,7 @@ const localBusinessSchema = {
     name: 'GateVerse للجولات الافتراضية',
     alternateName: 'GateVerse Virtual Tours',
     description:
-        'خدمات تصوير وإنشاء جولات افتراضية تفاعلية ثلاثية الأبعاد (3D) للعقارات السكنية والتجارية في الإسكندرية.',
+        'خدمات تصوير وإنشاء جولات افتراضية تفاعلية ثلاثية الأبعاد (3D) للعقارات السكنية والتجارية.',
     url: 'https://massah.tours',
     telephone: '+20-100-000-0000',
     email: 'hello@massah.tours',
