@@ -18,7 +18,7 @@ const localBusinessSchema = {
     url: 'https://massah.tours',
     telephone: '+20-100-000-0000',
     email: 'hello@massah.tours',
-    priceRange: '$$',
+    priceRange: '200–2000 EGP',
     currenciesAccepted: 'EGP, USD',
     paymentAccepted: 'Cash, Bank Transfer, InstaPay',
     address: {
@@ -45,9 +45,24 @@ const localBusinessSchema = {
         itemListElement: [
             {
                 '@type': 'Offer',
-                name: 'خطة استضافة واستعراض جولة 3D',
-                price: '30',
-                priceCurrency: 'USD',
+                name: 'خدمة جولة افتراضية 3D',
+                priceSpecification: [
+                    {
+                        '@type': 'UnitPriceSpecification',
+                        name: 'تصوير (رسوم لمرة واحدة)',
+                        price: '20',
+                        priceCurrency: 'EGP',
+                        unitText: 'م² (حد أدنى 2000 ج.م)',
+                    },
+                    {
+                        '@type': 'UnitPriceSpecification',
+                        name: 'استضافة شهرية',
+                        price: '200',
+                        priceCurrency: 'EGP',
+                        billingDuration: 'P1M',
+                        unitText: 'لكل 200 م² أو جزء منها',
+                    },
+                ],
                 description: 'إنتاج واستضافة جولة تفاعلية كاملة مع رابط دائم وكود تضمين.',
                 availability: 'https://schema.org/InStock',
             },
