@@ -117,7 +117,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="ar" dir="rtl">
+        // Browser extensions (Dark Reader, translators) add attributes to <html> before React
+        // hydrates; this silences only that element's attribute mismatch, not its children.
+        <html lang="ar" dir="rtl" suppressHydrationWarning>
             <head>
                 <meta name="theme-color" content="#0b1622" />
                 <link rel="icon" href="/images/favicon.ico" sizes="any" />
