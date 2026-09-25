@@ -29,7 +29,9 @@ export function generateStaticParams(): { slug: string }[] {
     }
 }
 
-export const dynamicParams = false
+// NOT `dynamicParams = false`: the dev server caches the list above, so a tour imported at
+// /admin while it runs was a 404 until the cache refreshed. Unknown slugs still 404 through
+// tourName() -> notFound(); deploys still prebuild every tour committed under public/tours.
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
     const name = tourName(params.slug)

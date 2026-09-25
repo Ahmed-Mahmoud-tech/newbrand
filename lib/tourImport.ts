@@ -11,7 +11,7 @@
  *   tourforge-nadir.jpg     default tripod logo → public/tourforge/nadir.jpg
  *   tour/…                  the tour itself     → public/tours/<slug>/…
  */
-import { mkdir, readdir, readFile, rename, rm, stat, writeFile } from 'fs/promises'
+import { cp, mkdir, readdir, readFile, rename, rm, stat, writeFile } from 'fs/promises'
 import path from 'path'
 import { inflateRawSync } from 'zlib'
 
@@ -92,6 +92,35 @@ async function exists(p: string): Promise<boolean> {
     )
 }
 
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms))
+
+/**
+ * rename() that survives Windows. Right after ~1,700 files are written into a folder, renaming
+ * it fails with EPERM/EBUSY for a while: Defender is still scanning the new files and the dev
+ * server's watcher holds handles in it. That failure used to abort the import, so the tour never
+ * reached public/tours and its page was a 404. Retry for a few seconds, then fall back to
+ * copying the folder into place, which needs no handle on the source directory itself.
+ */
+async function moveDir(src: string, dst: string): Promise<void> {
+    for (let attempt = 0; attempt < 12; attempt++) {
+        try {
+            await rename(src, dst)
+            return
+        } catch (err) {
+            const code = (err as NodeJS.ErrnoException).code
+            if (code !== 'EPERM' && code !== 'EBUSY' && code !== 'EACCES') throw err
+            await sleep(250 + attempt * 150)
+        }
+    }
+    await cp(src, dst, { recursive: true, errorOnExist: false, force: true })
+    await removeDir(src)
+}
+
+/** Recursive delete with the retries Windows needs for the same reason. */
+function removeDir(dir: string): Promise<void> {
+    return rm(dir, { recursive: true, force: true, maxRetries: 10, retryDelay: 200 })
+}
+
 export interface ImportResult {
     slug: string
     name: string
@@ -141,7 +170,7 @@ export async function importTour(zip: Buffer, slugOverride?: string): Promise<Im
         // The newest import's player serves every tour: players read all older v3 tours.
         await mkdir(PLAYER_DIR, { recursive: true })
         await writeFile(path.join(PLAYER_DIR, 'player.js.tmp'), player.data)
-        await rename(path.join(PLAYER_DIR, 'player.js.tmp'), path.join(PLAYER_DIR, 'player.js'))
+        await moveDir(path.join(PLAYER_DIR, 'player.js.tmp'), path.join(PLAYER_DIR, 'player.js'))
         const nadir = byName.get('tourforge-nadir.jpg')
         if (nadir) await writeFile(path.join(PLAYER_DIR, 'nadir.jpg'), nadir.data)
 
@@ -149,12 +178,20 @@ export async function importTour(zip: Buffer, slugOverride?: string): Promise<Im
         const final = path.join(TOURS_DIR, slug)
         const replaced = await exists(final)
         const old = path.join(TOURS_DIR, `.old-${slug}-${stamp}`)
-        if (replaced) await rename(final, old)
-        await rename(staging, final)
-        if (replaced) await rm(old, { recursive: true, force: true })
+        if (replaced) {
+            // the page may be serving files from the old copy right now; if it cannot be moved
+            // aside, delete it — a moment without the tour beats an import that never lands
+            try {
+                await moveDir(final, old)
+            } catch {
+                await removeDir(final)
+            }
+        }
+        await moveDir(staging, final)
+        if (replaced) await removeDir(old)
         return { slug, name: manifest.tour?.name || info.name || slug, files, replaced }
     } catch (err) {
-        await rm(staging, { recursive: true, force: true })
+        await removeDir(staging)
         throw err
     }
 }
@@ -192,5 +229,5 @@ export async function listTours(): Promise<TourSummary[]> {
 
 export async function deleteTour(slug: string): Promise<void> {
     const s = toSlug(slug)
-    await rm(path.join(TOURS_DIR, s), { recursive: true, force: true })
+    await removeDir(path.join(TOURS_DIR, s))
 }

@@ -16464,6 +16464,7 @@ var Dv = Z_([
 	yawOffset: Z(),
 	floor: Z().int().default(0),
 	room: kv.optional(),
+	label: X().max(200).optional(),
 	captureHeight: Z().positive().optional(),
 	pano: Av,
 	depth: jv.optional(),
@@ -16514,6 +16515,8 @@ var Dv = Z_([
 	cursorUrl: X().min(1).optional(),
 	markerUrl: X().min(1).optional(),
 	nadirUrl: X().min(1).optional(),
+	nadirLink: X().max(2e3).regex(/^https?:\/\/[^\s]+$/i, "link must start with http:// or https://").optional(),
+	northYaw: Z().finite().optional(),
 	music: Q({
 		url: X().min(1),
 		volume: Z().min(0).max(1).default(.5),
@@ -16522,7 +16525,8 @@ var Dv = Z_([
 });
 Q({
 	hotspots: H_(zv),
-	customization: Bv.optional()
+	customization: Bv.optional(),
+	startRotation: Dv.optional()
 });
 var Vv = Q({
 	sweep: kv,
@@ -19842,8 +19846,10 @@ var Lx = .03, Rx = new V(), zx = new V(), Bx = new V(), Vx = new W(), Hx = class
 	measure: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M3.5 16.5 16.5 3.5l4 4-13 13z\"/><path d=\"M7 13l1.8 1.8M10 10l1.8 1.8M13 7l1.8 1.8\"/></svg>",
 	soundOn: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 9.5h3.5L12 5.5v13l-4.5-4H4z\"/><path d=\"M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11\"/></svg>",
 	soundOff: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 9.5h3.5L12 5.5v13l-4.5-4H4z\"/><path d=\"M16 9.5l5 5M21 9.5l-5 5\"/></svg>",
+	compass: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10.2\"/><g class=\"tf-dial\"><path class=\"tf-north\" d=\"M12 3.6 14.3 12H9.7z\"/><path class=\"tf-south\" d=\"M12 20.4 9.7 12h4.6z\"/><text x=\"12\" y=\"2.9\" font-size=\"3.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-weight=\"700\">N</text></g></svg>",
+	places: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3.5\" y=\"4.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"13.5\" y=\"4.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"3.5\" y=\"13.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"13.5\" y=\"13.5\" width=\"7\" height=\"6\" rx=\"1.2\"/></svg>",
 	close: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 6l12 12M18 6 6 18\"/></svg>"
-}, Wx = "tf-hud-style", Gx = "\n.tf-overlay{position:absolute;inset:0;pointer-events:none;overflow:hidden;direction:ltr;text-align:left;font:500 14px/1.3 system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;z-index:2}\n.tf-hud-bar{position:absolute;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(18,20,24,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(0,0,0,.35);pointer-events:auto}\n.tf-hud-bar:empty{display:none}\n.tf-hud-btn{display:inline-flex;align-items:center;gap:6px;height:38px;min-width:38px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:#e9ecef;font:inherit;cursor:pointer;white-space:nowrap}\n.tf-hud-btn:hover{background:rgba(255,255,255,.1)}\n.tf-hud-btn.is-on{background:#fff;color:#111}\n.tf-hud-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}\n.tf-hud-sep{width:1px;margin:6px 2px;background:rgba(255,255,255,.18)}\n.tf-hud-hint{position:absolute;left:50%;bottom:calc(max(16px,env(safe-area-inset-bottom)) + 58px);transform:translateX(-50%);padding:6px 12px;border-radius:999px;background:rgba(18,20,24,.72);color:#fff;font-size:13px;white-space:nowrap}\n.tf-measure-label{position:absolute;left:0;top:0;padding:4px 10px;border-radius:6px;background:#ffd23f;color:#111;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.35)}\n.tf-measure-label.is-preview{opacity:.85}\n.tf-popup{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.45);pointer-events:auto}\n.tf-popup-card{position:relative;display:flex;flex-direction:column;width:min(560px,100%);max-height:min(80%,720px);border-radius:14px;background:#fff;color:#111;box-shadow:0 12px 40px rgba(0,0,0,.45);overflow:hidden}\n.tf-popup-head{display:flex;align-items:center;gap:8px;padding:12px 12px 12px 18px;border-bottom:1px solid #eee;font-weight:700;font-size:16px}\n.tf-popup-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-popup-close{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:999px;background:#f1f3f5;color:#111;cursor:pointer}\n.tf-popup-close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}\n.tf-popup-frame{flex:1;width:100%;min-height:240px;height:60vh;max-height:620px;border:0;background:#fff}\n@media (max-width:520px){.tf-hud-btn .tf-hud-text{display:none}}\n";
+}, Wx = "tf-hud-style", Gx = "\n.tf-overlay{position:absolute;inset:0;pointer-events:none;overflow:hidden;direction:ltr;text-align:left;font:500 14px/1.3 system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;z-index:2}\n.tf-hud-bar{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(18,20,24,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(0,0,0,.35);pointer-events:auto}\n.tf-hud-bar:empty{display:none}\n.tf-hud-btn{display:inline-flex;align-items:center;gap:6px;height:38px;min-width:38px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:#e9ecef;font:inherit;cursor:pointer;white-space:nowrap}\n.tf-hud-btn:hover{background:rgba(255,255,255,.1)}\n.tf-hud-btn.is-on{background:#fff;color:#111}\n.tf-hud-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}\n.tf-hud-compass{padding:0;width:38px;justify-content:center}\n.tf-hud-compass svg{width:30px;height:30px;stroke-width:1.4}\n.tf-hud-compass .tf-north{fill:#ff5a4f;stroke:none}\n.tf-hud-compass .tf-south{fill:currentColor;stroke:none;opacity:.55}\n.tf-hud-sep{width:1px;margin:6px 2px;background:rgba(255,255,255,.18)}\n.tf-hud-hint{position:absolute;left:50%;bottom:calc(max(16px,env(safe-area-inset-bottom)) + 58px);transform:translateX(-50%);padding:6px 12px;border-radius:999px;background:rgba(18,20,24,.72);color:#fff;font-size:13px;white-space:nowrap}\n.tf-measure-label{position:absolute;left:0;top:0;padding:4px 10px;border-radius:6px;background:#ffd23f;color:#111;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.35)}\n.tf-measure-label.is-preview{opacity:.85}\n.tf-popup{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.45);pointer-events:auto}\n.tf-popup-card{position:relative;display:flex;flex-direction:column;width:min(560px,100%);max-height:min(80%,720px);border-radius:14px;background:#fff;color:#111;box-shadow:0 12px 40px rgba(0,0,0,.45);overflow:hidden}\n.tf-popup-head{display:flex;align-items:center;gap:8px;padding:12px 12px 12px 18px;border-bottom:1px solid #eee;font-weight:700;font-size:16px}\n.tf-popup-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-popup-close{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:999px;background:#f1f3f5;color:#111;cursor:pointer}\n.tf-popup-close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}\n.tf-popup-frame{flex:1;width:100%;min-height:240px;height:60vh;max-height:620px;border:0;background:#fff}\n.tf-places-panel{position:fixed;top:0;right:0;bottom:0;width:min(330px,88%);display:flex;flex-direction:column;background:rgba(14,16,20,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#eef1f4;box-shadow:-8px 0 30px rgba(0,0,0,.35);transform:translateX(105%);transition:transform .25s ease;pointer-events:auto}\n.tf-places-panel.is-open{transform:none}\n.tf-places-head{display:flex;align-items:center;gap:8px;padding:14px 12px 10px 16px;font-weight:700;font-size:15px}\n.tf-places-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-places-head small{font-weight:600;font-size:12px;padding:1px 8px;border-radius:999px;background:rgba(255,255,255,.1)}\n.tf-places-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;padding:4px 12px 16px}\n.tf-place{display:flex;flex-direction:column;gap:5px;padding:4px 4px 6px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:rgba(255,255,255,.05);color:inherit;font:inherit;text-align:left;cursor:pointer}\n.tf-place:hover{border-color:rgba(47,212,184,.55);background:rgba(47,212,184,.1)}\n.tf-place.is-on{border-color:#2fd4b8;box-shadow:0 0 0 1px #2fd4b8}\n.tf-place-thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:7px;overflow:hidden;background:rgba(255,255,255,.07)}\n.tf-place-thumb img{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)}\n.tf-place-no{position:absolute;top:4px;left:4px;padding:1px 6px;border-radius:999px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}\n.tf-place.is-on .tf-place-no{background:#2fd4b8;color:#062a24}\n.tf-place-name{padding:0 2px;font-size:11.5px;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n@media (max-width:520px){.tf-hud-btn .tf-hud-text{display:none}.tf-places-panel{width:100%}}\n";
 function Kx(e, t, n) {
 	let r = document.createElement("button");
 	return r.type = "button", r.className = "tf-hud-btn", r.title = n, r.setAttribute("aria-label", n), r.innerHTML = `${e}${t ? `<span class="tf-hud-text">${t}</span>` : ""}`, r;
@@ -19873,22 +19879,44 @@ var Jx = class {
 	unlockOff = [];
 	offKey;
 	measuring = !1;
+	compassBtn;
+	dial;
+	heading = NaN;
+	placesBtn;
+	placesPanel;
+	placesGrid;
+	placesTitle;
+	placesCount;
+	places = [];
+	placeButtons = /* @__PURE__ */ new Map();
+	currentPlace = null;
+	thumbsLoaded = !1;
 	constructor(e, t, n) {
 		if (this.el = e, this.opts = t, this.actions = n, !document.getElementById(Wx)) {
 			let e = document.createElement("style");
 			e.id = Wx, e.textContent = Gx, document.head.appendChild(e);
 		}
-		getComputedStyle(e).position === "static" && (e.style.position = "relative"), this.overlay = document.createElement("div"), this.overlay.className = "tf-overlay", e.appendChild(this.overlay), this.bar = document.createElement("div"), this.bar.className = "tf-hud-bar", this.insideBtn = Kx(Ux.inside, "Inside", "Inside view"), this.dollBtn = Kx(Ux.dollhouse, "Dollhouse", "Dollhouse view"), this.sep = document.createElement("div"), this.sep.className = "tf-hud-sep", this.measureBtn = Kx(Ux.measure, "Measure", "Measure a distance"), this.musicBtn = Kx(Ux.soundOn, "", "Mute music"), this.insideBtn.onclick = () => this.actions.setMode("inside"), this.dollBtn.onclick = () => this.actions.setMode("dollhouse"), this.measureBtn.onclick = () => this.actions.setMeasuring(!this.measuring), this.musicBtn.onclick = () => this.toggleMute(), this.hint = document.createElement("div"), this.hint.className = "tf-hud-hint", this.hint.style.display = "none", t && this.overlay.append(this.bar, this.hint), this.layout();
-		let r = (e) => {
-			e.key === "Escape" && (this.popup ? this.closePopup() : this.measuring && this.actions.setMeasuring(!1));
+		getComputedStyle(e).position === "static" && (e.style.position = "relative"), this.overlay = document.createElement("div"), this.overlay.className = "tf-overlay", e.appendChild(this.overlay), this.bar = document.createElement("div"), this.bar.className = "tf-hud-bar", this.insideBtn = Kx(Ux.inside, "Inside", "Inside view"), this.dollBtn = Kx(Ux.dollhouse, "Dollhouse", "Dollhouse view"), this.sep = document.createElement("div"), this.sep.className = "tf-hud-sep", this.measureBtn = Kx(Ux.measure, "Measure", "Measure a distance"), this.musicBtn = Kx(Ux.soundOn, "", "Mute music"), this.insideBtn.onclick = () => this.actions.setMode("inside"), this.dollBtn.onclick = () => this.actions.setMode("dollhouse"), this.measureBtn.onclick = () => this.actions.setMeasuring(!this.measuring), this.musicBtn.onclick = () => this.toggleMute(), this.compassBtn = Kx(Ux.compass, "", "Face north"), this.compassBtn.classList.add("tf-hud-compass"), this.compassBtn.onclick = () => this.actions.faceNorth(), this.dial = this.compassBtn.querySelector(".tf-dial"), this.placesBtn = Kx(Ux.places, "Locations", "Show all locations"), this.placesBtn.onclick = () => this.togglePlaces(), this.placesPanel = document.createElement("div"), this.placesPanel.className = "tf-places-panel", this.placesPanel.setAttribute("role", "dialog"), this.placesPanel.setAttribute("aria-label", "Locations");
+		let r = document.createElement("div");
+		r.className = "tf-places-head", this.placesTitle = document.createElement("span"), this.placesTitle.textContent = "Locations", this.placesTitle.dir = "auto", this.placesCount = document.createElement("small");
+		let i = document.createElement("button");
+		i.type = "button", i.className = "tf-popup-close", i.setAttribute("aria-label", "Close locations"), i.innerHTML = Ux.close, i.onclick = () => this.togglePlaces(!1), r.append(this.placesTitle, this.placesCount, i), this.placesGrid = document.createElement("div"), this.placesGrid.className = "tf-places-grid", this.placesPanel.append(r, this.placesGrid), this.hint = document.createElement("div"), this.hint.className = "tf-hud-hint", this.hint.style.display = "none", t && this.overlay.append(this.bar, this.hint), t && t.places !== !1 && this.overlay.append(this.placesPanel), this.layout();
+		let a = (e) => {
+			e.key === "Escape" && (this.popup ? this.closePopup() : this.placesPanel.classList.contains("is-open") ? this.togglePlaces(!1) : this.measuring && this.actions.setMeasuring(!1));
 		};
-		document.addEventListener("keydown", r), this.offKey = () => document.removeEventListener("keydown", r);
+		document.addEventListener("keydown", a), this.offKey = () => document.removeEventListener("keydown", a);
 	}
 	setCapabilities(e) {
 		this.caps = e, this.layout();
 	}
 	setMode(e) {
 		this.insideBtn.classList.toggle("is-on", e === "inside"), this.dollBtn.classList.toggle("is-on", e === "dollhouse");
+	}
+	setHeading(e) {
+		if (Math.abs(e - this.heading) < .3) return;
+		this.heading = e, this.dial?.setAttribute("transform", `rotate(${(-e).toFixed(1)} 12 12)`);
+		let t = `Heading ${Math.round(e) % 360}° — click to face north`;
+		this.compassBtn.title = t, this.compassBtn.setAttribute("aria-label", t);
 	}
 	setMeasuring(e, t) {
 		this.measuring = e, this.measureBtn.classList.toggle("is-on", e), this.showHint(e ? t ?? "Click two points to measure" : null);
@@ -19942,6 +19970,34 @@ var Jx = class {
 	get popupOpen() {
 		return this.popup !== null;
 	}
+	setPlaces(e, t) {
+		this.places = t, this.placesTitle.textContent = e || "Locations", this.placesCount.textContent = String(t.length), this.placeButtons.clear(), this.thumbsLoaded = !1;
+		let n = t.map((e, t) => {
+			let n = document.createElement("button");
+			n.type = "button", n.className = "tf-place", n.title = e.name;
+			let r = document.createElement("span");
+			r.className = "tf-place-thumb";
+			let i = document.createElement("img");
+			i.alt = "", i.decoding = "async", i.loading = "lazy", i.dataset.src = e.thumb;
+			let a = document.createElement("span");
+			a.className = "tf-place-no", a.textContent = String(t + 1).padStart(2, "0"), r.append(i, a);
+			let o = document.createElement("span");
+			return o.className = "tf-place-name", o.dir = "auto", o.textContent = e.name, n.append(r, o), n.onclick = () => {
+				this.actions.goToPlace(e.id), this.overlay.clientWidth < 700 && this.togglePlaces(!1);
+			}, this.placeButtons.set(e.id, n), n;
+		});
+		this.placesGrid.replaceChildren(...n), this.setCurrentPlace(this.currentPlace), this.layout();
+	}
+	setCurrentPlace(e) {
+		this.currentPlace && this.placeButtons.get(this.currentPlace)?.classList.remove("is-on"), this.currentPlace = e, e && this.placeButtons.get(e)?.classList.add("is-on");
+	}
+	togglePlaces(e = !this.placesPanel.classList.contains("is-open")) {
+		if (this.placesPanel.classList.toggle("is-open", e), this.placesBtn.classList.toggle("is-on", e), e && !this.thumbsLoaded) {
+			this.thumbsLoaded = !0;
+			for (let e of this.placesGrid.querySelectorAll("img")) e.dataset.src && (e.src = e.dataset.src);
+		}
+		e && this.currentPlace && this.placeButtons.get(this.currentPlace)?.scrollIntoView({ block: "nearest" });
+	}
 	dispose() {
 		this.stopMusic(), this.offKey(), this.overlay.remove();
 	}
@@ -19957,7 +20013,7 @@ var Jx = class {
 	layout() {
 		if (!this.opts) return;
 		let e = this.opts.modes !== !1 && this.caps.dollhouse, t = this.opts.measure !== !1 && this.caps.measure, n = this.opts.music !== !1 && this.audio !== null, r = [];
-		e && r.push(this.insideBtn, this.dollBtn), t && r.push(this.measureBtn), n && (r.length && r.push(this.sep), r.push(this.musicBtn)), this.bar.replaceChildren(...r);
+		this.opts.compass !== !1 && r.push(this.compassBtn), this.opts.places !== !1 && this.places.length > 1 && r.push(this.placesBtn), e && r.push(this.insideBtn, this.dollBtn), t && r.push(this.measureBtn), n && (r.length && r.push(this.sep), r.push(this.musicBtn)), this.bar.replaceChildren(...r);
 	}
 };
 //#endregion
@@ -20093,13 +20149,14 @@ function oS(e) {
 yu();
 var sS = class {
 	object = new er();
+	radius;
 	discs = [];
 	materials = [];
 	geometry;
 	texture = null;
 	constructor(e) {
 		let t = e.radiusM ?? .28;
-		this.geometry = new Aa(t, 64), this.geometry.rotateX(-Math.PI / 2);
+		this.radius = t, this.geometry = new Aa(t, 64), this.geometry.rotateX(-Math.PI / 2);
 		for (let e = 0; e < 2; e++) {
 			let t = new mi({
 				transparent: !0,
@@ -20382,6 +20439,7 @@ var SS = 12, CS = class e {
 	assetBase = "./";
 	clipY = Infinity;
 	goingInside = !1;
+	turn = null;
 	modeT = 0;
 	modes = new Gy();
 	listeners = /* @__PURE__ */ new Map();
@@ -20460,13 +20518,40 @@ var SS = 12, CS = class e {
 				t.position.y + this.gazeDir.y,
 				t.position.z + this.gazeDir.z
 			]
-		}), this.look.setOrbitTarget(e === "dollhouse" ? this.modes : null), this.reticle.hide(), this.rings.setHover(null), this.measure.clear(), this.hud.setMode(e), this.emit("modechange", { mode: e });
+		}), this.look.setOrbitTarget(e === "dollhouse" ? this.modes : null), this.reticle.hide(), this.rings.setHover(null), this.measure.clear(), this.turn = null, this.hud.setMode(e), this.emit("modechange", { mode: e });
 	}
 	orbitBy(e, t) {
 		this.assertAlive(), this.modes.orbitBy(e, t);
 	}
 	zoomBy(e) {
 		this.assertAlive(), this.modes.zoomBy(e);
+	}
+	get viewYaw() {
+		return this.engine.camera.getWorldDirection(this.gazeDir), Math.atan2(-this.gazeDir.x, -this.gazeDir.z);
+	}
+	get northYaw() {
+		return this.manifest.customization?.northYaw ?? 0;
+	}
+	get heading() {
+		return ((this.northYaw - this.viewYaw) * 180 / Math.PI % 360 + 360) % 360;
+	}
+	setView(e, t) {
+		this.assertAlive(), this.turn = null, this.look.setAngles(t ?? this.look.pitch, e);
+	}
+	goToPlace(e) {
+		this.assertAlive();
+		let t = this.assets.sweep(e);
+		this.mode === "dollhouse" ? this.enterAt(t, null) : e !== this.currentSweep && this.moveTo(e, { direct: !0 });
+	}
+	faceNorth() {
+		this.assertAlive();
+		let e = this.mode === "dollhouse" ? "orbit" : "look", t = e === "orbit" ? this.modes.orbit.yaw : this.look.yaw;
+		this.turn = {
+			rig: e,
+			from: t,
+			delta: ty(this.northYaw - t),
+			start: performance.now()
+		};
 	}
 	get isMeasuring() {
 		return this.measuring;
@@ -20558,10 +20643,14 @@ var SS = 12, CS = class e {
 					this.emit("error", { error: e });
 				}
 			},
-			setMeasuring: (e) => this.setMeasuring(e)
+			setMeasuring: (e) => this.setMeasuring(e),
+			faceNorth: () => this.faceNorth(),
+			goToPlace: (e) => this.goToPlace(e)
 		}), this.measure = new Xx(this.hud.overlay), this.engine.scene.add(this.measure.object), this.hotspots.set(this.manifest.hotspots, (e) => this.resolveUrl(e)), this.setCustomization(this.manifest.customization), this.current = this.assets.sweep(this.manifest.tour.startSweep), this.look = new zy(this.engine.canvas), this.look.setFov(this.tuning.fovDeg);
 		let [s, c] = this.manifest.tour.startRotation;
-		this.look.setAngles(s, c), this.look.onClick = (e) => {
+		this.look.setAngles(s, c), this.look.onChange = () => {
+			this.turn = null;
+		}, this.look.onClick = (e) => {
 			e.button === 0 && this.handleClick(e.ndc);
 		}, this.look.onHover = (e) => this.handleHover(e), this.transition = new Ix({
 			isReady: (e) => this.assets.isTransitionReady(e) && this.surface.isReady(e),
@@ -20575,7 +20664,11 @@ var SS = 12, CS = class e {
 		}, this.transition.onArrive = (e) => this.arrive(e), this.hud.setCapabilities({
 			dollhouse: this.surface.tier === "A" && !!this.manifest.mesh?.bounds,
 			measure: this.surface.tier !== "C"
-		}), this.hud.setMode(this.mode), await this.assets.ensureLevel(this.current.id, 512, 10), await this.surface.ensure?.(this.current), this.engine.camera.position.fromArray(this.current.position), this.tick(0, performance.now());
+		}), this.hud.setMode(this.mode), this.hud.setPlaces(this.manifest.tour.name, this.manifest.sweeps.map((e, t) => ({
+			id: e.id,
+			name: ES(e, t),
+			thumb: this.placeThumb(e)
+		}))), this.hud.setCurrentPlace(this.current.id), await this.assets.ensureLevel(this.current.id, 512, 10), await this.surface.ensure?.(this.current), this.engine.camera.position.fromArray(this.current.position), this.tick(0, performance.now());
 		try {
 			await this.engine.renderer.compileAsync(this.engine.scene, this.engine.camera);
 		} catch {}
@@ -20583,7 +20676,11 @@ var SS = 12, CS = class e {
 	}
 	tick(e, t) {
 		if (this.destroyed) return;
-		this.look.update(e), this.updateDesiredLevel(), this.surface.setShellSwapT && this.surface.setShellSwapT(this.tuning.shellSwapT);
+		if (this.look.update(e), this.turn) {
+			let e = Math.min(1, (t - this.turn.start) / 700), n = e < .5 ? 4 * e * e * e : 1 - (-2 * e + 2) ** 3 / 2, r = this.turn.from + this.turn.delta * n;
+			this.turn.rig === "orbit" ? this.modes.orbit.yaw = r : this.look.setAngles(this.look.pitch, r), e >= 1 && (this.turn = null);
+		}
+		this.updateDesiredLevel(), this.surface.setShellSwapT && this.surface.setShellSwapT(this.tuning.shellSwapT);
 		let n = this.transition.update(t), r = this.engine.camera;
 		r.position.copy(n.position), n.state === "TRANSITION" ? r.quaternion.copy(n.quaternion) : this.look.quaternion(r.quaternion), this.engine.camera.getWorldDirection(this.gazeDir);
 		let i = this.modes.update(t, [
@@ -20619,7 +20716,7 @@ var SS = 12, CS = class e {
 			floorY: this.ringFloorY(c)
 		} : null, m ? n.blend : 0, i.t < .01), this.clipY = i.clipY, this.modeT = i.t;
 		let h = m && c && n.blend >= .5 ? c : o, g = i.t < .01 ? this.surface.depthFacesFor?.(h.id) ?? null : null;
-		if (this.hotspots.update(e, i.clipY, g ? (e) => bS(g, h, e) : null), this.measure.update(r, d, f), n.state === "IDLE" && this.hopQueue.length) {
+		if (this.hotspots.update(e, i.clipY, g ? (e) => bS(g, h, e) : null), this.measure.update(r, d, f), this.hud.setHeading(this.heading), n.state === "IDLE" && this.hopQueue.length) {
 			let e = this.hopQueue.shift();
 			this.transition.requestMove(this.assets.sweep(e), r.quaternion, { lookAt: this.hopQueue.length === 0 ? this.hopLookAt : null });
 		}
@@ -20634,7 +20731,7 @@ var SS = 12, CS = class e {
 		let t = this.current.id === e.id ? null : this.current.id;
 		this.current = e, this.modes.setFloorElevation(nb(e)), this.look.setFromQuaternion(this.transition.quaternion), this.assets.setPinned(e.id, null), this.assets.prefetchAround(e.id);
 		for (let t of this.assets.neighbors(e.id)) this.surface.ensure?.(this.assets.sweep(t))?.then(() => this.refreshRingFloor(t));
-		this.updateRings(), this.emit("sweepchange", {
+		this.updateRings(), this.hud.setCurrentPlace(e.id), this.emit("sweepchange", {
 			id: e.id,
 			from: t
 		});
@@ -20739,6 +20836,16 @@ var SS = 12, CS = class e {
 			normal: l
 		};
 	}
+	nadirLinkUnder(e) {
+		let t = this.manifest.customization?.nadirLink;
+		if (!t || !this.nadir || this.mode !== "inside" || this.transition.state === "TRANSITION") return null;
+		let n = this.transition.current, r = this.ringFloorY(n) + .02;
+		if (e.direction.y >= -1e-4) return null;
+		let i = (r - e.origin.y) / e.direction.y;
+		if (!(i > 0)) return null;
+		let a = e.origin.x + e.direction.x * i - n.position[0], o = e.origin.z + e.direction.z * i - n.position[2];
+		return Math.hypot(a, o) <= this.nadir.radius ? t : null;
+	}
 	clickableHotspot(e) {
 		let t = this.hotspots.pick(e);
 		return t && this.hotspots.get(t)?.html?.trim() ? t : null;
@@ -20754,7 +20861,11 @@ var SS = 12, CS = class e {
 			t.style.cursor = "pointer", this.reticle.hide(), this.rings.setHover(null);
 			return;
 		}
-		if (t.style.cursor = this.pickHandler ? "crosshair" : "", this.mode === "dollhouse") {
+		if (t.style.cursor = this.pickHandler ? "crosshair" : "", !this.pickHandler && !this.measuring && this.nadirLinkUnder(this.rayFor(e))) {
+			t.style.cursor = "pointer", this.reticle.hide(), this.rings.setHover(null);
+			return;
+		}
+		if (this.mode === "dollhouse") {
 			let n = this.surfaceHit(e);
 			this.measuring ? this.measure.hover(n?.point ?? null) : !this.pickHandler && n && (t.style.cursor = "pointer");
 			return;
@@ -20784,22 +20895,27 @@ var SS = 12, CS = class e {
 			this.openHotspot(t);
 			return;
 		}
+		let n = this.nadirLinkUnder(this.rayFor(e));
+		if (n) {
+			window.open(n, "_blank", "noopener,noreferrer"), this.emit("nadirclick", { url: n });
+			return;
+		}
 		if (this.mode === "dollhouse") {
 			let t = this.surfaceHit(e);
 			t && this.goInside(t);
 			return;
 		}
-		let n = this.rings.pick(this.rayFor(e));
-		if (n) {
-			this.moveTo(n, { direct: !0 });
+		let r = this.rings.pick(this.rayFor(e));
+		if (r) {
+			this.moveTo(r, { direct: !0 });
 			return;
 		}
-		let r = this.transition.current, i = this.surface.raycast(this.rayFor(e), r);
-		if (!i) return;
-		let a = this.nearestSweepToHit(i, r);
-		a && this.moveTo(a.id, {
+		let i = this.transition.current, a = this.surface.raycast(this.rayFor(e), i);
+		if (!a) return;
+		let o = this.nearestSweepToHit(a, i);
+		o && this.moveTo(o.id, {
 			direct: !0,
-			lookAt: this.levelLookAt(i, a)
+			lookAt: this.levelLookAt(a, o)
 		});
 	}
 	levelLookAt(e, t) {
@@ -20828,21 +20944,33 @@ var SS = 12, CS = class e {
 	}
 	async goInside(e) {
 		let t = [...this.assets.sweeps.values()], n = t.filter((t) => e.point.y >= nb(t) - .5 && e.point.y <= nb(t) + 3.5), r = Zy(e.point, n.length ? n : t);
-		if (!r) return;
+		r && await this.enterAt(r, e.point);
+	}
+	async enterAt(e, t) {
+		if (this.goingInside) return;
 		this.goingInside = !0, this.engine.canvas.style.cursor = "progress";
 		try {
-			await Promise.all([this.assets.prefetchForTransition(r.id), this.surface.ensure?.(r) ?? Promise.resolve()]);
+			await Promise.all([this.assets.prefetchForTransition(e.id), this.surface.ensure?.(e) ?? Promise.resolve()]);
 		} catch {} finally {
 			this.goingInside = !1, this.destroyed || (this.engine.canvas.style.cursor = "");
 		}
 		if (this.destroyed || this.mode !== "dollhouse") return;
-		let i = new V().fromArray(r.position), a = new V(e.point.x - i.x, 0, e.point.z - i.z);
-		if (a.lengthSq() < .25) {
+		let n = new V().fromArray(e.position), r = t ? new V(t.x - n.x, 0, t.z - n.z) : new V();
+		if (r.lengthSq() < .25) {
 			let { yaw: e } = this.modes.orbit;
-			a.set(-Math.sin(e), 0, -Math.cos(e));
+			r.set(-Math.sin(e), 0, -Math.cos(e));
 		}
-		let o = this.gazeToward(i.clone().add(a.normalize()), r);
-		this.hopQueue = [], this.transition.requestMove(r, o, { instant: !0 }), this.setMode("inside");
+		let i = this.gazeToward(n.clone().add(r.normalize()), e);
+		this.hopQueue = [], this.transition.requestMove(e, i, { instant: !0 }), this.setMode("inside");
+	}
+	placeThumb(e) {
+		let t = e.pano.levels[0] ?? 512;
+		return this.resolveUrl(qv(e.pano.urlTemplate, {
+			level: t,
+			f: 5,
+			x: 0,
+			y: 0
+		}));
 	}
 	applyNadir() {
 		let e = this.manifest.customization?.nadirUrl, t = this.manifest.tour.brand?.logoUrl, n = e ? this.resolveUrl(e) : this.opts.nadir ? t ? this.resolveUrl(t) : this.opts.nadir.url : null;
@@ -20877,9 +21005,12 @@ function TS(e, t) {
 	let n = typeof document < "u" ? document.baseURI : "http://localhost/", r = t ? new URL(t, n) : new URL(n), i = new URL(e, r).toString();
 	return i.endsWith("/") ? i : `${i}/`;
 }
-var ES = {
+function ES(e, t) {
+	return e.label || `Point ${String(t + 1).padStart(2, "0")}`;
+}
+var DS = {
 	version: xS,
 	mount: (e, t) => CS.mount(e, t)
 };
 //#endregion
-export { Cy as AssetSystem, Dx as DEFAULT_TUNING, mb as DUAL_PROJECTOR_FRAG, pb as DUAL_PROJECTOR_VERT, fb as DepthShellSurface, Ny as EASINGS, ky as Engine, Hx as HotspotLayer, Jx as Hud, zy as LookController, Xx as MeasureTool, Ex as MeshSurface, Gy as ModeController, sS as NadirPatch, CS as Player, lS as Reticle, gS as RingLayer, sb as SUBDIVISION_TO_DETAIL, ib as SphereSurface, ES as TourForge, Ix as TransitionController, xS as VERSION, Yy as aStar, Ky as buildAdjacency, Py as clamp, Fy as clamp01, _b as createDualProjectorMaterial, by as cubemapBytes, Ay as easeInOutCubic, jy as easeInOutSine, nb as floorYOf, Yx as formatDistance, $y as halfToFloat, Iy as lerp, My as linear, tb as loadDepthCube, eb as makeDepthCubeTexture, jx as meshReveal, Zy as nearestSweepTo, Qy as nextStepToward, vy as pixelsPerTexel, qx as popupDocument, kx as positionEase, Jy as reachableFrom, Xy as resolveClickTarget, yy as selectPanoLevel, Ly as smoothstep, qy as sweepDistance, Ax as textureBlend, Ox as transitionDurationMs };
+export { Cy as AssetSystem, Dx as DEFAULT_TUNING, mb as DUAL_PROJECTOR_FRAG, pb as DUAL_PROJECTOR_VERT, fb as DepthShellSurface, Ny as EASINGS, ky as Engine, Hx as HotspotLayer, Jx as Hud, zy as LookController, Xx as MeasureTool, Ex as MeshSurface, Gy as ModeController, sS as NadirPatch, CS as Player, lS as Reticle, gS as RingLayer, sb as SUBDIVISION_TO_DETAIL, ib as SphereSurface, DS as TourForge, Ix as TransitionController, xS as VERSION, Yy as aStar, Ky as buildAdjacency, Py as clamp, Fy as clamp01, _b as createDualProjectorMaterial, by as cubemapBytes, Ay as easeInOutCubic, jy as easeInOutSine, nb as floorYOf, Yx as formatDistance, $y as halfToFloat, Iy as lerp, My as linear, tb as loadDepthCube, eb as makeDepthCubeTexture, jx as meshReveal, Zy as nearestSweepTo, Qy as nextStepToward, vy as pixelsPerTexel, ES as placeName, qx as popupDocument, kx as positionEase, Jy as reachableFrom, Xy as resolveClickTarget, yy as selectPanoLevel, Ly as smoothstep, qy as sweepDistance, Ax as textureBlend, Ox as transitionDurationMs };
