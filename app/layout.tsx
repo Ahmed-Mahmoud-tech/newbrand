@@ -1,6 +1,16 @@
-import type { Metadata } from 'next'
-import { Tajawal, IBM_Plex_Sans_Arabic, IBM_Plex_Mono } from 'next/font/google'
+import type { Metadata, Viewport } from 'next'
+import { Tajawal, IBM_Plex_Sans_Arabic, IBM_Plex_Mono, El_Messiri } from 'next/font/google'
+
+import { BRAND, EMAIL, SAME_AS, SITE_URL, TELEPHONE } from '@/lib/site'
 import './globals.css'
+
+// Body text. Self-hosted by next/font (was a render-blocking Google Fonts @import in CSS).
+const elMessiri = El_Messiri({
+    subsets: ['arabic', 'latin'],
+    weight: ['400', '500', '600', '700'],
+    display: 'swap',
+    variable: '--font-el-messiri',
+})
 
 const tajawal = Tajawal({
     subsets: ['arabic'],
@@ -9,10 +19,12 @@ const tajawal = Tajawal({
     variable: '--font-tajawal',
 })
 
+// Secondary faces (buttons, numbers): not preloaded, so they don't compete with the headings.
 const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
     subsets: ['arabic'],
     weight: ['400', '500', '600'],
     display: 'swap',
+    preload: false,
     variable: '--font-ibm-plex-sans',
 })
 
@@ -20,21 +32,30 @@ const ibmPlexMono = IBM_Plex_Mono({
     subsets: ['latin'],
     weight: ['500', '600'],
     display: 'swap',
+    preload: false,
     variable: '--font-ibm-plex-mono',
 })
 
-const SITE_URL = 'https://massah.tours'
+const DESCRIPTION =
+    'GateVerse تحوّل عقارك لجولة تفاعلية ثلاثية الأبعاد — عميلك يتجوّل في كل زاوية ويقيس المساحات من موبايله قبل الزيارة. معاينات جادة فقط، رابط دائم، وتسليم خلال 48 ساعة.'
+
+export const viewport: Viewport = {
+    themeColor: '#0b1622',
+    colorScheme: 'dark',
+    width: 'device-width',
+    initialScale: 1,
+}
 
 export const metadata: Metadata = {
     metadataBase: new URL(SITE_URL),
 
     /* ── SEO core ── */
     title: {
-        default: 'GateVerse | جولات افتراضية ثلاثية الأبعاد —  مصر',
+        default: 'GateVerse | جولات افتراضية ثلاثية الأبعاد — مصر',
         template: '%s | GateVerse',
     },
-    description:
-        'GateVerse تحوّل عقارك لجولة تفاعلية ثلاثية الأبعاد — عميلك يتجوّل في كل زاوية ويقيس المساحات من موبايله قبل الزيارة. معاينات جادة فقط، رابط دائم، وتسليم خلال 48 ساعة.',
+    description: DESCRIPTION,
+    applicationName: BRAND,
     keywords: [
         'جولة افتراضية ثلاثية الأبعاد',
         'جولة افتراضية عقارية',
@@ -50,30 +71,30 @@ export const metadata: Metadata = {
         'جولة تفاعلية عقارات',
         'معاينة عقار اونلاين',
     ],
-    authors: [{ name: 'GateVerse', url: SITE_URL }],
-    creator: 'GateVerse',
-    publisher: 'GateVerse',
+    authors: [{ name: BRAND, url: SITE_URL }],
+    creator: BRAND,
+    publisher: BRAND,
     category: 'Real Estate Photography',
     formatDetection: { email: false, address: false, telephone: false },
+    manifest: '/manifest.webmanifest',
 
-    /* ── Open Graph (GEO: social discovery) ── */
+    /* ── Open Graph (image comes from app/opengraph-image.png) ── */
     openGraph: {
         type: 'website',
         locale: 'ar_EG',
         alternateLocale: ['en_US'],
-        url: SITE_URL,
-        siteName: 'GateVerse',
-        title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد ',
+        url: '/',
+        siteName: BRAND,
+        title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد',
         description:
             'جولات 3D تفاعلية تُحوّل عقارك لتجربة حضور رقمية — معاينات جادة فقط، قياسات تفاعلية، روابط دائمة، وتوافق مع كل الأجهزة.',
     },
 
-    /* ── Twitter / X card ── */
+    /* ── Twitter / X card (image comes from app/twitter-image.png) ── */
     twitter: {
         card: 'summary_large_image',
         title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد',
         description: 'حوّل عقارك لجولة تفاعلية 3D — عميلك يتجوّل ويقيس من موبايله. تسليم خلال 48 ساعة.',
-        creator: '@gateverse',
     },
 
     /* ── Crawl directives ── */
@@ -89,8 +110,13 @@ export const metadata: Metadata = {
         },
     },
 
-    /* ── Canonical ── */
-    alternates: { canonical: SITE_URL },
+    /* ── Search Console / Bing Webmaster ownership (set the env vars on the host) ── */
+    verification: {
+        google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+            ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+            : undefined,
+    },
 
     /* ── GEO / LLMO extra meta ── */
     other: {
@@ -106,13 +132,49 @@ export const metadata: Metadata = {
         'DC.subject': 'Virtual Tours, Real Estate Photography, 3D Tours',
         'DC.creator': 'GateVerse',
         'DC.type': 'Service',
-
-        /* AI-readability signals (LLMO) */
-        'ai-content-declaration': 'human-created',
-        rating: 'General',
-        language: 'Arabic',
-        revisit: '7 days',
     },
+}
+
+/**
+ * Site-wide entity graph. Search engines and AI assistants use Organization + sameAs to tie the
+ * site to its social profiles and treat them as one brand; WebSite names the site in results.
+ */
+const siteSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+        {
+            '@type': 'Organization',
+            '@id': `${SITE_URL}/#organization`,
+            name: BRAND,
+            alternateName: ['GateVerse Virtual Tours', 'جيت فيرس'],
+            url: SITE_URL,
+            logo: {
+                '@type': 'ImageObject',
+                url: `${SITE_URL}/images/icon-512.png`,
+                width: 512,
+                height: 512,
+            },
+            image: `${SITE_URL}/images/logo-sm.png`,
+            email: EMAIL,
+            telephone: TELEPHONE,
+            contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: TELEPHONE,
+                contactType: 'sales',
+                areaServed: 'EG',
+                availableLanguage: ['Arabic', 'English'],
+            },
+            sameAs: SAME_AS,
+        },
+        {
+            '@type': 'WebSite',
+            '@id': `${SITE_URL}/#website`,
+            url: SITE_URL,
+            name: BRAND,
+            inLanguage: 'ar',
+            publisher: { '@id': `${SITE_URL}/#organization` },
+        },
+    ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -120,13 +182,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         // Browser extensions (Dark Reader, translators) add attributes to <html> before React
         // hydrates; this silences only that element's attribute mismatch, not its children.
         <html lang="ar" dir="rtl" suppressHydrationWarning>
-            <head>
-                <meta name="theme-color" content="#0b1622" />
-                <link rel="icon" href="/images/favicon.ico" sizes="any" />
-            </head>
             <body
-                className={`${tajawal.variable} ${ibmPlexSansArabic.variable} ${ibmPlexMono.variable}`}
+                className={`${elMessiri.variable} ${tajawal.variable} ${ibmPlexSansArabic.variable} ${ibmPlexMono.variable}`}
             >
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
                 {children}
             </body>
         </html>

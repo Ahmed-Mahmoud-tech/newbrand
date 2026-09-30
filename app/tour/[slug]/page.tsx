@@ -33,15 +33,26 @@ export function generateStaticParams(): { slug: string }[] {
 // /admin while it runs was a 404 until the cache refreshed. Unknown slugs still 404 through
 // tourName() -> notFound(); deploys still prebuild every tour committed under public/tours.
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-    const name = tourName(params.slug)
-    return name
-        ? { title: `${name} — جولة افتراضية`, description: `جولة افتراضية ثلاثية الأبعاد: ${name}` }
-        : { title: 'جولة افتراضية' }
+type Props = { params: Promise<{ slug: string }> }
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params
+    const name = tourName(slug)
+    if (!name) return { title: 'جولة افتراضية', robots: { index: false } }
+    const title = `${name} — جولة افتراضية`
+    const description = `جولة افتراضية ثلاثية الأبعاد تفاعلية: ${name}. تجوّل في كل زاوية وقِس المساحات من موبايلك — من إنتاج GateVerse.`
+    return {
+        title,
+        description,
+        alternates: { canonical: `/tour/${slug}` },
+        openGraph: { type: 'website', url: `/tour/${slug}`, siteName: 'GateVerse', locale: 'ar_EG', title, description },
+        twitter: { card: 'summary_large_image', title, description },
+    }
 }
 
-export default function TourPage({ params }: { params: { slug: string } }) {
-    const name = tourName(params.slug)
+export default async function TourPage({ params }: Props) {
+    const { slug } = await params
+    const name = tourName(slug)
     if (!name) notFound()
-    return <TourViewer slug={params.slug} name={name} />
+    return <TourViewer slug={slug} name={name} />
 }

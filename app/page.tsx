@@ -1,5 +1,16 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import { SAME_AS, SITE_URL, TELEPHONE, WHATSAPP_URL } from '@/lib/site'
+import logo from '@/public/images/logo-sm.png'
 import NavToggle from './components/NavToggle'
 import PriceCalculator from './components/PriceCalculator'
+import SocialLinks from './components/SocialLinks'
+
+export const metadata: Metadata = {
+    alternates: { canonical: '/' },
+}
 
 /* ─── Virtual tours ─── */
 const TOURS = [
@@ -10,13 +21,16 @@ const TOURS = [
 const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': ['LocalBusiness', 'ProfessionalService'],
-    '@id': 'https://massah.tours/#business',
+    '@id': `${SITE_URL}/#business`,
     name: 'GateVerse للجولات الافتراضية',
     alternateName: 'GateVerse Virtual Tours',
     description:
         'GateVerse تُنتج جولات افتراضية ثلاثية الأبعاد تُمكّن المشترين والمستأجرين من معاينة كل زاوية، قياس المساحات، واستكشاف التفاصيل التقنية — كلها من الموبايل قبل الزيارة الفعلية.',
-    url: 'https://massah.tours',
-    telephone: '+20-100-000-0000',
+    url: SITE_URL,
+    image: `${SITE_URL}/opengraph-image.png`,
+    logo: `${SITE_URL}/images/icon-512.png`,
+    parentOrganization: { '@id': `${SITE_URL}/#organization` },
+    telephone: TELEPHONE,
     email: 'hello@massah.tours',
     priceRange: '200–2000 EGP',
     currenciesAccepted: 'EGP, USD',
@@ -70,7 +84,7 @@ const localBusinessSchema = {
         ],
     },
     knowsAbout: ['3D Virtual Tours', 'Real Estate Photography', 'Virtual Reality', 'Digital Twin', 'Immersive Tours'],
-    sameAs: ['https://www.facebook.com/gateverse', 'https://www.instagram.com/gateverse'],
+    sameAs: SAME_AS,
 }
 
 const faqSchema = {
@@ -85,6 +99,14 @@ const faqSchema = {
         //         text: 'تبدأ تكلفة الاستضافة والخدمة من $30 شهريًا (أو ما يعادلها بالجنيه المصري عبر InstaPay/تحويل بنكي) لأي عقار بغض النظر عن مساحته، مع خصم خاص عند الاشتراك السنوي ($300/سنوياً).',
         //     },
         // },
+        {
+            '@type': 'Question',
+            name: 'ما هي تكلفة الجولة الافتراضية مع GateVerse؟',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'التصوير 20 ج.م لكل متر مربع كرسوم لمرة واحدة (بحد أدنى 2,000 ج.م)، والاستضافة 200 ج.م شهرياً لكل 200 م² أو جزء منها، مع خصم 10% عند الدفع السنوي. مثال: شقة 150 م² = 3,000 ج.م تصوير + 200 ج.م شهرياً.',
+            },
+        },
         {
             '@type': 'Question',
             name: 'كم يستغرق إنتاج وتسليم الجولة الافتراضية؟',
@@ -161,7 +183,9 @@ export default function HomePage() {
                     <div className="logo">
                         {/* <div className="logo-mark" aria-hidden="true" />
                         <span>GateVerse</span> */}
-                        <img src="/images/logo.png" alt="GateVerse Logo" width="100" />
+                        <Link href="/" aria-label="GateVerse — الصفحة الرئيسية">
+                            <Image src={logo} alt="GateVerse" width={100} priority />
+                        </Link>
                     </div>
                     <div className="nav-links" role="list">
                         <a href="#benefits" role="listitem">لماذا GateVerse؟</a>
@@ -280,7 +304,7 @@ export default function HomePage() {
                                     <div className="iframe-wrap">
                                         <iframe
                                             src={`https://my.matterport.com/show?play=1&lang=ar&m=${tour.id}`}
-                                            allow="xr-spatial-tracking; gyroscope; accelerometer; magnetometer; camera; microphone; display-capture; encrypted-media; picture-in-picture"
+                                            allow="xr-spatial-tracking; gyroscope; accelerometer; magnetometer; fullscreen; encrypted-media; picture-in-picture"
                                             allowFullScreen
                                             loading="lazy"
                                             title={`جولة افتراضية — ${tour.title}`}
@@ -354,6 +378,29 @@ export default function HomePage() {
                     </div>
                 </section>
             </main>
+
+            {/* ── FOOTER ── */}
+            <footer>
+                <div className="wrap footer-row">
+                    <div className="footer-brand">
+                        <Image src={logo} alt="GateVerse" width={90} />
+                        <p>جولات افتراضية ثلاثية الأبعاد للعقارات — معاينة كاملة وقياسات تفاعلية من الموبايل.</p>
+                    </div>
+                    <div className="footer-social">
+                        <span className="field-label">تابعنا</span>
+                        <SocialLinks />
+                    </div>
+                    <div className="footer-meta">
+                        <span>
+                            واتساب:{' '}
+                            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                                {TELEPHONE.replace(/-/g, ' ')}
+                            </a>
+                        </span>
+                        <span>© {new Date().getFullYear()} GateVerse</span>
+                    </div>
+                </div>
+            </footer>
         </>
     )
 }

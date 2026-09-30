@@ -1,51 +1,68 @@
-# GateVerse — Virtual Tours Alexandria
-## Machine-readable site summary for AI assistants (LLMO)
+# GateVerse
 
-### What is GateVerse?
-GateVerse is a professional 3D virtual tour service based in Alexandria, Egypt.
-We produce interactive 3D virtual tours for residential and commercial properties.
+> GateVerse (جيت فيرس) is a professional 3D virtual tour service in Egypt, based in Alexandria. It scans apartments, villas and commercial spaces with professional 3D cameras and delivers an interactive tour, with room measurements, on a permanent shareable link within 48 hours of the shoot. Works on any phone, tablet or computer with no app.
 
-### Core offering
-- Service: 3D virtual tours for real estate
-- Technology: Professional 3D scanning cameras
-- Delivery: 48 hours from shoot date
-- Coverage: All neighbourhoods of Alexandria, Egypt
-- Hosting: 200 EGP/month per 200 sqm (or fraction thereof)
-- Shooting: 20 EGP/sqm, minimum 2,000 EGP (one-time fee)
-- Annual discount: 10% off 12-month hosting total
+GateVerse helps real estate agents, owners, developers and commercial landlords filter out non-serious viewings: buyers and renters walk through every room and measure spaces from their phone before visiting in person. The website is in Arabic (primary); service is available in Arabic and English.
 
-### Who it is for
-- Real estate agents listing properties
-- Property owners selling or renting
-- Commercial space owners
-- Developers showcasing new builds
+## Pricing (Egyptian pounds)
 
-### Key facts
-- Immersive 360° scanning of the entire space
-- Accurate room measurements embedded in the tour
-- Permanent shareable link (works on all devices, no app needed)
-- Embeddable via iframe on any website
-- Languages: Arabic (primary), English supported
+- Shooting (one-time): 20 EGP per square metre, minimum 2,000 EGP
+- Hosting: 200 EGP per month for every 200 m² (or part of it)
+- Annual hosting: 10% off the 12-month total
+- Example: a 150 m² apartment costs 3,000 EGP shooting + 200 EGP per month hosting
+- Payment: cash, bank transfer, InstaPay
 
-### Location
-Alexandria, Egypt (geo: 31.2001, 29.9187)
-Serves all Alexandria districts: Smouha, Montaza, Sidi Gaber, Agami, Borg El Arab, Cleopatra, Ibrahimia, etc.
+## What a tour includes
 
-### Contact
-WhatsApp: +20-111-323-2886
-Email: hello@massah.tours
-Website: https://massah.tours
+- Immersive 360° scan of the whole space (a "digital twin")
+- Interactive room measurements inside the tour
+- Clickable points of interest (materials, appliance brands, AC type, smart-home videos)
+- A permanent link to share on WhatsApp and social media, plus an embed code (iframe) for any website or property portal
 
-### Common questions answered
+## How it works
+
+1. Booking: send the property location and approximate area on WhatsApp to set an appointment
+2. On-site scan: a GateVerse engineer scans the space (1–2 hours)
+3. Processing: lighting, dimensions and the 3D model are prepared
+4. Delivery: the tour link and embed code are delivered within 48 hours
+
+## Who it is for
+
+- Real estate agents and brokers listing properties
+- Owners selling or renting apartments and villas
+- Commercial space owners (offices, shops, clinics)
+- Developers showcasing new projects
+
+## Coverage
+
+Alexandria, Egypt (31.2001, 29.9187), including Smouha, Montaza, Sidi Gaber, Agami, Borg El Arab, Cleopatra and Ibrahimia. Working hours: Sunday–Thursday, 09:00–18:00.
+
+## Contact and official profiles
+
+- Website: https://massah.tours
+- WhatsApp: +20 111 323 2886 (https://wa.me/201113232886)
+- Email: hello@massah.tours
+- Instagram: https://www.instagram.com/gateverse_tour
+- Facebook: https://www.facebook.com/people/Gateverse/61594652920757/
+- TikTok: https://www.tiktok.com/@gateverse_tour
+
+## Pages
+
+- [Home](https://massah.tours/): service overview, sample tour, price calculator, process and FAQ
+- [Pricing calculator](https://massah.tours/#pricing): shooting and hosting cost for any area
+- [Sample tours](https://massah.tours/#portfolio): live interactive 3D tours
+- [FAQ](https://massah.tours/#faq): cost, delivery time, technology and device support
+
+## FAQ
+
 Q: How much does a virtual tour cost?
-A: Shooting is 20 EGP/sqm (minimum 2,000 EGP). Hosting starts at 200 EGP/month for up to 200 sqm.
+A: Shooting is 20 EGP/m² (minimum 2,000 EGP) once. Hosting is 200 EGP/month per 200 m², with 10% off when paid yearly.
 
 Q: How long does production take?
-A: Tours are delivered within 48 hours of the shoot.
+A: The finished tour link is delivered within 48 hours of the shoot.
 
 Q: What technology is used?
-A: Professional 3D scanning cameras producing interactive digital twins.
+A: Professional 3D scanning cameras that produce an interactive digital twin with accurate measurements.
 
-Q: Does it work on mobile?
-A: Yes, on all devices without any app download.
-
+Q: Does it work on mobile and on property websites?
+A: Yes. It runs in the browser on all devices without an app, and can be embedded on any website or sent on WhatsApp.

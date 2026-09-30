@@ -38,3 +38,6 @@ Thumbs.db
 # Editor directories
 .vscode/
 .idea/
+
+# local-only secrets (never commit, never put in public/)
+.private/

@@ -14,12 +14,34 @@ import { deleteTour, importTour, ImportError, listTours } from '@/lib/tourImport
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
-function localOnly(): Response | null {
-    if (process.env.NODE_ENV === 'development') return null
-    return NextResponse.json(
-        { error: 'The tour admin only works on the local dev server (npm run dev). Import there, then push.' },
-        { status: 403 },
-    )
+/** Sent by AdminClient. A custom header makes cross-site requests need a CORS preflight, which
+ *  this route never grants, so other websites open in the browser cannot call it (CSRF). */
+const ADMIN_HEADER = 'x-gateverse-admin'
+
+const LOOPBACK_HOST = /^(localhost|127\.0\.0\.1|\[::1\])(:\d+)?$/i
+
+function localOnly(req: Request): Response | null {
+    if (process.env.NODE_ENV !== 'development') {
+        return NextResponse.json(
+            { error: 'The tour admin only works on the local dev server (npm run dev). Import there, then push.' },
+            { status: 403 },
+        )
+    }
+    // `next dev` listens on every network interface: refuse other machines on the LAN and
+    // DNS-rebinding pages, which reach the server under a non-loopback Host.
+    const host = req.headers.get('host') ?? ''
+    const origin = req.headers.get('origin')
+    const sameOrigin = !origin || (() => {
+        try {
+            return new URL(origin).host === host
+        } catch {
+            return false
+        }
+    })()
+    if (!LOOPBACK_HOST.test(host) || !sameOrigin || req.headers.get(ADMIN_HEADER) !== '1') {
+        return NextResponse.json({ error: 'Open the admin at http://localhost:3000/admin.' }, { status: 403 })
+    }
+    return null
 }
 
 function fail(err: unknown): Response {
@@ -27,14 +49,14 @@ function fail(err: unknown): Response {
     return NextResponse.json({ error: (err as Error).message }, { status })
 }
 
-export async function GET(): Promise<Response> {
-    const blocked = localOnly()
+export async function GET(req: Request): Promise<Response> {
+    const blocked = localOnly(req)
     if (blocked) return blocked
     return NextResponse.json({ tours: await listTours() })
 }
 
 export async function POST(req: Request): Promise<Response> {
-    const blocked = localOnly()
+    const blocked = localOnly(req)
     if (blocked) return blocked
     try {
         const slug = new URL(req.url).searchParams.get('slug') || undefined
@@ -47,7 +69,7 @@ export async function POST(req: Request): Promise<Response> {
 }
 
 export async function DELETE(req: Request): Promise<Response> {
-    const blocked = localOnly()
+    const blocked = localOnly(req)
     if (blocked) return blocked
     try {
         const slug = new URL(req.url).searchParams.get('slug')

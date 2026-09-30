@@ -1,6 +1,10 @@
 'use client'
 
+import Image from 'next/image'
+import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+
+import logo from '@/public/images/logo-sm.png'
 
 /** The slice of the TourForge player API this page uses. */
 interface TourForgePlayer {
@@ -50,7 +54,7 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
     return (
         <div style={{ position: 'fixed', inset: 0, background: '#000' }}>
             <div ref={ref} style={{ position: 'absolute', inset: 0 }} aria-label={name} />
-            <a
+            <Link
                 href="/"
                 style={{
                     position: 'absolute',
@@ -71,10 +75,9 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
                     fontSize: 14,
                 }}
             >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/logo.png" alt="GateVerse" style={{ height: 28, width: 'auto' }} />
+                <Image src={logo} alt="GateVerse" width={43} height={28} priority />
                 <span style={{ padding: '0 0.5rem' }}>{name}</span>
-            </a>
+            </Link>
             {state !== 'ready' && (
                 <div style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', color: '#cfd8e0', fontSize: 16 }}>
                     {state === 'loading' ? 'جاري تحميل الجولة…' : 'تعذّر تحميل الجولة. حاول تحديث الصفحة.'}

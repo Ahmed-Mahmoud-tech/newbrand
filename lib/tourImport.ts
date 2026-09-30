@@ -20,6 +20,8 @@ export const TOURS_DIR = path.join(PUBLIC_DIR, 'tours')
 export const PLAYER_DIR = path.join(PUBLIC_DIR, 'tourforge')
 
 const SLUG = /^[a-z0-9][a-z0-9_-]{0,79}$/
+/** Largest single file accepted from a zip (panoramas are a few MB; this only stops zip bombs). */
+const MAX_ENTRY_BYTES = 512 * 1024 * 1024
 
 export class ImportError extends Error {
     constructor(readonly status: number, message: string) {
@@ -60,6 +62,7 @@ function readZip(buf: Buffer): ZipEntry[] {
         if (buf.readUInt32LE(p) !== 0x02014b50) throw new ImportError(400, 'Corrupt zip (central directory).')
         const method = buf.readUInt16LE(p + 10)
         const compressed = buf.readUInt32LE(p + 20)
+        const size = buf.readUInt32LE(p + 24)
         const nameLen = buf.readUInt16LE(p + 28)
         const extraLen = buf.readUInt16LE(p + 30)
         const commentLen = buf.readUInt16LE(p + 32)
@@ -67,11 +70,13 @@ function readZip(buf: Buffer): ZipEntry[] {
         const name = buf.subarray(p + 46, p + 46 + nameLen).toString('utf8')
         p += 46 + nameLen + extraLen + commentLen
         if (name.endsWith('/')) continue // directory entry
+        if (size > MAX_ENTRY_BYTES) throw new ImportError(400, `File too large in zip: ${name}`)
         if (buf.readUInt32LE(local) !== 0x04034b50) throw new ImportError(400, `Corrupt zip entry: ${name}`)
         const start = local + 30 + buf.readUInt16LE(local + 26) + buf.readUInt16LE(local + 28)
         const raw = buf.subarray(start, start + compressed)
         if (method === 0) out.push({ name, data: raw })
-        else if (method === 8) out.push({ name, data: inflateRawSync(raw) })
+        // never inflate past the size the entry declares
+        else if (method === 8) out.push({ name, data: inflateRawSync(raw, { maxOutputLength: Math.max(size, 1) }) })
         else throw new ImportError(400, `Unsupported compression in ${name}.`)
     }
     return out

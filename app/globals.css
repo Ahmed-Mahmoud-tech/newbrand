@@ -31,7 +31,6 @@
   margin: 0;
   padding: 0;
 }
-@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -43,7 +42,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.7;
   overflow-x: hidden;
-  font-family: "El Messiri", sans-serif;
+  font-family: var(--font-el-messiri), "El Messiri", sans-serif;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -785,4 +784,69 @@ footer {
 }
 .footer-row a:hover {
   color: var(--cyan);
+}
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+}
+.footer-brand p {
+  color: var(--ink-dim);
+  line-height: 1.6;
+}
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-social .field-label {
+  margin: 0;
+}
+.social-links {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--ink);
+  background: var(--bg-elevated);
+  transition:
+    border-color 0.2s,
+    color 0.2s,
+    transform 0.15s;
+}
+.social-links a:hover,
+.social-links a:focus-visible {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  transform: translateY(-2px);
+}
+.social-links svg {
+  width: 20px;
+  height: 20px;
+}
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--ink-dim);
+}
+.footer-meta a {
+  font-family: var(--font-mono);
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+@media (max-width: 600px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
 }

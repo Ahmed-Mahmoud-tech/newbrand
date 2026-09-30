@@ -4,6 +4,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 
 import styles from './admin.module.css'
 
+/** Required by /api/admin/tours: other websites cannot send it without a CORS preflight. */
+const ADMIN_HEADERS = { 'x-gateverse-admin': '1' }
+
 interface TourSummary {
     slug: string
     name: string
@@ -21,7 +24,7 @@ export default function AdminClient({ localOnly }: { localOnly: boolean }) {
     const inputRef = useRef<HTMLInputElement>(null)
 
     const refresh = useCallback(async () => {
-        const res = await fetch('/api/admin/tours', { cache: 'no-store' })
+        const res = await fetch('/api/admin/tours', { cache: 'no-store', headers: ADMIN_HEADERS })
         const json = (await res.json()) as { tours?: TourSummary[]; error?: string }
         if (json.tours) setTours(json.tours)
         else if (json.error) setMessage({ ok: false, text: json.error })
@@ -45,6 +48,7 @@ export default function AdminClient({ localOnly }: { localOnly: boolean }) {
         // XHR rather than fetch: a tour is hundreds of MB and fetch cannot report upload progress
         const xhr = new XMLHttpRequest()
         xhr.open('POST', `/api/admin/tours${slug.trim() ? `?slug=${encodeURIComponent(slug.trim())}` : ''}`)
+        xhr.setRequestHeader('x-gateverse-admin', '1')
         xhr.upload.onprogress = (e) => e.lengthComputable && setProgress(e.loaded / e.total)
         xhr.onload = () => {
             setProgress(null)
@@ -74,7 +78,7 @@ export default function AdminClient({ localOnly }: { localOnly: boolean }) {
 
     const remove = async (t: TourSummary) => {
         if (!window.confirm(`Delete “${t.name}” (/tour/${t.slug})? This removes its files from public/tours.`)) return
-        const res = await fetch(`/api/admin/tours?slug=${encodeURIComponent(t.slug)}`, { method: 'DELETE' })
+        const res = await fetch(`/api/admin/tours?slug=${encodeURIComponent(t.slug)}`, { method: 'DELETE', headers: ADMIN_HEADERS })
         if (!res.ok) setMessage({ ok: false, text: ((await res.json()) as { error?: string }).error ?? 'Delete failed.' })
         void refresh()
     }
