@@ -1,0 +1,234 @@
+.root {
+  position: absolute;
+  inset: 0;
+  /* above the player's overlay (z 2) and the back link (z 1) */
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 16px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 40%, var(--bg-elevated-2) 0%, var(--bg) 60%, #050b12 100%);
+  color: var(--ink);
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.leaving {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Perspective floor grid */
+.grid {
+  position: absolute;
+  inset: 45% -50% -20%;
+  background-image:
+    linear-gradient(var(--grid-line-strong) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-strong) 1px, transparent 1px);
+  background-size: 48px 48px;
+  transform: perspective(500px) rotateX(62deg);
+  transform-origin: top center;
+  mask-image: linear-gradient(to bottom, transparent, #000 25%, transparent 85%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 25%, transparent 85%);
+  animation: gridMove 3s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  to {
+    background-position: 0 48px;
+  }
+}
+
+/* ── 3D cube ── */
+.scene {
+  --size: 96px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  margin-bottom: 28px;
+  perspective: 700px;
+}
+
+.cube {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: spin 7s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateX(-26deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-26deg) rotateY(360deg);
+  }
+}
+
+.face,
+.coreFace {
+  position: absolute;
+  inset: 0;
+}
+
+.face {
+  border: 1.5px solid var(--cyan);
+  background: rgba(79, 224, 200, 0.05);
+  box-shadow: inset 0 0 22px rgba(79, 224, 200, 0.22), 0 0 12px rgba(79, 224, 200, 0.18);
+}
+
+.front { transform: rotateY(0deg) translateZ(var(--half)); }
+.back { transform: rotateY(180deg) translateZ(var(--half)); }
+.right { transform: rotateY(90deg) translateZ(var(--half)); }
+.left { transform: rotateY(-90deg) translateZ(var(--half)); }
+.top { transform: rotateX(90deg) translateZ(var(--half)); }
+.bottom { transform: rotateX(-90deg) translateZ(var(--half)); }
+
+.cube {
+  --half: calc(var(--size) / 2);
+}
+
+/* Inner cube grows with progress */
+.core {
+  --core: 40px;
+  position: absolute;
+  left: calc(50% - var(--core) / 2);
+  top: calc(50% - var(--core) / 2);
+  width: var(--core);
+  height: var(--core);
+  transform-style: preserve-3d;
+  transform: scale(calc(0.45 + var(--p, 0) * 0.75));
+  transition: transform 0.4s ease;
+}
+
+.coreSpin {
+  --half: calc(var(--core) / 2);
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: coreSpin 3.5s linear infinite;
+}
+
+@keyframes coreSpin {
+  from {
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(45deg) rotateY(-360deg) rotateZ(360deg);
+  }
+}
+
+.coreFace {
+  background: rgba(217, 162, 75, 0.35);
+  border: 1px solid var(--sand);
+  box-shadow: 0 0 14px rgba(217, 162, 75, 0.45);
+}
+
+.shadow {
+  position: absolute;
+  left: 50%;
+  bottom: -46px;
+  width: 110px;
+  height: 18px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(79, 224, 200, 0.35), transparent 70%);
+  animation: pulse 3.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+    transform: translateX(-50%) scale(0.8);
+  }
+}
+
+/* ── Text + progress bar ── */
+.title {
+  position: relative;
+  max-width: 100%;
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 4.5vw, 24px);
+  font-weight: 700;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.bar {
+  position: relative;
+  width: min(300px, 100%);
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(79, 224, 200, 0.12);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* A block child of an RTL box starts at the right, so the bar fills right-to-left */
+.fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--sand), var(--cyan));
+  box-shadow: 0 0 12px rgba(79, 224, 200, 0.6);
+  transition: width 0.2s linear;
+  position: relative;
+  overflow: hidden;
+}
+
+.fill::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: shine 1.4s ease-in-out infinite;
+}
+
+@keyframes shine {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.meta {
+  position: relative;
+  width: min(300px, 100%);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: #9fb3c3;
+}
+
+.pct {
+  font-family: var(--font-mono);
+  color: var(--cyan);
+  direction: ltr;
+  font-variant-numeric: tabular-nums;
+}
+
+.error {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #cfd8e0;
+  text-align: center;
+}
+
+.error button {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--cyan);
+  background: var(--cyan-soft);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
