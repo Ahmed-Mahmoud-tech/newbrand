@@ -1,0 +1,64 @@
+/* Contact buttons over the tour: physical left (the logo pill is top-left, the player's places
+   panel opens from the right), above the player's centred bottom bar. Under the player overlay
+   (z 2), so an open popup covers them. */
+.bar {
+  position: absolute;
+  left: 14px;
+  bottom: calc(max(16px, env(safe-area-inset-bottom)) + 64px);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100% - 160px);
+  overflow-y: auto;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 4px 14px 4px 4px;
+  border-radius: 999px;
+  background: rgba(18, 20, 24, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s;
+}
+.btn:hover {
+  transform: translateX(3px);
+}
+.btn:focus-visible {
+  outline: 2px solid #4fe0c8;
+  outline-offset: 2px;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #fff;
+  flex: none;
+}
+
+/* Phones: icons only, the label would cover the view. */
+@media (max-width: 600px) {
+  .btn {
+    padding: 4px;
+  }
+  .label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}

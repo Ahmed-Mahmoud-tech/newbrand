@@ -570,6 +570,26 @@ section {
   color: var(--cyan);
 }
 
+/* Segment tabs: four choices, two per row on narrow phones */
+.seg-tabs {
+  flex-wrap: wrap;
+}
+.seg-tabs button {
+  min-width: 25%;
+  min-height: 44px;
+}
+@media (max-width: 420px) {
+  .seg-tabs button {
+    min-width: 50%;
+  }
+}
+.calc-hint {
+  margin: -18px 0 24px;
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
 .area-input-row {
   display: flex;
   align-items: center;

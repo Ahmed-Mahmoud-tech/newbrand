@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 import { SITE_URL } from '@/lib/site'
 
 // Private tools only. /_next/ must stay crawlable: Google renders the page with its CSS and JS.
-const DISALLOW = ['/api/', '/admin']
+const DISALLOW = ['/api/', '/admin', '/stats/']
 
 /**
  * AI search and assistant crawlers, allowed by name so the site can be cited in ChatGPT, Claude,

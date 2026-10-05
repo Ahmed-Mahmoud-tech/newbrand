@@ -32,7 +32,7 @@ const localBusinessSchema = {
     parentOrganization: { '@id': `${SITE_URL}/#organization` },
     telephone: TELEPHONE,
     email: 'hello@massah.tours',
-    priceRange: '200–2000 EGP',
+    priceRange: '750–44000 EGP',
     currenciesAccepted: 'EGP, USD',
     paymentAccepted: 'Cash, Bank Transfer, InstaPay',
     address: {
@@ -64,18 +64,32 @@ const localBusinessSchema = {
                 priceSpecification: [
                     {
                         '@type': 'UnitPriceSpecification',
-                        name: 'تصوير (رسوم لمرة واحدة)',
+                        name: 'تصوير عقار (رسوم لمرة واحدة)',
                         price: '20',
                         priceCurrency: 'EGP',
-                        unitText: 'م² (حد أدنى 2000 ج.م)',
+                        unitText: 'م² لأول 130 م²، ثم 15 ج.م حتى 200 م² و12 ج.م بعدها (حد أدنى 1000 ج.م)',
                     },
                     {
                         '@type': 'UnitPriceSpecification',
-                        name: 'استضافة شهرية',
-                        price: '200',
+                        name: 'استضافة عقار شهرية',
+                        price: '100',
                         priceCurrency: 'EGP',
                         billingDuration: 'P1M',
-                        unitText: 'لكل 200 م² أو جزء منها',
+                        unitText: 'للجولة',
+                    },
+                    {
+                        '@type': 'UnitPriceSpecification',
+                        name: 'تصوير مكان تجاري (رسوم لمرة واحدة)',
+                        price: '20',
+                        priceCurrency: 'EGP',
+                        unitText: 'م² لأول 150 م²، ثم 10 ج.م حتى 400 م² و6 ج.م بعدها، مع سنة استضافة (حد أدنى 1000 ج.م)',
+                    },
+                    {
+                        '@type': 'UnitPriceSpecification',
+                        name: 'تصوير مطبخ',
+                        price: '750',
+                        priceCurrency: 'EGP',
+                        unitText: 'للمطبخ',
                     },
                 ],
                 description: 'إنتاج واستضافة جولة تفاعلية كاملة مع رابط دائم وكود تضمين.',
@@ -104,7 +118,7 @@ const faqSchema = {
             name: 'ما هي تكلفة الجولة الافتراضية مع GateVerse؟',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'التصوير 20 ج.م لكل متر مربع كرسوم لمرة واحدة (بحد أدنى 2,000 ج.م)، والاستضافة 200 ج.م شهرياً لكل 200 م² أو جزء منها، مع خصم 10% عند الدفع السنوي. مثال: شقة 150 م² = 3,000 ج.م تصوير + 200 ج.م شهرياً.',
+                text: 'السعر حسب مجالك وسعر المتر بيقل كل ما المساحة تكبر. العقارات: 20 ج.م للمتر لأول 130 م² ثم 15 ج.م حتى 200 م² و12 ج.م بعدها (حد أدنى 1,000 ج.م) + استضافة 100 ج.م شهرياً، مثال: شقة 150 م² = 2,900 ج.م. الأماكن التجارية (قاعات، جيم، سبا، معارض، كافيهات): 20 ج.م للمتر لأول 150 م² ثم 10 ج.م حتى 400 م² و6 ج.م بعدها، وأول سنة استضافة مجاناً. الفنادق تبدأ من 5,000 ج.م، والمطابخ 750 ج.م للمطبخ.',
             },
         },
         {
@@ -325,7 +339,7 @@ export default function HomePage() {
                             <div className="eyebrow">احسب سعرك</div>
                             <h2 id="pricing-heading">تسعير واضح، بدون مفاجآت</h2>
                             <p>
-                                تصوير بـ <strong>20 ج.م/م²</strong> (حد أدنى 2,000 ج.م) · استضافة بـ <strong>200 ج.م/شهر</strong> لكل 200 م² · خصم 10% على الدفع السنوي.
+                                اختار مجالك: <strong>سعر المتر بيقل كل ما المساحة تكبر</strong> · الأماكن التجارية والفنادق معاها <strong>سنة استضافة مجاناً</strong> · المطابخ <strong>750 ج.م</strong> للمطبخ.
                             </p>
                         </div>
                         <PriceCalculator />

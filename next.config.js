@@ -74,6 +74,15 @@ const nextConfig = {
             // Keep private tools out of search results even if a link leaks.
             { source: '/admin', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
             { source: '/api/:path*', headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }] },
+            // Each client's stats link is private: never indexed, never sent on as a referrer.
+            {
+                source: '/stats/:token*',
+                headers: [
+                    { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+                    { key: 'Referrer-Policy', value: 'no-referrer' },
+                    { key: 'Cache-Control', value: 'private, no-store' },
+                ],
+            },
 
             // Static assets from public/ (Next serves them with max-age=0 by default). Not
             // content-hashed, so browsers revalidate daily; the CDN copy is replaced on deploy.

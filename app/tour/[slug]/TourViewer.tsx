@@ -5,11 +5,14 @@ import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 
 import logo from '@/public/images/logo-sm.png'
+import ContactBar from './ContactBar'
 import TourLoader from './TourLoader'
+import { track, trackViewOnce } from './track'
 
 /** The slice of the TourForge player API this page uses. */
 interface TourForgePlayer {
     destroy(): void
+    on(type: 'hotspotclick', cb: (e: { id: string }) => void): () => void
 }
 interface TourForgeModule {
     TourForge: {
@@ -120,6 +123,10 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
                 })
                 if (cancelled) return p.destroy()
                 player = p
+                // Counted for the owner's stats (gateverse.net/stats/…): the view once per
+                // session, and every popup opened. destroy() drops the listener.
+                trackViewOnce(slug)
+                p.on('hotspotclick', ({ id }) => track(slug, 'popup', id))
                 target.current = 1
                 setStage('ready')
                 setState('ready')
@@ -189,6 +196,7 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
                 <Image src={logo} alt="GateVerse" width={43} height={28} priority />
                 <span style={{ padding: '0 0.5rem' }}>{name}</span>
             </Link>
+            {state === 'ready' && <ContactBar slug={slug} name={name} />}
             {!loaderGone && (
                 <TourLoader
                     name={name}

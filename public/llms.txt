@@ -6,10 +6,12 @@ GateVerse helps real estate agents, owners, developers and commercial landlords 
 
 ## Pricing (Egyptian pounds)
 
-- Shooting (one-time): 20 EGP per square metre, minimum 2,000 EGP
-- Hosting: 200 EGP per month for every 200 m² (or part of it)
-- Annual hosting: 10% off the 12-month total
-- Example: a 150 m² apartment costs 3,000 EGP shooting + 200 EGP per month hosting
+Prices depend on the type of place, and the rate per m² falls as the area grows (each band of m² at its own rate):
+
+- Real estate (apartments, villas): 20 EGP/m² up to 130 m², 15 EGP/m² from 131 to 200 m², 12 EGP/m² above 200 m²; minimum 1,000 EGP. Hosting 100 EGP per month per tour (10% off when paid yearly). Example: a 150 m² apartment costs 2,900 EGP shooting + 100 EGP per month.
+- Commercial (wedding halls, gyms, spas, furniture showrooms, shops, kids areas, restaurants, cafés): 20 EGP/m² up to 150 m², 10 EGP/m² from 151 to 400 m², 6 EGP/m² above 400 m²; minimum 1,000 EGP. The first year of hosting is included; renewal 1,200 EGP per year. Example: an 800 m² hall costs 7,900 EGP.
+- Hotels: 13 EGP/m² up to 1,000 m², 8 EGP/m² up to 3,000 m², 5 EGP/m² above (area = the spaces shot); minimum 5,000 EGP; first year of hosting included, then 10% of the shoot per year.
+- Kitchens: 750 EGP per kitchen, 15% off each extra kitchen shot the same day; hosting 250 EGP per year.
 - Payment: cash, bank transfer, InstaPay
 
 ## What a tour includes
@@ -56,7 +58,7 @@ Alexandria, Egypt (31.2001, 29.9187), including Smouha, Montaza, Sidi Gaber, Aga
 ## FAQ
 
 Q: How much does a virtual tour cost?
-A: Shooting is 20 EGP/m² (minimum 2,000 EGP) once. Hosting is 200 EGP/month per 200 m², with 10% off when paid yearly.
+A: It depends on the type of place and its area, and the rate per m² falls as the area grows. A 150 m² apartment is 2,900 EGP once plus 100 EGP/month hosting; commercial spaces start at 1,000 EGP with the first year of hosting included; kitchens are 750 EGP each. The calculator at https://massah.tours/#pricing gives the exact price.
 
 Q: How long does production take?
 A: The finished tour link is delivered within 48 hours of the shoot.
