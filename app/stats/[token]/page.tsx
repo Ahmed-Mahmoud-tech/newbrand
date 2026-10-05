@@ -9,6 +9,7 @@ import { db } from '@/lib/db'
 import { LINK_COLOR, LINK_ICON, LINK_KINDS, LINK_LABEL } from '@/lib/tourLinks'
 import { statsForToken } from '@/lib/tourStats'
 
+import LiveRefresh from './LiveRefresh'
 import styles from './stats.module.css'
 
 // Per request: the numbers change all day, and every link is private.
@@ -46,6 +47,7 @@ export default async function StatsPage({ params }: { params: Promise<{ token: s
                 <div>
                     <p className={styles.eyebrow}>إحصائيات جولاتك</p>
                     <h1>{stats.name}</h1>
+                    <LiveRefresh seconds={15} />
                 </div>
             </header>
 
