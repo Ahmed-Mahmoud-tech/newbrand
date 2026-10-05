@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import { headers } from 'next/headers'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
@@ -26,7 +27,10 @@ export default async function StatsPage({ params }: { params: Promise<{ token: s
     const { token } = await params
     const pool = db()
     if (!pool || !/^[A-Za-z0-9_-]{20,64}$/.test(token)) notFound()
-    const stats = await statsForToken(pool, token)
+    const h = await headers()
+    const host = h.get('x-forwarded-host') ?? h.get('host') ?? 'localhost:3000'
+    const proto = h.get('x-forwarded-proto') ?? (host.startsWith('localhost') ? 'http' : 'https')
+    const stats = await statsForToken(pool, token, `${proto}://${host}`)
     if (!stats) notFound()
 
     const sum = (k: 'views30' | 'clicks30' | 'views' | 'clicks') => stats.tours.reduce((s, t) => s + t[k], 0)

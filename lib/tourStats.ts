@@ -4,7 +4,6 @@
  */
 import type { Pool } from 'pg'
 
-import { SITE_URL } from './site'
 import { LINK_KINDS, type LinkKind } from './tourLinks'
 
 export interface TourStat {
@@ -28,9 +27,9 @@ export interface ClientStats {
 const DAYS = 30
 
 /** Tour name and popup titles from the tour's own manifest; the slug and ids when it can't be read. */
-async function manifestInfo(slug: string): Promise<{ name: string; titles: Map<string, string> }> {
+async function manifestInfo(origin: string, slug: string): Promise<{ name: string; titles: Map<string, string> }> {
     try {
-        const r = await fetch(`${SITE_URL}/tours/${slug}/tour.json`, { next: { revalidate: 3600 } })
+        const r = await fetch(`${origin}/tours/${slug}/tour.json`, { next: { revalidate: 3600 } })
         if (!r.ok) throw new Error(String(r.status))
         const m = (await r.json()) as { tour?: { name?: string }; hotspots?: { id: string; title?: string }[] }
         return { name: m.tour?.name || slug, titles: new Map((m.hotspots ?? []).map((h) => [h.id, h.title || h.id])) }
@@ -39,7 +38,8 @@ async function manifestInfo(slug: string): Promise<{ name: string; titles: Map<s
     }
 }
 
-export async function statsForToken(pool: Pool, token: string): Promise<ClientStats | null> {
+/** `origin` = where this request came in (the tour files are served from the same deploy). */
+export async function statsForToken(pool: Pool, token: string, origin: string): Promise<ClientStats | null> {
     const { rows: [client] } = await pool.query<{ id: string; name: string }>(
         'SELECT id, name FROM clients WHERE stats_token = $1 AND deleted_at IS NULL',
         [token],
@@ -66,7 +66,7 @@ export async function statsForToken(pool: Pool, token: string): Promise<ClientSt
              GROUP BY day`,
             [slugs, DAYS],
         ),
-        Promise.all(slugs.map(manifestInfo)),
+        Promise.all(slugs.map((s) => manifestInfo(origin, s))),
     ])
 
     const out: TourStat[] = tours.map((t, i) => ({ slug: t.slug, name: infos[i].name, active: t.active, views: 0, views30: 0, clicks: 0, clicks30: 0, byKind: {}, popups: [] }))
