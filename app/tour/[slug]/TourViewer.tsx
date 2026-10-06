@@ -46,7 +46,7 @@ async function fetchWithProgress(url: string, onProgress: (f: number) => void): 
     const reader = res.body.getReader()
     const chunks: Uint8Array[] = []
     let received = 0
-    for (;;) {
+    for (; ;) {
         const { done, value } = await reader.read()
         if (done) break
         chunks.push(value)
@@ -78,66 +78,66 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
             target.current = Math.max(target.current, to)
         }
 
-        ;(async () => {
-            try {
-                // 1. player script. Download it with fetch() for byte progress; that fills the
-                //    HTTP cache (/tourforge/* is max-age=3600 in next.config.js), so the import
-                //    below reuses it. Not a blob: import: the CSP's script-src forbids blob:.
-                setStage('player')
-                await fetchWithProgress(PLAYER_SRC, (f) => bump(f * PLAYER_END)).catch(() => {})
-                // webpackIgnore: load the file from public/ at runtime instead of bundling it
-                const mod = (await import(/* webpackIgnore: true */ PLAYER_SRC)) as TourForgeModule
-                bump(PLAYER_END)
-                if (cancelled) return
+            ; (async () => {
+                try {
+                    // 1. player script. Download it with fetch() for byte progress; that fills the
+                    //    HTTP cache (/tourforge/* is max-age=3600 in next.config.js), so the import
+                    //    below reuses it. Not a blob: import: the CSP's script-src forbids blob:.
+                    setStage('player')
+                    await fetchWithProgress(PLAYER_SRC, (f) => bump(f * PLAYER_END)).catch(() => { })
+                    // webpackIgnore: load the file from public/ at runtime instead of bundling it
+                    const mod = (await import(/* webpackIgnore: true */ PLAYER_SRC)) as TourForgeModule
+                    bump(PLAYER_END)
+                    if (cancelled) return
 
-                // 2. manifest (passed in so the player doesn't fetch it again; manifestUrl still
-                //    tells it where relative assets live)
-                setStage('manifest')
-                const manifestUrl = `/tours/${slug}/tour.json`
-                const manifestBlob = await fetchWithProgress(manifestUrl, (f) =>
-                    bump(PLAYER_END + f * (MANIFEST_END - PLAYER_END)),
-                )
-                const manifest: unknown = JSON.parse(await manifestBlob.text())
-                if (cancelled) return
+                    // 2. manifest (passed in so the player doesn't fetch it again; manifestUrl still
+                    //    tells it where relative assets live)
+                    setStage('manifest')
+                    const manifestUrl = `/tours/${slug}/tour.json`
+                    const manifestBlob = await fetchWithProgress(manifestUrl, (f) =>
+                        bump(PLAYER_END + f * (MANIFEST_END - PLAYER_END)),
+                    )
+                    const manifest: unknown = JSON.parse(await manifestBlob.text())
+                    if (cancelled) return
 
-                // 3. mount: panoramas, depth, mesh. Each finished tour asset closes a quarter of
-                //    the remaining gap; a slow creep keeps the bar alive between them.
-                setStage('scene')
-                const closeGap = (share: number) =>
-                    bump(target.current + (MOUNT_END - target.current) * share)
-                if (typeof PerformanceObserver !== 'undefined') {
-                    observer = new PerformanceObserver((list) => {
-                        for (const e of list.getEntries()) {
-                            if (e.name.includes(`/tours/${slug}/`)) closeGap(0.25)
-                        }
+                    // 3. mount: panoramas, depth, mesh. Each finished tour asset closes a quarter of
+                    //    the remaining gap; a slow creep keeps the bar alive between them.
+                    setStage('scene')
+                    const closeGap = (share: number) =>
+                        bump(target.current + (MOUNT_END - target.current) * share)
+                    if (typeof PerformanceObserver !== 'undefined') {
+                        observer = new PerformanceObserver((list) => {
+                            for (const e of list.getEntries()) {
+                                if (e.name.includes(`/tours/${slug}/`)) closeGap(0.25)
+                            }
+                        })
+                        observer.observe({ type: 'resource', buffered: false })
+                    }
+                    creep = setInterval(() => closeGap(0.03), 200)
+
+                    const p = await mod.TourForge.mount(el, {
+                        manifest,
+                        manifestUrl,
+                        hud: true,
+                        nadir: { url: '/tourforge/nadir.jpg' },
                     })
-                    observer.observe({ type: 'resource', buffered: false })
+                    if (cancelled) return p.destroy()
+                    player = p
+                    // Counted for the owner's stats (gateverse.net/stats/…): the view once per
+                    // session, and every popup opened. destroy() drops the listener.
+                    trackViewOnce(slug)
+                    p.on('hotspotclick', ({ id }) => track(slug, 'popup', id))
+                    target.current = 1
+                    setStage('ready')
+                    setState('ready')
+                } catch (e) {
+                    console.error('[tour]', e)
+                    if (!cancelled) setState('error')
+                } finally {
+                    observer?.disconnect()
+                    clearInterval(creep)
                 }
-                creep = setInterval(() => closeGap(0.03), 200)
-
-                const p = await mod.TourForge.mount(el, {
-                    manifest,
-                    manifestUrl,
-                    hud: true,
-                    nadir: { url: '/tourforge/nadir.jpg' },
-                })
-                if (cancelled) return p.destroy()
-                player = p
-                // Counted for the owner's stats (gateverse.net/stats/…): the view once per
-                // session, and every popup opened. destroy() drops the listener.
-                trackViewOnce(slug)
-                p.on('hotspotclick', ({ id }) => track(slug, 'popup', id))
-                target.current = 1
-                setStage('ready')
-                setState('ready')
-            } catch (e) {
-                console.error('[tour]', e)
-                if (!cancelled) setState('error')
-            } finally {
-                observer?.disconnect()
-                clearInterval(creep)
-            }
-        })()
+            })()
         return () => {
             cancelled = true
             observer?.disconnect()
@@ -194,7 +194,7 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
                 }}
             >
                 <Image src={logo} alt="GateVerse" width={43} height={28} priority />
-                <span style={{ padding: '0 0.5rem' }}>{name}</span>
+                <span style={{ padding: '0.25rem 0.5rem 0', textTransform: 'capitalize' }}>{name}</span>
             </Link>
             {state === 'ready' && <ContactBar slug={slug} name={name} />}
             {!loaderGone && (

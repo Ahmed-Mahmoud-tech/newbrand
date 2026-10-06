@@ -11,9 +11,11 @@ import styles from './stats.module.css'
  */
 export default function LiveRefresh({ seconds = 15 }: { seconds?: number }) {
     const router = useRouter()
-    const [at, setAt] = useState(() => new Date())
+    // Set after mount: the server's clock (and second) would never match the browser's on hydration.
+    const [at, setAt] = useState<Date | null>(null)
 
     useEffect(() => {
+        setAt(new Date())
         let timer: ReturnType<typeof setInterval> | undefined
         const tick = () => {
             router.refresh()
@@ -38,7 +40,7 @@ export default function LiveRefresh({ seconds = 15 }: { seconds?: number }) {
 
     return (
         <p className={styles.live} aria-live="polite">
-            <span className={styles.liveDot} aria-hidden /> لايف · آخر تحديث {at.toLocaleTimeString('ar-EG', { hour: 'numeric', minute: '2-digit', second: '2-digit' })}
+            <span className={styles.liveDot} aria-hidden /> لايف{at && ` · آخر تحديث ${at.toLocaleTimeString('ar-EG', { hour: 'numeric', minute: '2-digit' })}`}
         </p>
     )
 }

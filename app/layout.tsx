@@ -179,11 +179,13 @@ const siteSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        // Browser extensions (Dark Reader, translators) add attributes to <html> before React
-        // hydrates; this silences only that element's attribute mismatch, not its children.
+        // Browser extensions (Dark Reader, translators, Grammarly) add attributes to <html> and
+        // <body> before React hydrates; this silences only those two elements' attribute
+        // mismatches, not their children.
         <html lang="ar" dir="rtl" suppressHydrationWarning>
             <body
                 className={`${elMessiri.variable} ${tajawal.variable} ${ibmPlexSansArabic.variable} ${ibmPlexMono.variable}`}
+                suppressHydrationWarning
             >
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
                 {children}

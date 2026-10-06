@@ -15,13 +15,24 @@ export interface TourStat {
     clicks: number
     clicks30: number
     byKind: Partial<Record<LinkKind, number>>
-    popups: { id: string; title: string; count: number }[]
+    byKind30: Partial<Record<LinkKind, number>>
+    /** Every popup opened at least once: all-time and last-30-day opens. */
+    popups: { id: string; title: string; count: number; count30: number }[]
+    /** This tour's last 30 days, oldest first, zeros included. */
+    daily: Day[]
+}
+
+export interface Day {
+    day: string
+    views: number
+    clicks: number
 }
 
 export interface ClientStats {
     name: string
     tours: TourStat[]
-    daily: { day: string; views: number; clicks: number }[]
+    /** All the client's tours together. */
+    daily: Day[]
 }
 
 const DAYS = 30
@@ -57,19 +68,49 @@ export async function statsForToken(pool: Pool, token: string, origin: string): 
              FROM tour_stats WHERE slug = ANY($1) GROUP BY slug, event, target`,
             [slugs, DAYS],
         ),
-        pool.query<{ day: string; views: number; clicks: number }>(
-            `SELECT to_char(day, 'YYYY-MM-DD') AS day,
+        pool.query<{ slug: string; day: string; views: number; clicks: number }>(
+            `SELECT slug, to_char(day, 'YYYY-MM-DD') AS day,
                     sum(CASE WHEN event = 'view' THEN count ELSE 0 END)::int AS views,
                     sum(CASE WHEN event = 'click' THEN count ELSE 0 END)::int AS clicks
              FROM tour_stats
              WHERE slug = ANY($1) AND day > (now() AT TIME ZONE 'Africa/Cairo')::date - $2::int
-             GROUP BY day`,
+             GROUP BY slug, day`,
             [slugs, DAYS],
         ),
         Promise.all(slugs.map((s) => manifestInfo(origin, s))),
     ])
 
-    const out: TourStat[] = tours.map((t, i) => ({ slug: t.slug, name: infos[i].name, active: t.active, views: 0, views30: 0, clicks: 0, clicks30: 0, byKind: {}, popups: [] }))
+    // every day of the window, oldest first
+    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Cairo' }).format(new Date())
+    const days = Array.from({ length: DAYS }, (_, i) => {
+        const d = new Date(`${today}T00:00:00Z`)
+        d.setUTCDate(d.getUTCDate() - (DAYS - 1 - i))
+        return d.toISOString().slice(0, 10)
+    })
+    const series = (rows: { day: string; views: number; clicks: number }[]): Day[] => {
+        const byDay = new Map<string, Day>()
+        for (const r of rows) {
+            const d = byDay.get(r.day) ?? { day: r.day, views: 0, clicks: 0 }
+            d.views += r.views
+            d.clicks += r.clicks
+            byDay.set(r.day, d)
+        }
+        return days.map((day) => byDay.get(day) ?? { day, views: 0, clicks: 0 })
+    }
+
+    const out: TourStat[] = tours.map((t, i) => ({
+        slug: t.slug,
+        name: infos[i].name,
+        active: t.active,
+        views: 0,
+        views30: 0,
+        clicks: 0,
+        clicks30: 0,
+        byKind: {},
+        byKind30: {},
+        popups: [],
+        daily: series(daily.filter((d) => d.slug === t.slug)),
+    }))
     const bySlug = new Map(out.map((t) => [t.slug, t]))
     for (const r of sums) {
         const t = bySlug.get(r.slug)
@@ -80,22 +121,14 @@ export async function statsForToken(pool: Pool, token: string, origin: string): 
         } else if (r.event === 'click' && (LINK_KINDS as readonly string[]).includes(r.target)) {
             t.clicks += r.total
             t.clicks30 += r.recent
-            t.byKind[r.target as LinkKind] = (t.byKind[r.target as LinkKind] ?? 0) + r.total
+            const k = r.target as LinkKind
+            t.byKind[k] = (t.byKind[k] ?? 0) + r.total
+            t.byKind30[k] = (t.byKind30[k] ?? 0) + r.recent
         } else if (r.event === 'popup') {
             const titles = infos[slugs.indexOf(r.slug)].titles
-            t.popups.push({ id: r.target, title: titles.get(r.target) ?? r.target, count: r.total })
+            t.popups.push({ id: r.target, title: titles.get(r.target) ?? r.target, count: r.total, count30: r.recent })
         }
     }
-    out.forEach((t) => t.popups.sort((a, b) => b.count - a.count))
-
-    // every day of the window, oldest first, zeros included
-    const byDay = new Map(daily.map((d) => [d.day, d]))
-    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Africa/Cairo' }).format(new Date())
-    const days = Array.from({ length: DAYS }, (_, i) => {
-        const d = new Date(`${today}T00:00:00Z`)
-        d.setUTCDate(d.getUTCDate() - (DAYS - 1 - i))
-        const day = d.toISOString().slice(0, 10)
-        return { day, views: byDay.get(day)?.views ?? 0, clicks: byDay.get(day)?.clicks ?? 0 }
-    })
-    return { name: client.name, tours: out, daily: days }
+    out.forEach((t) => t.popups.sort((a, b) => b.count30 - a.count30 || b.count - a.count))
+    return { name: client.name, tours: out, daily: series(daily) }
 }

@@ -16,7 +16,7 @@ export default function ContactBar({ slug, name }: { slug: string; name: string 
         fetch(`/api/tour/${slug}/links`)
             .then((r) => (r.ok ? r.json() : { links: {} }))
             .then((d: { links?: TourLinks }) => !cancelled && setLinks(d.links ?? {}))
-            .catch(() => {})
+            .catch(() => { })
         return () => {
             cancelled = true
         }
@@ -47,7 +47,7 @@ export default function ContactBar({ slug, name }: { slug: string; name: string 
                                 <path d={LINK_ICON[k]} />
                             </svg>
                         </span>
-                        <span className={styles.label}>{LINK_LABEL[k]}</span>
+                        {/* <span className={styles.label}>{LINK_LABEL[k]}</span> */}
                     </a>
                 )
             })}

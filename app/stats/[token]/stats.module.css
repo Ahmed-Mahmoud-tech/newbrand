@@ -30,6 +30,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 16px;
+  padding: 0; /* the site's global section padding is for the landing page */
 }
 @media (max-width: 600px) {
   .kpis {
@@ -213,4 +214,102 @@
   50% {
     opacity: 0.35;
   }
+}
+
+/* Tour picker: all tours, or one */
+.tabs {
+  display: flex;
+  justify-content: flex-start; /* override the site header's global nav rules */
+  gap: 8px;
+  padding: 0 0 4px;
+  position: static;
+  background: none;
+  border: 0;
+  overflow-x: auto;
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+.tab {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+  color: var(--ink-dim);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.tab b {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  color: var(--sand);
+}
+.tab:hover {
+  color: var(--ink);
+}
+.tab:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+.tabOn {
+  border-color: var(--cyan);
+  background: var(--cyan-soft);
+  color: var(--ink);
+}
+
+.tourList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tourList a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 10px 12px;
+  background: var(--bg-elevated-2);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+}
+.tourList a:hover .more {
+  color: var(--cyan);
+}
+.tourList a:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+.tourName {
+  flex: 1;
+  min-width: 140px;
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+.tourName em {
+  font-style: normal;
+}
+.more {
+  color: var(--ink-dim);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+.note {
+  margin-top: 10px;
+  color: var(--ink-dim);
+  font-size: 0.8rem;
+}
+.kinds small,
+.popups small {
+  color: var(--ink-dim);
+  font-size: 0.75rem;
+}
+.card .kpis {
+  margin: 12px 0 0;
 }
