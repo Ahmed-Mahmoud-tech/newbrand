@@ -523,7 +523,9 @@ section {
   overflow: hidden;
 }
 @media (max-width: 820px) {
-  .calc-panel { grid-template-columns: 1fr; }
+  .calc-panel {
+    grid-template-columns: 1fr;
+  }
 }
 
 .calc-inputs {
@@ -563,7 +565,9 @@ section {
   font-weight: 500;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: background 0.18s, color 0.18s;
+  transition:
+    background 0.18s,
+    color 0.18s;
 }
 .type-toggle button.active {
   background: var(--cyan-soft);
@@ -596,7 +600,7 @@ section {
   border: 1px solid var(--border);
   margin-bottom: 28px;
 }
-.area-input-row input[type='number'] {
+.area-input-row input[type="number"] {
   flex: 1;
   background: transparent;
   border: none;
@@ -642,7 +646,9 @@ section {
   margin-top: 4px;
   font-size: 0.88rem;
 }
-.tb-row.discount { color: var(--sand); }
+.tb-row.discount {
+  color: var(--sand);
+}
 
 /* results panel */
 .calc-result {
@@ -659,8 +665,16 @@ section {
   text-align: center;
   padding: 40px 0;
 }
-.result-block { display: flex; flex-direction: column; gap: 6px; }
-.result-label { font-size: 0.8rem; color: var(--ink-dim); letter-spacing: 0.04em; }
+.result-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.result-label {
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+  letter-spacing: 0.04em;
+}
 .result-formula {
   font-size: 0.78rem;
   color: var(--ink-dimmer);
@@ -671,15 +685,27 @@ section {
   font-weight: 600;
   line-height: 1.1;
 }
-.result-value span { font-size: 0.9rem; color: var(--ink-dimmer); }
-.result-value.sand { color: var(--sand); }
-.result-value.cyan { color: var(--cyan); }
-.result-value.grand { color: var(--ink); }
+.result-value span {
+  font-size: 0.9rem;
+  color: var(--ink-dimmer);
+}
+.result-value.sand {
+  color: var(--sand);
+}
+.result-value.cyan {
+  color: var(--cyan);
+}
+.result-value.grand {
+  color: var(--ink);
+}
 .result-divider {
   height: 1px;
   background: var(--border);
 }
-.total-block .result-label { color: var(--ink-dim); font-size: 0.85rem; }
+.total-block .result-label {
+  color: var(--ink-dim);
+  font-size: 0.85rem;
+}
 .total-block .result-value.grand {
   font-size: clamp(2.2rem, 4.5vw, 3.2rem);
   color: var(--sand);
@@ -791,7 +817,8 @@ details[open] .faq-question::after {
 /* ── Footer ── */
 footer {
   border-top: 1px solid var(--border);
-  padding: 40px 0;
+  padding: 15px 0;
+  background: var(--bg-elevated);
 }
 .footer-row {
   display: flex;

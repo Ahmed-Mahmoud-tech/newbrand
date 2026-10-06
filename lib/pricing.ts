@@ -33,9 +33,47 @@ export const HOSTING = {
     hotelPercentYearly: 10,
     kitchenYearly: 250,
 }
+/** Hosting bundles: real estate per month, kitchens per year (the 1-tour price is the one above). */
+export const BUNDLES = {
+    real_estate: [{ tours: 1, price: 100 }, { tours: 10, price: 500 }],
+    kitchen: [{ tours: 1, price: 250 }, { tours: 10, price: 500 }, { tours: 30, price: 1200 }],
+}
 // PRICE-LISTS-END
 
+/** What comes free after a while, per tab (same sheet). */
+export const GIFTS: Record<Segment, string> = {
+    real_estate: 'بعد 10 وحدات: جولة ببلاش',
+    commercial: 'بعد سنة: تحديث البوب أب ببلاش',
+    hotel: '',
+    kitchen: 'بعد 10 مطابخ: صفحة بورتفوليو فيها كل جولاتك',
+}
+
+/** The cheapest mix of bundles covering `tours` tours (3 kitchens already take the 10-bundle). Same as the CRM's bundleHosting. */
+export function bundleHosting(segment: keyof typeof BUNDLES, tours: number): { price: number; bundles: { tours: number; count: number }[] } {
+    const list = BUNDLES[segment]
+    const n = Math.max(0, Math.floor(tours))
+    const best: { price: number; pick: number }[] = [{ price: 0, pick: -1 }]
+    for (let i = 1; i <= n; i++) {
+        let b = { price: Infinity, pick: -1 }
+        list.forEach((x, j) => {
+            const p = best[Math.max(0, i - x.tours)].price + x.price
+            if (p < b.price) b = { price: p, pick: j }
+        })
+        best.push(b)
+    }
+    const counts = new Map<number, number>()
+    for (let i = n; i > 0; ) {
+        const x = list[best[i].pick]
+        counts.set(x.tours, (counts.get(x.tours) ?? 0) + 1)
+        i = Math.max(0, i - x.tours)
+    }
+    return { price: best[n].price, bundles: [...counts].map(([t, count]) => ({ tours: t, count })).sort((a, b) => b.tours - a.tours) }
+}
+
 export const ANNUAL_DISCOUNT = 0.1
+
+/** A kitchen shot the same day as another: the discount is rounded, then taken off (as the CRM's priceDeal does). */
+export const KITCHEN_SAME_DAY_PRICE = KITCHEN_PRICE - Math.round((KITCHEN_PRICE * SAME_DAY_PERCENT) / 100)
 
 /** Each band of m² at its own rate, like an electricity bill — a bigger place never costs less. */
 export function tieredPrice(area: number, tiers: Tier[]): number {
@@ -79,9 +117,9 @@ export interface Quote {
 export function quote(segment: Segment, size: number, plan: Plan): Quote {
     const n = Math.max(0, Math.floor(size))
     if (segment === 'kitchen') {
-        const extra = Math.round(KITCHEN_PRICE * (1 - SAME_DAY_PERCENT / 100))
+        const extra = KITCHEN_SAME_DAY_PRICE
         const shooting = n ? KITCHEN_PRICE + (n - 1) * extra : 0
-        const yearly = n * HOSTING.kitchenYearly
+        const yearly = bundleHosting('kitchen', n).price
         return { shooting, hostingNow: yearly, renewal: yearly, renewalUnit: 'سنة', hostingIncluded: false, total: shooting + yearly, belowMinimum: false }
     }
     const raw = n ? tieredPrice(n, TIERS[segment]) : 0

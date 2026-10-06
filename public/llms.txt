@@ -8,10 +8,10 @@ GateVerse helps real estate agents, owners, developers and commercial landlords 
 
 Prices depend on the type of place, and the rate per m² falls as the area grows (each band of m² at its own rate):
 
-- Real estate (apartments, villas): 20 EGP/m² up to 130 m², 15 EGP/m² from 131 to 200 m², 12 EGP/m² above 200 m²; minimum 1,000 EGP. Hosting 100 EGP per month per tour (10% off when paid yearly). Example: a 150 m² apartment costs 2,900 EGP shooting + 100 EGP per month.
+- Real estate (apartments, villas): 20 EGP/m² up to 130 m², 15 EGP/m² from 131 to 200 m², 12 EGP/m² above 200 m²; minimum 1,000 EGP. Hosting 100 EGP per month per tour, or 500 EGP per month for 10 tours (10% off when paid yearly); the subscription moves to a new unit when one is sold or rented. Example: a 150 m² apartment costs 2,900 EGP shooting + 100 EGP per month.
 - Commercial (wedding halls, gyms, spas, furniture showrooms, shops, kids areas, restaurants, cafés): 20 EGP/m² up to 150 m², 10 EGP/m² from 151 to 400 m², 6 EGP/m² above 400 m²; minimum 1,000 EGP. The first year of hosting is included; renewal 1,200 EGP per year. Example: an 800 m² hall costs 7,900 EGP.
 - Hotels: 13 EGP/m² up to 1,000 m², 8 EGP/m² up to 3,000 m², 5 EGP/m² above (area = the spaces shot); minimum 5,000 EGP; first year of hosting included, then 10% of the shoot per year.
-- Kitchens: 750 EGP per kitchen, 15% off each extra kitchen shot the same day; hosting 250 EGP per year.
+- Kitchens: 750 EGP per kitchen, 15% off each extra kitchen shot the same day; hosting per year: 250 EGP for one tour, 500 EGP for 10 tours, 1,200 EGP for 30 tours.
 - Payment: cash, bank transfer, InstaPay
 
 ## What a tour includes

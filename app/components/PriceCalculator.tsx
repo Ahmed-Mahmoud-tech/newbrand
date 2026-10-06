@@ -3,8 +3,12 @@ import { useMemo, useState } from 'react'
 
 import { WHATSAPP_NUMBER } from '@/lib/site'
 import {
+  BUNDLES,
+  bundleHosting,
+  GIFTS,
   HOSTING,
   KITCHEN_PRICE,
+  KITCHEN_SAME_DAY_PRICE,
   MIN_SHOOT,
   quote,
   SAME_DAY_PERCENT,
@@ -22,7 +26,14 @@ const SIZE: Record<Segment, { label: string; unit: string; start: string; hint: 
   real_estate: { label: 'مساحة العقار (م²)', unit: 'م²', start: '150', hint: 'شقة، فيلا، دوبلكس' },
   commercial: { label: 'مساحة المكان (م²)', unit: 'م²', start: '300', hint: 'قاعة، جيم، سبا، معرض، كافيه، كيدز إيريا' },
   hotel: { label: 'مساحة الأماكن اللي هتتصوّر (م²)', unit: 'م²', start: '1500', hint: 'اللوبي، المطعم، القاعات، وأوضة من كل نوع' },
-  kitchen: { label: 'عدد المطابخ في نفس اليوم', unit: 'مطبخ', start: '1', hint: `أول مطبخ ${KITCHEN_PRICE} ج.م، وكل مطبخ زيادة في نفس اليوم خصم ${SAME_DAY_PERCENT}%` },
+  kitchen: { label: 'عدد المطابخ', unit: 'مطبخ', start: '1', hint: `أول مطبخ ${KITCHEN_PRICE} ج.م، وكل مطبخ زيادة في نفس اليوم خصم ${SAME_DAY_PERCENT}%` },
+}
+
+/** "باقة 10 جولات + 2 جولة" — the bundles the calculator picked for this many kitchens. */
+function bundleText(bundles: { tours: number; count: number }[], fmt: (n: number) => string): string {
+  return bundles
+    .map((b) => (b.tours === 1 ? `${fmt(b.count)} ${b.count === 1 ? 'جولة' : 'جولات'} × ${fmt(HOSTING.kitchenYearly)}` : `${b.count > 1 ? `${fmt(b.count)} × ` : ''}باقة ${fmt(b.tours)} جولات`))
+    .join(' + ')
 }
 
 export default function PriceCalculator() {
@@ -138,7 +149,7 @@ export default function PriceCalculator() {
               <div className="result-formula mono">
                 {segment === 'kitchen'
                   ? size > 1
-                    ? `${fmt(KITCHEN_PRICE)} + ${fmt(size - 1)} × ${fmt(Math.round(KITCHEN_PRICE * (1 - SAME_DAY_PERCENT / 100)))}`
+                    ? `${fmt(KITCHEN_PRICE)} + ${fmt(size - 1)} × ${fmt(KITCHEN_SAME_DAY_PRICE)}`
                     : `${fmt(KITCHEN_PRICE)} ج.م للمطبخ`
                   : `${fmt(size)} م² بالشرائح`}
               </div>
@@ -164,7 +175,7 @@ export default function PriceCalculator() {
                 <>
                   <div className="result-formula mono">
                     {segment === 'kitchen'
-                      ? `${fmt(size)} × ${fmt(HOSTING.kitchenYearly)} ج.م/سنة`
+                      ? bundleText(bundleHosting('kitchen', size).bundles, fmt)
                       : plan === 'annual'
                         ? `${fmt(HOSTING.realEstateMonthly)} × 12 × 90%`
                         : `${fmt(HOSTING.realEstateMonthly)} ج.م للجولة`}
@@ -174,6 +185,16 @@ export default function PriceCalculator() {
                   </div>
                 </>
               )}
+              {(segment === 'real_estate' || segment === 'kitchen') && (
+                <div className="result-note">
+                  باقات الاستضافة:{' '}
+                  {BUNDLES[segment]
+                    .map((b) => `${b.tours === 1 ? 'جولة' : `${fmt(b.tours)} جولات`} ${fmt(b.price)} ج.م`)
+                    .join(' · ')}
+                  {segment === 'real_estate' ? ' في الشهر. الاشتراك بينتقل لوحدة جديدة لما الوحدة تتباع أو تتأجر' : ' في السنة'}
+                </div>
+              )}
+              {GIFTS[segment] && <div className="result-note">🎁 {GIFTS[segment]}</div>}
             </div>
 
             <div className="result-divider" />
