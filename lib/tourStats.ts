@@ -37,13 +37,20 @@ export interface ClientStats {
 
 const DAYS = 30
 
-/** Tour name and popup titles from the tour's own manifest; the slug and ids when it can't be read. */
+/**
+ * Tour name and popup labels from the tour's own manifest; the slug and ids when it can't be read.
+ * A popup is labelled by the report name set in the TourForge editor, else its visitor-facing
+ * title, else its id (same order as the CRM's lib/tour-stats.ts).
+ */
 async function manifestInfo(origin: string, slug: string): Promise<{ name: string; titles: Map<string, string> }> {
     try {
         const r = await fetch(`${origin}/tours/${slug}/tour.json`, { next: { revalidate: 3600 } })
         if (!r.ok) throw new Error(String(r.status))
-        const m = (await r.json()) as { tour?: { name?: string }; hotspots?: { id: string; title?: string }[] }
-        return { name: m.tour?.name || slug, titles: new Map((m.hotspots ?? []).map((h) => [h.id, h.title || h.id])) }
+        const m = (await r.json()) as { tour?: { name?: string }; hotspots?: { id: string; name?: string; title?: string }[] }
+        return {
+            name: m.tour?.name || slug,
+            titles: new Map((m.hotspots ?? []).map((h) => [h.id, h.name?.trim() || h.title?.trim() || h.id])),
+        }
     } catch {
         return { name: slug, titles: new Map() }
     }
