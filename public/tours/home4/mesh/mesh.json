@@ -1,0 +1,96 @@
+{
+  "tier": "A",
+  "surface": "poisson",
+  "lods": [
+    {
+      "lod": 3,
+      "chunks": [
+        "model.glb"
+      ],
+      "tris": 584379,
+      "bytes": 43078940,
+      "textured": true,
+      "atlasSize": 4096,
+      "atlasCount": 4,
+      "regions": [
+        {
+          "region": 0,
+          "triangles": 138236,
+          "surfaceAreaM2": 95.93907782911619,
+          "atlasSize": 4096,
+          "idealMmPerTexel": 2.391320692438182,
+          "seamStepAcrossSources": 26.608,
+          "seamStepWithinSource": 2.36,
+          "projection": "symmetric-depth-chart-coherent",
+          "rasterizedTexels": 9395924,
+          "observedTexels": 9272010,
+          "unseenTexels": 123914,
+          "fabricatedTexels": 0,
+          "coherentSourceTexels": 392715,
+          "sweepsInReach": 14
+        },
+        {
+          "region": 1,
+          "triangles": 145881,
+          "surfaceAreaM2": 95.94040564153563,
+          "atlasSize": 4096,
+          "idealMmPerTexel": 2.3913372405143143,
+          "seamStepAcrossSources": 29.519,
+          "seamStepWithinSource": 2.701,
+          "projection": "symmetric-depth-chart-coherent",
+          "rasterizedTexels": 9261816,
+          "observedTexels": 9240870,
+          "unseenTexels": 20946,
+          "fabricatedTexels": 0,
+          "coherentSourceTexels": 964769,
+          "sweepsInReach": 14
+        },
+        {
+          "region": 2,
+          "triangles": 156642,
+          "surfaceAreaM2": 95.94465867864122,
+          "atlasSize": 4096,
+          "idealMmPerTexel": 2.3913902439034307,
+          "seamStepAcrossSources": 27.795,
+          "seamStepWithinSource": 3.02,
+          "projection": "symmetric-depth-chart-coherent",
+          "rasterizedTexels": 8835953,
+          "observedTexels": 8819087,
+          "unseenTexels": 16866,
+          "fabricatedTexels": 0,
+          "coherentSourceTexels": 900649,
+          "sweepsInReach": 14
+        },
+        {
+          "region": 3,
+          "triangles": 143620,
+          "surfaceAreaM2": 95.93437864483914,
+          "atlasSize": 4096,
+          "idealMmPerTexel": 2.391262127177499,
+          "seamStepAcrossSources": 29.405,
+          "seamStepWithinSource": 2.804,
+          "projection": "symmetric-depth-chart-coherent",
+          "rasterizedTexels": 9076361,
+          "observedTexels": 9031534,
+          "unseenTexels": 44827,
+          "fabricatedTexels": 0,
+          "coherentSourceTexels": 382015,
+          "sweepsInReach": 14
+        }
+      ]
+    }
+  ],
+  "bounds": {
+    "min": [
+      -2.9589524269104004,
+      -0.6201930046081543,
+      -5.339036464691162
+    ],
+    "max": [
+      9.95887565612793,
+      3.531259059906006,
+      6.643460273742676
+    ]
+  },
+  "voxel": 0.13425518429432942
+}
