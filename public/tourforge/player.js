@@ -16558,6 +16558,7 @@ var kv = $_([
 	normal: kv,
 	imageUrl: X().min(1),
 	widthM: Z().min(.05).max(10).default(.6),
+	name: X().trim().max(80).optional(),
 	title: X().max(200).optional(),
 	html: X().max(2e5).optional()
 }), Hv = Q({
