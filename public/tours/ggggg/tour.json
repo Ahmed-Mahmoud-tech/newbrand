@@ -705,6 +705,16 @@
         "tris": 571166,
         "bytes": 35721380,
         "textured": true
+      },
+      {
+        "lod": 0,
+        "chunks": [
+          "mesh/model-preview.glb.gz"
+        ],
+        "tris": 85662,
+        "textured": true,
+        "preview": true,
+        "bytes": 3061851
       }
     ],
     "bounds": {

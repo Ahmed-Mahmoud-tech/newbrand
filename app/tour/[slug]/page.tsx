@@ -1,3 +1,4 @@
+import { createHash } from 'crypto'
 import fs from 'fs'
 import path from 'path'
 import type { Metadata } from 'next'
@@ -6,6 +7,21 @@ import { notFound } from 'next/navigation'
 import TourViewer from './TourViewer'
 
 const TOURS_DIR = path.join(process.cwd(), 'public', 'tours')
+const PLAYER_FILE = path.join(process.cwd(), 'public', 'tourforge', 'player.js')
+
+/**
+ * Content hash of the installed player, for its URL. Every tour import replaces player.js in
+ * place, and Cloudflare (in front of Vercel) caches it at the edge and rewrites its
+ * Cache-Control to 4 hours, so visitors kept getting the previous player after a deploy. A URL
+ * that changes with the file cannot be served stale.
+ */
+function playerVersion(): string {
+    try {
+        return createHash('sha256').update(fs.readFileSync(PLAYER_FILE)).digest('hex').slice(0, 12)
+    } catch {
+        return ''
+    }
+}
 
 function tourName(slug: string): string | null {
     if (!/^[a-z0-9][a-z0-9_-]{0,79}$/.test(slug)) return null
@@ -54,5 +70,5 @@ export default async function TourPage({ params }: Props) {
     const { slug } = await params
     const name = tourName(slug)
     if (!name) notFound()
-    return <TourViewer slug={slug} name={name} />
+    return <TourViewer slug={slug} name={name} playerVersion={playerVersion()} />
 }

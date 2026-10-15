@@ -99,16 +99,12 @@ const nextConfig = {
                 source: '/tours/:slug/tour.json',
                 headers: [{ key: 'Cache-Control', value: 'public, max-age=300, stale-while-revalidate=86400' }],
             },
+            // player.js is loaded as ?v=<content hash> (app/tour/[slug]/page.tsx): Cloudflare in
+            // front of Vercel rewrites this header to 4 hours and caches the file at the edge, so
+            // no header here could stop a stale player; a new URL per version does.
             {
                 source: '/tourforge/:path*',
                 headers: [{ key: 'Cache-Control', value: 'public, max-age=3600, stale-while-revalidate=86400' }],
-            },
-            // Every tour import replaces the player under the same URL, so a cached copy kept
-            // visitors on the previous player for hours after a deploy. Revalidate on each visit
-            // instead: unchanged, that is a 304 (ETag). Listed last so it wins over the rule above.
-            {
-                source: '/tourforge/player.js',
-                headers: [{ key: 'Cache-Control', value: 'no-cache' }],
             },
         ]
     },

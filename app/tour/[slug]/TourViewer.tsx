@@ -21,6 +21,7 @@ interface TourForgeModule {
 }
 
 // Written by the tour import (lib/tourImport.ts); a plain ES module with no dependencies.
+// Loaded as `?v=<content hash>` (page.tsx), so a new player is never served from a stale cache.
 const PLAYER_SRC = '/tourforge/player.js'
 
 // Share of the progress bar each loading stage fills. The player has no progress hook, so
@@ -58,7 +59,7 @@ async function fetchWithProgress(url: string, onProgress: (f: number) => void): 
     return new Blob(chunks as BlobPart[], { type: res.headers.get('content-type') ?? '' })
 }
 
-export default function TourViewer({ slug, name }: { slug: string; name: string }) {
+export default function TourViewer({ slug, name, playerVersion }: { slug: string; name: string; playerVersion: string }) {
     const ref = useRef<HTMLDivElement>(null)
     const [state, setState] = useState<'loading' | 'ready' | 'error'>('loading')
     const [stage, setStage] = useState<Stage>('player')
@@ -81,12 +82,13 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
             ; (async () => {
                 try {
                     // 1. player script. Download it with fetch() for byte progress; that fills the
-                    //    HTTP cache (player.js is no-cache in next.config.js, so the import below
-                    //    reuses it after a 304). Not a blob: import: the CSP's script-src forbids blob:.
+                    //    HTTP cache, so the import below reuses it. Not a blob: import: the CSP's
+                    //    script-src forbids blob:.
                     setStage('player')
-                    await fetchWithProgress(PLAYER_SRC, (f) => bump(f * PLAYER_END)).catch(() => { })
+                    const playerSrc = playerVersion ? `${PLAYER_SRC}?v=${playerVersion}` : PLAYER_SRC
+                    await fetchWithProgress(playerSrc, (f) => bump(f * PLAYER_END)).catch(() => { })
                     // webpackIgnore: load the file from public/ at runtime instead of bundling it
-                    const mod = (await import(/* webpackIgnore: true */ PLAYER_SRC)) as TourForgeModule
+                    const mod = (await import(/* webpackIgnore: true */ playerSrc)) as TourForgeModule
                     bump(PLAYER_END)
                     if (cancelled) return
 
@@ -147,7 +149,7 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
             clearInterval(creep)
             player?.destroy()
         }
-    }, [slug])
+    }, [slug, playerVersion])
 
     // Ease the visible bar toward the target so jumps read as smooth motion.
     useEffect(() => {
