@@ -119,6 +119,9 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
                         manifest,
                         manifestUrl,
                         hud: true,
+                        // the page IS the tour: arrows walk point to point and W/A/S/D turn,
+                        // without clicking into the canvas first
+                        keyboard: 'page',
                         nadir: { url: '/tourforge/nadir.jpg' },
                     })
                     if (cancelled) return p.destroy()

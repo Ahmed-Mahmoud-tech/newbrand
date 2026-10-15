@@ -1,0 +1,264 @@
+{
+  "pipelineVersion": "2026.09.30-inverse-warp-visibility-exposure",
+  "textureSettings": {
+    "bakeWidth": 8192,
+    "atlasSize": 4096,
+    "atlasJpegQuality": 95,
+    "material": "KHR_materials_unlit"
+  },
+  "exposureCompensation": {
+    "heldOutMedianDisagreementBefore": 0.31908589601516724,
+    "heldOutMedianDisagreementAfter": 0.18896394968032837,
+    "gainsBGR": [
+      [
+        1.6,
+        1.6,
+        1.6
+      ],
+      [
+        1.6,
+        1.6,
+        1.6
+      ],
+      [
+        1.1342,
+        1.2587,
+        1.4247
+      ],
+      [
+        1.3371,
+        1.4534,
+        1.6
+      ],
+      [
+        0.8819,
+        1.0021,
+        1.1246
+      ],
+      [
+        0.8176,
+        0.9143,
+        0.9777
+      ],
+      [
+        0.625,
+        0.7353,
+        0.87
+      ],
+      [
+        0.9445,
+        0.9597,
+        0.8981
+      ],
+      [
+        0.7197,
+        0.6727,
+        0.625
+      ],
+      [
+        0.7329,
+        0.667,
+        0.625
+      ],
+      [
+        0.7037,
+        0.7095,
+        0.6958
+      ],
+      [
+        0.6765,
+        0.7243,
+        0.7586
+      ],
+      [
+        0.625,
+        0.625,
+        0.6594
+      ],
+      [
+        0.625,
+        0.6397,
+        0.6733
+      ],
+      [
+        0.7965,
+        0.7457,
+        0.7329
+      ],
+      [
+        1.0194,
+        0.9842,
+        0.9737
+      ],
+      [
+        1.3583,
+        1.3162,
+        1.2908
+      ],
+      [
+        1.1906,
+        1.181,
+        1.1904
+      ],
+      [
+        1.5843,
+        1.5713,
+        1.5721
+      ],
+      [
+        1.3927,
+        1.3848,
+        1.3858
+      ],
+      [
+        1.2417,
+        1.1535,
+        1.0004
+      ],
+      [
+        1.2404,
+        1.0793,
+        0.9176
+      ],
+      [
+        1.2075,
+        1.0345,
+        0.9014
+      ],
+      [
+        0.9917,
+        0.8512,
+        0.6995
+      ]
+    ]
+  },
+  "exportSettings": {
+    "lods": [
+      3
+    ],
+    "maxAtlasRegions": 8,
+    "regionAreaM2": 220.0,
+    "regionTriangleBudget": 180000,
+    "projection": "symmetric-depth-support-with-chart-coherence"
+  },
+  "sweeps": 24,
+  "surface": "poisson",
+  "depthSource": "da3",
+  "depthCacheKey": "4ecef5fe9efe13bf356592ad938c30f49b26b29b08e47990a595a6d7c75b6350",
+  "depthModel": "depth-anything/DA3-BASE",
+  "depthSize": [
+    2048,
+    1024
+  ],
+  "voxel": 0.06,
+  "truncation": 0.15,
+  "agreement": {
+    "pairs": 80,
+    "samples": 10376437,
+    "withinTruncation": 0.5056786833476655,
+    "medianAbsError": 0.23801717750255813,
+    "p90AbsError": 2.3259311263028515,
+    "bias": -0.18106323172172356,
+    "truncation": 0.25
+  },
+  "surfaceFilter": {
+    "points": 3062370,
+    "floating": 50739,
+    "redundant": 218406,
+    "unsupported": 71379
+  },
+  "poissonDepth": 9,
+  "poissonCellM": 0.0265,
+  "lods": [
+    {
+      "lod": 3,
+      "chunks": [
+        "model.glb"
+      ],
+      "tris": 571166,
+      "bytes": 46778452,
+      "textured": true,
+      "atlasSize": 4096,
+      "atlasCount": 4,
+      "regions": [
+        {
+          "region": 0,
+          "triangles": 141305,
+          "surfaceAreaM2": 101.76323829435916,
+          "atlasSize": 4096,
+          "idealMmPerTexel": 2.462836102896152,
+          "seamStepAcrossSources": 30.979,
+          "seamStepWithinSource": 4.285,
+          "projection": "symmetric-depth-chart-coherent",
+          "rasterizedTexels": 8969249,
+          "observedTexels": 8966519,
+          "unseenTexels": 2730,
+          "fabricatedTexels": 0,
+          "coherentSourceTexels": 1292591,
+          "sweepsInReach": 24
+        },
+        {
+          "region": 1,
+          "triangles": 147898,
+          "surfaceAreaM2": 101.76360717051809,
+          "atlasSize": 4096,
+          "idealMmPerTexel": 2.4628405665940143,
+          "seamStepAcrossSources": 36.82,
+          "seamStepWithinSource": 3.589,
+          "projection": "symmetric-depth-chart-coherent",
+          "rasterizedTexels": 7972990,
+          "observedTexels": 7948049,
+          "unseenTexels": 24941,
+          "fabricatedTexels": 0,
+          "coherentSourceTexels": 1043893,
+          "sweepsInReach": 24
+        },
+        {
+          "region": 2,
+          "triangles": 142180,
+          "surfaceAreaM2": 101.76303300513861,
+          "atlasSize": 4096,
+          "idealMmPerTexel": 2.462833618728159,
+          "seamStepAcrossSources": 30.652,
+          "seamStepWithinSource": 3.246,
+          "projection": "symmetric-depth-chart-coherent",
+          "rasterizedTexels": 8977062,
+          "observedTexels": 8964698,
+          "unseenTexels": 12364,
+          "fabricatedTexels": 0,
+          "coherentSourceTexels": 1403395,
+          "sweepsInReach": 24
+        },
+        {
+          "region": 3,
+          "triangles": 139783,
+          "surfaceAreaM2": 101.76341902016495,
+          "atlasSize": 4096,
+          "idealMmPerTexel": 2.4628382898246004,
+          "seamStepAcrossSources": 35.235,
+          "seamStepWithinSource": 3.338,
+          "projection": "symmetric-depth-chart-coherent",
+          "rasterizedTexels": 8824370,
+          "observedTexels": 8815970,
+          "unseenTexels": 8400,
+          "fabricatedTexels": 0,
+          "coherentSourceTexels": 1291868,
+          "sweepsInReach": 24
+        }
+      ]
+    }
+  ],
+  "bounds": {
+    "min": [
+      -6.230892181396484,
+      -0.10686016082763672,
+      -2.518913209438324
+    ],
+    "max": [
+      5.467371940612793,
+      2.9949941635131836,
+      9.769813299179077
+    ]
+  },
+  "seconds": 1166.1
+}
