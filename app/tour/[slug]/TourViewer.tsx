@@ -81,8 +81,8 @@ export default function TourViewer({ slug, name }: { slug: string; name: string 
             ; (async () => {
                 try {
                     // 1. player script. Download it with fetch() for byte progress; that fills the
-                    //    HTTP cache (/tourforge/* is max-age=3600 in next.config.js), so the import
-                    //    below reuses it. Not a blob: import: the CSP's script-src forbids blob:.
+                    //    HTTP cache (player.js is no-cache in next.config.js, so the import below
+                    //    reuses it after a 304). Not a blob: import: the CSP's script-src forbids blob:.
                     setStage('player')
                     await fetchWithProgress(PLAYER_SRC, (f) => bump(f * PLAYER_END)).catch(() => { })
                     // webpackIgnore: load the file from public/ at runtime instead of bundling it

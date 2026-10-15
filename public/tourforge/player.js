@@ -17281,7 +17281,8 @@ var Ey = class {
 		return i.loading.set(t, s), s;
 	}
 	async prefetchForTransition(e) {
-		await this.ensureLevel(e, 512 <= this.levelCap ? Math.min(512, this.transitionReadyLevel(e)) : this.transitionReadyLevel(e), 10), await this.ensureLevel(e, this.transitionReadyLevel(e), 9);
+		let t = this.transitionReadyLevel(e), n = this.levelsOf(e)[0] ?? t;
+		await Promise.all([this.ensureLevel(e, t, 10), n < t ? this.ensureLevel(e, n, 9) : null]);
 	}
 	prefetchAround(e) {
 		let t = () => void 0, n = this.capFor(e);
@@ -22747,7 +22748,7 @@ var YT = 12, XT = 3.5, ZT = 250, QT = class e {
 		try {
 			await this.engine.renderer.compileAsync(this.engine.scene, this.engine.camera), await this.layers?.warm(this.engine.camera);
 		} catch {}
-		this.engine.onFrame((e, t) => this.tick(e, t)), this.engine.start(), this.assets.setPinned(this.current.id, null), this.assets.prefetchAround(this.current.id), this.updateRings(), this.emit("ready", { sweep: this.current.id });
+		this.engine.onFrame((e, t) => this.tick(e, t)), this.engine.start(), this.assets.setPinned(this.current.id, null), this.prefetchAround(this.current.id), this.updateRings(), this.emit("ready", { sweep: this.current.id });
 	}
 	tick(e, t) {
 		if (this.destroyed) return;
@@ -22822,6 +22823,10 @@ var YT = 12, XT = 3.5, ZT = 250, QT = class e {
 			!this.destroyed && this.layers && n && (t ? this.layers.prepare(e.id, n) : this.layers.enqueue(e.id, n));
 		});
 	}
+	prefetchAround(e) {
+		this.assets.prefetchAround(e);
+		for (let t of this.assets.neighbors(e)) this.ensureSurface(this.assets.sweep(t), !1);
+	}
 	updateDesiredLevel() {
 		let e = this.current.pano.levels;
 		if (!e.length) return;
@@ -22830,9 +22835,7 @@ var YT = 12, XT = 3.5, ZT = 250, QT = class e {
 	}
 	arrive(e) {
 		let t = this.current.id === e.id ? null : this.current.id;
-		this.current = e, this.modes.setFloorElevation(JS(e)), this.look.setFromQuaternion(this.transition.quaternion), this.assets.setPinned(e.id, null), this.assets.prefetchAround(e.id), this.ensureSurface(e, !1);
-		for (let t of this.assets.neighbors(e.id)) this.ensureSurface(this.assets.sweep(t), !1);
-		this.updateRings(), this.hud.setCurrentPlace(e.id), this.emit("sweepchange", {
+		this.current = e, this.modes.setFloorElevation(JS(e)), this.look.setFromQuaternion(this.transition.quaternion), this.assets.setPinned(e.id, null), this.ensureSurface(e, !1), this.prefetchAround(e.id), this.updateRings(), this.hud.setCurrentPlace(e.id), this.emit("sweepchange", {
 			id: e.id,
 			from: t
 		});
