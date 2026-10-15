@@ -21788,7 +21788,7 @@ var Hw = .03, Uw = new V(), Ww = new V(), Gw = new V(), Kw = new U(), qw = class
 	compass: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10.2\"/><g class=\"tf-dial\"><path class=\"tf-north\" d=\"M12 3.6 14.3 12H9.7z\"/><path class=\"tf-south\" d=\"M12 20.4 9.7 12h4.6z\"/><text x=\"12\" y=\"2.9\" font-size=\"3.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-weight=\"700\">N</text></g></svg>",
 	places: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3.5\" y=\"4.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"13.5\" y=\"4.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"3.5\" y=\"13.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"13.5\" y=\"13.5\" width=\"7\" height=\"6\" rx=\"1.2\"/></svg>",
 	close: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 6l12 12M18 6 6 18\"/></svg>"
-}, Yw = "tf-hud-style", Xw = "\n.tf-overlay{position:absolute;inset:0;pointer-events:none;overflow:hidden;direction:ltr;text-align:left;font:500 14px/1.3 system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;z-index:2}\n.tf-hud-bar{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(18,20,24,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(0,0,0,.35);pointer-events:auto}\n.tf-hud-bar:empty{display:none}\n.tf-hud-btn{display:inline-flex;align-items:center;gap:6px;height:38px;min-width:38px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:#e9ecef;font:inherit;cursor:pointer;white-space:nowrap}\n.tf-hud-btn:hover{background:rgba(255,255,255,.1)}\n.tf-hud-btn.is-on{background:#fff;color:#111}\n.tf-hud-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}\n.tf-hud-compass{padding:0;width:38px;justify-content:center}\n.tf-hud-compass svg{width:30px;height:30px;stroke-width:1.4}\n.tf-hud-compass .tf-north{fill:#ff5a4f;stroke:none}\n.tf-hud-compass .tf-south{fill:currentColor;stroke:none;opacity:.55}\n.tf-hud-sep{width:1px;margin:6px 2px;background:rgba(255,255,255,.18)}\n.tf-hud-hint{position:absolute;left:50%;bottom:calc(max(16px,env(safe-area-inset-bottom)) + 58px);transform:translateX(-50%);padding:6px 12px;border-radius:999px;background:rgba(18,20,24,.72);color:#fff;font-size:13px;white-space:nowrap}\n.tf-measure-label{position:absolute;left:0;top:0;padding:4px 10px;border-radius:6px;background:#ffd23f;color:#111;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.35)}\n.tf-measure-label.is-preview{opacity:.85}\n.tf-popup{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.45);pointer-events:auto}\n.tf-popup-card{position:relative;display:flex;flex-direction:column;width:min(560px,100%);max-height:min(80%,720px);border-radius:14px;background:#fff;color:#111;box-shadow:0 12px 40px rgba(0,0,0,.45);overflow:hidden}\n.tf-popup-head{display:flex;align-items:center;gap:8px;padding:12px 12px 12px 18px;border-bottom:1px solid #eee;font-weight:700;font-size:16px}\n.tf-popup-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-popup-close{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:999px;background:#3a3a3a;color:#fff;cursor:pointer;padding:0}\n.tf-popup-close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}\n.tf-popup-frame{flex:1;width:100%;min-height:80vh;height:60vh;max-height:620px;border:0;background:#fff}\n.tf-places-panel{position:fixed;top:0;right:0;bottom:0;width:min(330px,88%);display:flex;flex-direction:column;background:rgba(14,16,20,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#eef1f4;box-shadow:-8px 0 30px rgba(0,0,0,.35);transform:translateX(105%);transition:transform .25s ease;pointer-events:auto}\n.tf-places-panel.is-open{transform:none}\n.tf-places-head{display:flex;align-items:center;gap:8px;padding:14px 12px 10px 16px;font-weight:700;font-size:15px}\n.tf-places-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-places-head small{font-weight:600;font-size:12px;padding:1px 8px;border-radius:999px;background:rgba(255,255,255,.1)}\n.tf-places-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;padding:4px 12px 16px}\n.tf-place{display:flex;flex-direction:column;gap:5px;padding:4px 4px 6px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:rgba(255,255,255,.05);color:inherit;font:inherit;text-align:left;cursor:pointer}\n.tf-place:hover{border-color:rgba(47,212,184,.55);background:rgba(47,212,184,.1)}\n.tf-place.is-on{border-color:#2fd4b8;box-shadow:0 0 0 1px #2fd4b8}\n.tf-place-thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:7px;overflow:hidden;background:rgba(255,255,255,.07)}\n.tf-place-thumb img{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)}\n.tf-place-no{position:absolute;top:4px;left:4px;padding:1px 6px;border-radius:999px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}\n.tf-place.is-on .tf-place-no{background:#2fd4b8;color:#062a24}\n.tf-place-name{padding:0 2px;font-size:11.5px;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n@media (max-width:520px){.tf-hud-btn .tf-hud-text{display:none}.tf-places-panel{width:100%}}\n";
+}, Yw = "tf-hud-style", Xw = "\n.tf-overlay{position:absolute;inset:0;pointer-events:none;overflow:hidden;direction:ltr;text-align:left;font:500 14px/1.3 system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;z-index:2}\n.tf-hud-bar{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(18,20,24,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(0,0,0,.35);pointer-events:auto}\n.tf-hud-bar:empty{display:none}\n.tf-hud-btn{display:inline-flex;align-items:center;gap:6px;height:38px;min-width:38px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:#e9ecef;font:inherit;cursor:pointer;white-space:nowrap}\n.tf-hud-btn:hover{background:rgba(255,255,255,.1)}\n.tf-hud-btn.is-on{background:#fff;color:#111}\n.tf-hud-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}\n.tf-hud-compass{padding:0;width:38px;justify-content:center}\n.tf-hud-compass svg{width:30px;height:30px;stroke-width:1.4}\n.tf-hud-compass .tf-north{fill:#ff5a4f;stroke:none}\n.tf-hud-compass .tf-south{fill:currentColor;stroke:none;opacity:.55}\n.tf-hud-sep{width:1px;margin:6px 2px;background:rgba(255,255,255,.18)}\n.tf-hud-hint{position:absolute;left:50%;bottom:calc(max(16px,env(safe-area-inset-bottom)) + 58px);transform:translateX(-50%);padding:6px 12px;border-radius:999px;background:rgba(18,20,24,.72);color:#fff;font-size:13px;white-space:nowrap}\n.tf-measure-label{position:absolute;left:0;top:0;padding:4px 10px;border-radius:6px;background:#ffd23f;color:#111;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.35)}\n.tf-measure-label.is-preview{opacity:.85}\n.tf-popup{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.45);pointer-events:auto}\n.tf-popup-card{position:relative;display:flex;flex-direction:column;width:min(560px,100%);max-height:min(80%,720px);border-radius:14px;background:#fff;color:#111;box-shadow:0 12px 40px rgba(0,0,0,.45);overflow:hidden}\n.tf-popup-head{display:flex;align-items:center;gap:8px;padding:12px 12px 12px 18px;border-bottom:1px solid #eee;font-weight:700;font-size:16px}\n.tf-popup-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-popup-close{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:999px;background:#3a3a3a;color:#fff;cursor:pointer;padding:0}\n.tf-popup-close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}\n.tf-popup-frame{flex:1;width:100%;min-height:80vh;height:60vh;max-height:620px;border:0;background:#fff}\n.tf-places-panel{position:fixed;top:0;right:0;bottom:0;width:min(330px,88%);display:flex;flex-direction:column;background:rgba(14,16,20,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#eef1f4;box-shadow:-8px 0 30px rgba(0,0,0,.35);transform:translateX(105%);transition:transform .25s ease;pointer-events:auto}\n.tf-places-panel.is-open{transform:none}\n.tf-places-head{display:flex;align-items:center;gap:8px;padding:14px 12px 10px 16px;font-weight:700;font-size:15px}\n.tf-places-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-places-head small{font-weight:600;font-size:12px;padding:1px 8px;border-radius:999px;background:rgba(255,255,255,.1)}\n.tf-places-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;padding:4px 12px 16px}\n.tf-place{display:flex;flex-direction:column;gap:5px;padding:4px 4px 6px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:rgba(255,255,255,.05);color:inherit;font:inherit;text-align:left;cursor:pointer}\n.tf-place:hover{border-color:rgba(47,212,184,.55);background:rgba(47,212,184,.1)}\n.tf-place.is-on{border-color:#2fd4b8;box-shadow:0 0 0 1px #2fd4b8}\n.tf-place-thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:7px;overflow:hidden;background:rgba(255,255,255,.07)}\n.tf-place-thumb img{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)}\n.tf-place-no{position:absolute;top:4px;left:4px;padding:1px 6px;border-radius:999px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}\n.tf-place.is-on .tf-place-no{background:#2fd4b8;color:#062a24}\n.tf-place-name{padding:0 2px;font-size:11.5px;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-loading{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(18,20,24,.6);box-shadow:0 4px 18px rgba(0,0,0,.3);display:none}\n.tf-loading.is-on{display:block;animation:tf-fade .2s ease-out}\n.tf-loading::after{content:\"\";position:absolute;inset:11px;border-radius:50%;border:3px solid rgba(255,255,255,.25);border-top-color:#fff;animation:tf-spin .8s linear infinite}\n@keyframes tf-spin{to{transform:rotate(360deg)}}\n@keyframes tf-fade{from{opacity:0}}\n@media (max-width:520px){.tf-hud-btn .tf-hud-text{display:none}.tf-places-panel{width:100%}}\n";
 function Zw(e, t, n) {
 	let r = document.createElement("button");
 	return r.type = "button", r.className = "tf-hud-btn", r.title = n, r.setAttribute("aria-label", n), r.innerHTML = `${e}${t ? `<span class="tf-hud-text">${t}</span>` : ""}`, r;
@@ -21808,6 +21808,8 @@ var $w = class {
 	musicBtn;
 	sep;
 	hint;
+	loading;
+	loadingOn = !1;
 	popup = null;
 	audio = null;
 	muted = !1;
@@ -21835,7 +21837,7 @@ var $w = class {
 			let e = document.createElement("style");
 			e.id = Yw, e.textContent = Xw, document.head.appendChild(e);
 		}
-		getComputedStyle(e).position === "static" && (e.style.position = "relative"), this.overlay = document.createElement("div"), this.overlay.className = "tf-overlay", e.appendChild(this.overlay), this.bar = document.createElement("div"), this.bar.className = "tf-hud-bar", this.insideBtn = Zw(Jw.inside, "Inside", "Inside view"), this.dollBtn = Zw(Jw.dollhouse, "Dollhouse", "Dollhouse view"), this.sep = document.createElement("div"), this.sep.className = "tf-hud-sep", this.measureBtn = Zw(Jw.measure, "Measure", "Measure a distance"), this.musicBtn = Zw(Jw.soundOn, "", "Mute music"), this.insideBtn.onclick = () => this.actions.setMode("inside"), this.dollBtn.onclick = () => this.actions.setMode("dollhouse"), this.measureBtn.onclick = () => this.actions.setMeasuring(!this.measuring), this.musicBtn.onclick = () => this.toggleMute(), this.compassBtn = Zw(Jw.compass, "", "Face north"), this.compassBtn.classList.add("tf-hud-compass"), this.compassBtn.onclick = () => this.actions.faceNorth(), this.dial = this.compassBtn.querySelector(".tf-dial"), this.placesBtn = Zw(Jw.places, "Locations", "Show all locations"), this.placesBtn.onclick = () => this.togglePlaces(), this.placesPanel = document.createElement("div"), this.placesPanel.className = "tf-places-panel", this.placesPanel.setAttribute("role", "dialog"), this.placesPanel.setAttribute("aria-label", "Locations");
+		getComputedStyle(e).position === "static" && (e.style.position = "relative"), this.overlay = document.createElement("div"), this.overlay.className = "tf-overlay", e.appendChild(this.overlay), this.loading = document.createElement("div"), this.loading.className = "tf-loading", this.loading.setAttribute("role", "status"), this.loading.setAttribute("aria-label", "Loading"), this.overlay.appendChild(this.loading), this.bar = document.createElement("div"), this.bar.className = "tf-hud-bar", this.insideBtn = Zw(Jw.inside, "Inside", "Inside view"), this.dollBtn = Zw(Jw.dollhouse, "Dollhouse", "Dollhouse view"), this.sep = document.createElement("div"), this.sep.className = "tf-hud-sep", this.measureBtn = Zw(Jw.measure, "Measure", "Measure a distance"), this.musicBtn = Zw(Jw.soundOn, "", "Mute music"), this.insideBtn.onclick = () => this.actions.setMode("inside"), this.dollBtn.onclick = () => this.actions.setMode("dollhouse"), this.measureBtn.onclick = () => this.actions.setMeasuring(!this.measuring), this.musicBtn.onclick = () => this.toggleMute(), this.compassBtn = Zw(Jw.compass, "", "Face north"), this.compassBtn.classList.add("tf-hud-compass"), this.compassBtn.onclick = () => this.actions.faceNorth(), this.dial = this.compassBtn.querySelector(".tf-dial"), this.placesBtn = Zw(Jw.places, "Locations", "Show all locations"), this.placesBtn.onclick = () => this.togglePlaces(), this.placesPanel = document.createElement("div"), this.placesPanel.className = "tf-places-panel", this.placesPanel.setAttribute("role", "dialog"), this.placesPanel.setAttribute("aria-label", "Locations");
 		let r = document.createElement("div");
 		r.className = "tf-places-head", this.placesTitle = document.createElement("span"), this.placesTitle.textContent = "Locations", this.placesTitle.dir = "auto", this.placesCount = document.createElement("small");
 		let i = document.createElement("button");
@@ -21859,6 +21861,9 @@ var $w = class {
 	}
 	setMeasuring(e, t) {
 		this.measuring = e, this.measureBtn.classList.toggle("is-on", e), this.showHint(e ? t ?? "Click two points to measure" : null);
+	}
+	setLoading(e) {
+		e !== this.loadingOn && (this.loadingOn = e, this.loading.classList.toggle("is-on", e));
 	}
 	showHint(e) {
 		this.hint.textContent = e ?? "", this.hint.style.display = e ? "" : "none";
@@ -22470,7 +22475,7 @@ var JT = "0.0.1";
 //#endregion
 //#region src/api/Player.ts
 Su();
-var YT = 12, XT = 3.5, ZT = class e {
+var YT = 12, XT = 3.5, ZT = 250, QT = class e {
 	el;
 	opts;
 	static version = JT;
@@ -22498,6 +22503,7 @@ var YT = 12, XT = 3.5, ZT = class e {
 	assetBase = "./";
 	clipY = Infinity;
 	goingInside = !1;
+	waitSince = 0;
 	turn = null;
 	modeT = 0;
 	modes = new sb();
@@ -22670,8 +22676,8 @@ var YT = 12, XT = 3.5, ZT = class e {
 		this.destroyed || (this.destroyed = !0, this.engine.dispose(), this.look.dispose(), this.assets.dispose(), this.rings.dispose(), this.reticle.dispose(), this.nadir?.dispose(), this.hotspots.dispose(), this.measure.dispose(), this.hud.dispose(), this.surface.dispose(), this.layers?.dispose(), this.material.dispose(), this.listeners.clear());
 	}
 	async init() {
-		this.manifest = this.opts.manifest ? Yv(this.opts.manifest) : await QT(this.opts.manifestUrl);
-		let e = $T(this.manifest.assetBase, this.opts.manifestUrl);
+		this.manifest = this.opts.manifest ? Yv(this.opts.manifest) : await $T(this.opts.manifestUrl);
+		let e = eE(this.manifest.assetBase, this.opts.manifestUrl);
 		this.assetBase = e, this.engine = new Hy(this.el, {
 			maxPixelRatio: 2,
 			preserveDrawingBuffer: this.opts.preserveDrawingBuffer ?? !1
@@ -22750,44 +22756,46 @@ var YT = 12, XT = 3.5, ZT = class e {
 			this.turn.rig === "orbit" ? this.modes.orbit.yaw = r : this.look.setAngles(this.look.pitch, r), e >= 1 && (this.turn = null);
 		}
 		this.updateDesiredLevel(), this.surface.setShellSwapT && this.surface.setShellSwapT(this.tuning.shellSwapT);
-		let n = this.transition.update(t), r = this.engine.camera;
-		r.position.copy(n.position), n.state === "TRANSITION" ? r.quaternion.copy(n.quaternion) : this.look.quaternion(r.quaternion), this.engine.camera.getWorldDirection(this.gazeDir);
-		let i = this.modes.update(t, [
-			r.position.x,
-			r.position.y,
-			r.position.z
+		let n = this.transition.update(t), r = n.state === "PREFETCH" || this.goingInside;
+		r ? this.waitSince ||= t : this.waitSince = 0, this.hud.setLoading(r && t - this.waitSince >= ZT);
+		let i = this.engine.camera;
+		i.position.copy(n.position), n.state === "TRANSITION" ? i.quaternion.copy(n.quaternion) : this.look.quaternion(i.quaternion), this.engine.camera.getWorldDirection(this.gazeDir);
+		let a = this.modes.update(t, [
+			i.position.x,
+			i.position.y,
+			i.position.z
 		], [
-			r.position.x + this.gazeDir.x,
-			r.position.y + this.gazeDir.y,
-			r.position.z + this.gazeDir.z
+			i.position.x + this.gazeDir.x,
+			i.position.y + this.gazeDir.y,
+			i.position.z + this.gazeDir.z
 		]);
-		i.t > 0 && (r.position.set(i.eye[0], i.eye[1], i.eye[2]), r.lookAt(i.lookAt[0], i.lookAt[1], i.lookAt[2])), r.fov !== this.look.fov && (r.fov = this.look.fov, r.updateProjectionMatrix());
-		let a = this.material.uniforms, o = n.from.pano, s = this.assets.bestTexture(o.id);
-		a.panoA.value = s?.texture ?? null, a.posA.value.fromArray(o.position), a.rotA.value.fromArray(ry(o.yawOffset)), a.depthA.value = this.surface.depthTextureFor?.(o.id) ?? null;
-		let c = n.to?.pano ?? null;
-		if (c && n.state === "TRANSITION") {
-			let e = this.assets.bestTexture(c.id);
-			a.panoB.value = e?.texture ?? a.panoA.value, a.posB.value.fromArray(c.position), a.rotB.value.fromArray(ry(c.yawOffset)), a.blend.value = n.blend, a.depthB.value = this.surface.depthTextureFor?.(c.id) ?? a.depthA.value;
-		} else a.panoB.value = a.panoA.value, a.posB.value.copy(a.posA.value), a.rotB.value.copy(a.rotA.value), a.blend.value = 0, a.depthB.value = a.depthA.value;
-		a.occBias.value = this.tuning.occlusionBias;
-		let l = this.surface.tier === "A" && n.state === "TRANSITION" ? jw(n.t, this.tuning) : 0;
-		a.modeMix.value = Math.max(l, this.surface.tier === "A" ? i.modeMix : 0), a.clipY.value = i.clipY, this.surface.setBackdropVisible?.(i.t < .5);
-		let u = this.engine.pixelRatio, { width: d, height: f } = this.engine.size;
-		a.resolution.value.set(d * u, f * u), this.surface.update(o, n.state === "TRANSITION" ? c : null, n.t), this.drawLayers(o, n.state === "TRANSITION" ? c : null, n.blend, i.t);
-		let p = n.state === "IDLE" || n.state === "SETTLE" || n.state === "PREFETCH";
-		this.rings.mesh.visible = p && i.t < .01, (!p || i.t >= .01) && this.reticle.hide(), this.reticle.tick(e), this.rings.tick(e);
-		let m = n.state === "TRANSITION" && c !== null;
+		a.t > 0 && (i.position.set(a.eye[0], a.eye[1], a.eye[2]), i.lookAt(a.lookAt[0], a.lookAt[1], a.lookAt[2])), i.fov !== this.look.fov && (i.fov = this.look.fov, i.updateProjectionMatrix());
+		let o = this.material.uniforms, s = n.from.pano, c = this.assets.bestTexture(s.id);
+		o.panoA.value = c?.texture ?? null, o.posA.value.fromArray(s.position), o.rotA.value.fromArray(ry(s.yawOffset)), o.depthA.value = this.surface.depthTextureFor?.(s.id) ?? null;
+		let l = n.to?.pano ?? null;
+		if (l && n.state === "TRANSITION") {
+			let e = this.assets.bestTexture(l.id);
+			o.panoB.value = e?.texture ?? o.panoA.value, o.posB.value.fromArray(l.position), o.rotB.value.fromArray(ry(l.yawOffset)), o.blend.value = n.blend, o.depthB.value = this.surface.depthTextureFor?.(l.id) ?? o.depthA.value;
+		} else o.panoB.value = o.panoA.value, o.posB.value.copy(o.posA.value), o.rotB.value.copy(o.rotA.value), o.blend.value = 0, o.depthB.value = o.depthA.value;
+		o.occBias.value = this.tuning.occlusionBias;
+		let u = this.surface.tier === "A" && n.state === "TRANSITION" ? jw(n.t, this.tuning) : 0;
+		o.modeMix.value = Math.max(u, this.surface.tier === "A" ? a.modeMix : 0), o.clipY.value = a.clipY, this.surface.setBackdropVisible?.(a.t < .5);
+		let d = this.engine.pixelRatio, { width: f, height: p } = this.engine.size;
+		o.resolution.value.set(f * d, p * d), this.surface.update(s, n.state === "TRANSITION" ? l : null, n.t), this.drawLayers(s, n.state === "TRANSITION" ? l : null, n.blend, a.t);
+		let m = n.state === "IDLE" || n.state === "SETTLE" || n.state === "PREFETCH";
+		this.rings.mesh.visible = m && a.t < .01, (!m || a.t >= .01) && this.reticle.hide(), this.reticle.tick(e), this.rings.tick(e);
+		let h = n.state === "TRANSITION" && l !== null;
 		this.nadir?.update({
-			sweep: o,
-			floorY: this.ringFloorY(o)
-		}, m && c ? {
-			sweep: c,
-			floorY: this.ringFloorY(c)
-		} : null, m ? n.blend : 0, i.t < .01), this.clipY = i.clipY, this.modeT = i.t;
-		let h = m && c && n.blend >= .5 ? c : o, g = i.t < .01 ? this.surface.depthFacesFor?.(h.id) ?? null : null;
-		if (this.hotspots.update(e, i.clipY, g ? (e) => VT(g, h, e) : null), this.measure.update(r, d, f), this.hud.setHeading(this.heading), n.state === "IDLE" && this.hopQueue.length) {
+			sweep: s,
+			floorY: this.ringFloorY(s)
+		}, h && l ? {
+			sweep: l,
+			floorY: this.ringFloorY(l)
+		} : null, h ? n.blend : 0, a.t < .01), this.clipY = a.clipY, this.modeT = a.t;
+		let g = h && l && n.blend >= .5 ? l : s, _ = a.t < .01 ? this.surface.depthFacesFor?.(g.id) ?? null : null;
+		if (this.hotspots.update(e, a.clipY, _ ? (e) => VT(_, g, e) : null), this.measure.update(i, f, p), this.hud.setHeading(this.heading), n.state === "IDLE" && this.hopQueue.length) {
 			let e = this.hopQueue.shift();
-			this.transition.requestMove(this.assets.sweep(e), r.quaternion, { lookAt: this.hopQueue.length === 0 ? this.hopLookAt : null });
+			this.transition.requestMove(this.assets.sweep(e), i.quaternion, { lookAt: this.hopQueue.length === 0 ? this.hopLookAt : null });
 		} else n.state === "IDLE" && this.layers?.idleWork();
 	}
 	drawLayers(e, t, n, r) {
@@ -23084,7 +23092,7 @@ var YT = 12, XT = 3.5, ZT = class e {
 			i: t
 		})).filter(({ sw: e }) => !e.hidden).map(({ sw: e, i: t }) => ({
 			id: e.id,
-			name: eE(e, t),
+			name: tE(e, t),
 			thumb: this.placeThumb(e)
 		}));
 		this.hud.setPlaces(this.manifest.tour.name, e);
@@ -23121,22 +23129,22 @@ var YT = 12, XT = 3.5, ZT = class e {
 		if (this.destroyed) throw Error("Player has been destroyed");
 	}
 };
-async function QT(e) {
+async function $T(e) {
 	if (!e) throw Error("TourForge.mount: pass `manifestUrl` or `manifest`");
 	let t = await fetch(e, { credentials: "same-origin" });
 	if (!t.ok) throw Error(`manifest fetch failed: HTTP ${t.status} for ${e}`);
 	return Yv(await t.json());
 }
-function $T(e, t) {
+function eE(e, t) {
 	let n = typeof document < "u" ? document.baseURI : "http://localhost/", r = t ? new URL(t, n) : new URL(n), i = new URL(e, r).toString();
 	return i.endsWith("/") ? i : `${i}/`;
 }
-function eE(e, t) {
+function tE(e, t) {
 	return e.label || `Point ${String(t + 1).padStart(2, "0")}`;
 }
-var tE = {
+var nE = {
 	version: JT,
-	mount: (e, t) => ZT.mount(e, t)
+	mount: (e, t) => QT.mount(e, t)
 };
 //#endregion
-export { Oy as AssetSystem, Ew as DEFAULT_TUNING, dC as DUAL_PROJECTOR_FRAG, uC as DUAL_PROJECTOR_VERT, lC as DepthShellSurface, Ky as EASINGS, Hy as Engine, qw as HotspotLayer, $w as Hud, tb as LookController, tT as MeasureTool, Tw as MeshSurface, sb as ModeController, fT as NadirPatch, ZT as Player, xT as Reticle, LT as RingLayer, $S as SUBDIVISION_TO_DETAIL, XS as SphereSurface, tE as TourForge, Iw as TransitionController, JT as VERSION, db as aStar, cb as buildAdjacency, qy as clamp, Jy as clamp01, mC as createDualProjectorMaterial, Ty as cubemapBytes, Uy as easeInOutCubic, Wy as easeInOutSine, JS as floorYOf, eT as formatDistance, US as halfToFloat, Aw as layerMix, Yy as lerp, Gy as linear, GS as loadDepthCube, WS as makeDepthCubeTexture, jw as meshReveal, pb as nearestSweepTo, mb as nextStepToward, Cy as pixelsPerTexel, eE as placeName, Qw as popupDocument, Ow as positionEase, ub as reachableFrom, fb as resolveClickTarget, wy as selectPanoLevel, Xy as smoothstep, lb as sweepDistance, kw as textureBlend, Dw as transitionDurationMs };
+export { Oy as AssetSystem, Ew as DEFAULT_TUNING, dC as DUAL_PROJECTOR_FRAG, uC as DUAL_PROJECTOR_VERT, lC as DepthShellSurface, Ky as EASINGS, Hy as Engine, qw as HotspotLayer, $w as Hud, tb as LookController, tT as MeasureTool, Tw as MeshSurface, sb as ModeController, fT as NadirPatch, QT as Player, xT as Reticle, LT as RingLayer, $S as SUBDIVISION_TO_DETAIL, XS as SphereSurface, nE as TourForge, Iw as TransitionController, JT as VERSION, db as aStar, cb as buildAdjacency, qy as clamp, Jy as clamp01, mC as createDualProjectorMaterial, Ty as cubemapBytes, Uy as easeInOutCubic, Wy as easeInOutSine, JS as floorYOf, eT as formatDistance, US as halfToFloat, Aw as layerMix, Yy as lerp, Gy as linear, GS as loadDepthCube, WS as makeDepthCubeTexture, jw as meshReveal, pb as nearestSweepTo, mb as nextStepToward, Cy as pixelsPerTexel, tE as placeName, Qw as popupDocument, Ow as positionEase, ub as reachableFrom, fb as resolveClickTarget, wy as selectPanoLevel, Xy as smoothstep, lb as sweepDistance, kw as textureBlend, Dw as transitionDurationMs };
