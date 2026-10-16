@@ -730,5 +730,24 @@
       ]
     }
   },
-  "hotspots": []
+  "hotspots": [
+    {
+      "id": "img_mv9tuvgn",
+      "anchor": [
+        0.9093398949649915,
+        1.671259386449344,
+        0.8007973323944121
+      ],
+      "normal": [
+        -0.8009804878199204,
+        0,
+        -0.5986904526813188
+      ],
+      "imageUrl": "custom/58710a907195d529.png",
+      "widthM": 0.1,
+      "name": "Popup 1",
+      "title": "ffffffffff",
+      "html": "dddddddddddddddd"
+    }
+  ]
 }
