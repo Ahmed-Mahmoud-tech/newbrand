@@ -31,7 +31,7 @@ const localBusinessSchema = {
     logo: `${SITE_URL}/images/icon-512.png`,
     parentOrganization: { '@id': `${SITE_URL}/#organization` },
     telephone: TELEPHONE,
-    email: 'hello@massah.tours',
+    email: 'contact@gateverse.net',
     priceRange: '750–44000 EGP',
     currenciesAccepted: 'EGP, USD',
     paymentAccepted: 'Cash, Bank Transfer, InstaPay',
