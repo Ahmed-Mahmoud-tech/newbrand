@@ -1,0 +1,466 @@
+{
+  "version": 3,
+  "tour": {
+    "id": "the-circle",
+    "name": "The Circle",
+    "startSweep": "s_10",
+    "startRotation": [
+      0,
+      -1.6406094968746698,
+      0
+    ],
+    "watermark": false
+  },
+  "assetBase": "./",
+  "sweeps": [
+    {
+      "id": "s_01",
+      "position": [
+        0,
+        1.4999999999999991,
+        0
+      ],
+      "yawOffset": -0.3316125578789224,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_01/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "0",
+      "registrationConfidence": 0.921832884097035,
+      "depth": {
+        "cubemap": "sweeps/s_01/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_02",
+      "position": [
+        -0.9085595820483321,
+        1.4999999999999991,
+        0.987221895225887
+      ],
+      "yawOffset": -0.6294145868611842,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_02/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "1",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_02/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_03",
+      "position": [
+        -2.149614264485869,
+        1.4999999999999991,
+        2.3162278448898284
+      ],
+      "yawOffset": 2.886583739513748,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_03/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "2",
+      "registrationConfidence": 0.37870619946091644,
+      "depth": {
+        "cubemap": "sweeps/s_03/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_06",
+      "position": [
+        1.4425733571317092,
+        1.4999999999999991,
+        0.8601713957035418
+      ],
+      "yawOffset": -0.5375938498841375,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_06/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "5",
+      "registrationConfidence": 0.6765498652291105,
+      "depth": {
+        "cubemap": "sweeps/s_06/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_07",
+      "position": [
+        0.22443179561069324,
+        1.4999999999999991,
+        2.0862308356315764
+      ],
+      "yawOffset": -0.8571674116280681,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_07/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "6",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_07/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_08",
+      "position": [
+        -0.9324394967008024,
+        1.4999999999999991,
+        3.227677887107538
+      ],
+      "yawOffset": -1.833273251984852,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_08/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "7",
+      "registrationConfidence": 0.5768194070080862,
+      "depth": {
+        "cubemap": "sweeps/s_08/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_09",
+      "position": [
+        0.4372156492484479,
+        1.4999999999999991,
+        4.244798672494327
+      ],
+      "yawOffset": -1.8837580344972233,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_09/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "8",
+      "registrationConfidence": 0.4029649595687331,
+      "depth": {
+        "cubemap": "sweeps/s_09/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_10",
+      "position": [
+        1.3976879195391279,
+        1.4999999999999991,
+        5.0009160721494235
+      ],
+      "yawOffset": -1.9215903467218065,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_10/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "9",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_10/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_11",
+      "position": [
+        2.443720628042046,
+        1.4999999999999991,
+        3.966159507994667
+      ],
+      "yawOffset": -2.0079895850370937,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_11/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "10",
+      "registrationConfidence": 0.6401617250673854,
+      "depth": {
+        "cubemap": "sweeps/s_11/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_12",
+      "position": [
+        3.837699876945143,
+        1.4999999999999991,
+        4.115103972181118
+      ],
+      "yawOffset": -2.8122662447425455,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_12/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "11",
+      "registrationConfidence": 0.31266846361185985,
+      "depth": {
+        "cubemap": "sweeps/s_12/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_13",
+      "position": [
+        0.904505838977604,
+        1.4999999999999991,
+        5.943375745611446
+      ],
+      "yawOffset": 2.7648908263259866,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_13/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "12",
+      "registrationConfidence": 0.5889487870619946,
+      "depth": {
+        "cubemap": "sweeps/s_13/depth_{f}.raw.gz"
+      }
+    }
+  ],
+  "graph": {
+    "edges": [
+      [
+        "s_01",
+        "s_07"
+      ],
+      [
+        "s_01",
+        "s_06"
+      ],
+      [
+        "s_01",
+        "s_08"
+      ],
+      [
+        "s_01",
+        "s_03"
+      ],
+      [
+        "s_01",
+        "s_02"
+      ],
+      [
+        "s_02",
+        "s_08"
+      ],
+      [
+        "s_02",
+        "s_07"
+      ],
+      [
+        "s_02",
+        "s_06"
+      ],
+      [
+        "s_02",
+        "s_03"
+      ],
+      [
+        "s_03",
+        "s_08"
+      ],
+      [
+        "s_03",
+        "s_07"
+      ],
+      [
+        "s_03",
+        "s_06"
+      ],
+      [
+        "s_06",
+        "s_07"
+      ],
+      [
+        "s_06",
+        "s_08"
+      ],
+      [
+        "s_07",
+        "s_08"
+      ],
+      [
+        "s_08",
+        "s_09"
+      ],
+      [
+        "s_09",
+        "s_11"
+      ],
+      [
+        "s_09",
+        "s_10"
+      ],
+      [
+        "s_10",
+        "s_13"
+      ],
+      [
+        "s_10",
+        "s_12"
+      ],
+      [
+        "s_10",
+        "s_11"
+      ],
+      [
+        "s_11",
+        "s_13"
+      ],
+      [
+        "s_11",
+        "s_12"
+      ],
+      [
+        "s_12",
+        "s_13"
+      ]
+    ]
+  },
+  "rooms": [],
+  "tags": [],
+  "reel": [],
+  "mesh": {
+    "tier": "A",
+    "surface": "poisson",
+    "lods": [
+      {
+        "lod": 3,
+        "chunks": [
+          "mesh/model.glb.gz"
+        ],
+        "tris": 580542,
+        "bytes": 30435195,
+        "textured": true
+      },
+      {
+        "lod": 0,
+        "chunks": [
+          "mesh/model-preview.glb.gz"
+        ],
+        "tris": 87077,
+        "textured": true,
+        "preview": true,
+        "bytes": 2789179
+      }
+    ],
+    "bounds": {
+      "min": [
+        -3.625976800918579,
+        -0.05901622772216797,
+        -1.9838013648986816
+      ],
+      "max": [
+        7.115813732147217,
+        2.874358654022217,
+        8.403631210327148
+      ]
+    }
+  },
+  "hotspots": []
+}
