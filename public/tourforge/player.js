@@ -17443,17 +17443,6 @@ var Py = 9, Fy = class {
 	hasLevel(e, t) {
 		return this.resident.get(e)?.textures.has(t) ?? !1;
 	}
-	isSharp(e) {
-		let t = this.capFor(e);
-		return this.residentLevels(e).some((e) => e >= t);
-	}
-	isSharpening(e) {
-		let t = this.resident.get(e);
-		if (!t || this.isSharp(e)) return !1;
-		let n = t.best()?.level ?? 0;
-		for (let e of t.loading.keys()) if (e > n) return !0;
-		return !1;
-	}
 	residentLevels(e) {
 		return [...this.resident.get(e)?.textures.keys() ?? []].sort((e, t) => e - t);
 	}
@@ -22189,8 +22178,7 @@ var vT = class {
 		this.measuring = e, this.measureBtn.classList.toggle("is-on", e), this.showHint(e ? t ?? "Click two points to measure" : null);
 	}
 	setLoading(e, t = null) {
-		let n = t ? `${t.x}px` : "50%", r = t ? `${t.y}px` : "50%";
-		e && (this.loading.style.left !== n && (this.loading.style.left = n), this.loading.style.top !== r && (this.loading.style.top = r)), e !== this.loadingOn && (this.loadingOn = e, this.loading.classList.toggle("is-on", e));
+		e !== this.loadingOn && (this.loadingOn = e, e && (this.loading.style.left = t ? `${t.x}px` : "50%", this.loading.style.top = t ? `${t.y}px` : "50%"), this.loading.classList.toggle("is-on", e));
 	}
 	showHint(e) {
 		this.hint.textContent = e ?? "", this.hint.style.display = e ? "" : "none";
@@ -22838,11 +22826,11 @@ var gE = "0.0.1";
 //#endregion
 //#region src/api/Player.ts
 Du();
-var _E = 12, vE = 3.5, yE = 250, bE = 400, xE = 1e3;
-function SE() {
+var _E = 12, vE = 3.5, yE = 250, bE = 400;
+function xE() {
 	return typeof navigator > "u" || !navigator.connection?.saveData && !/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
 }
-var CE = class e {
+var SE = class e {
 	el;
 	opts;
 	static version = gE;
@@ -22872,8 +22860,6 @@ var CE = class e {
 	goingInside = !1;
 	waitSince = 0;
 	spinnerAt = null;
-	spinnerOn = !1;
-	sharpSince = 0;
 	surfaceQueue = Promise.resolve();
 	settleWaiters = [];
 	nextSurface = null;
@@ -23049,8 +23035,8 @@ var CE = class e {
 		this.destroyed || (this.destroyed = !0, this.engine.dispose(), this.look.dispose(), this.assets.dispose(), this.rings.dispose(), this.reticle.dispose(), this.nadir?.dispose(), this.hotspots.dispose(), this.measure.dispose(), this.hud.dispose(), this.surface.dispose(), this.nextSurface?.surface.dispose(), this.nextSurface?.material.dispose(), this.layers?.dispose(), this.material.dispose(), this.listeners.clear());
 	}
 	async init() {
-		this.manifest = this.opts.manifest ? ey(this.opts.manifest) : await wE(this.opts.manifestUrl);
-		let e = TE(this.manifest.assetBase, this.opts.manifestUrl);
+		this.manifest = this.opts.manifest ? ey(this.opts.manifest) : await CE(this.opts.manifestUrl);
+		let e = wE(this.manifest.assetBase, this.opts.manifestUrl);
 		this.assetBase = e, this.engine = new $y(this.el, {
 			maxPixelRatio: 2,
 			preserveDrawingBuffer: this.opts.preserveDrawingBuffer ?? !1
@@ -23126,7 +23112,7 @@ var CE = class e {
 		let n = this.manifest.mesh;
 		if (!n) return;
 		let r = Vw(n, Rw, zw), i = n.lods.find((e) => e.preview && e.chunks.length);
-		i && i !== r && (await this.loadMeshLevel(e, t, i), !r || !SE()) || r && await this.loadMeshLevel(e, t, r);
+		i && i !== r && (await this.loadMeshLevel(e, t, i), !r || !xE()) || r && await this.loadMeshLevel(e, t, r);
 	}
 	async loadMeshLevel(e, t, n) {
 		if (this.destroyed) return;
@@ -23179,7 +23165,7 @@ var CE = class e {
 			this.waitSince = 0;
 			for (let e of this.settleWaiters.splice(0)) e();
 		}
-		this.updateSpinner(n, r, t);
+		this.hud.setLoading(r && t - this.waitSince >= bE, this.spinnerAt);
 		let i = this.engine.camera;
 		i.position.copy(n.position), n.state === "TRANSITION" ? i.quaternion.copy(n.quaternion) : this.look.quaternion(i.quaternion), this.engine.camera.getWorldDirection(this.gazeDir);
 		let a = this.modes.update(t, [
@@ -23220,16 +23206,6 @@ var CE = class e {
 			this.transition.requestMove(this.assets.sweep(e), i.quaternion, { lookAt: this.hopQueue.length === 0 ? this.hopLookAt : null });
 		} else n.state === "IDLE" && this.layers?.idleWork();
 		n.state !== "TRANSITION" && !this.modeFlying() && this.assets.pumpUploads();
-	}
-	updateSpinner(e, t, n) {
-		let r = !1, i = null;
-		if (t) r = n - this.waitSince >= bE, i = this.spinnerAt;
-		else if (e.state === "TRANSITION") r = this.spinnerOn && !!e.to && !this.assets.isSharp(e.to.pano.id);
-		else {
-			let e = this.mode === "inside" && !this.modeFlying() && this.assets.isSharpening(this.current.id);
-			e ? this.sharpSince ||= n : this.sharpSince = 0, r = e && (this.spinnerOn || n - this.sharpSince >= xE);
-		}
-		this.spinnerOn = r, this.hud.setLoading(r, i);
 	}
 	drawLayers(e, t, n, r) {
 		let i = this.layers;
@@ -23543,7 +23519,7 @@ var CE = class e {
 			i: t
 		})).filter(({ sw: e }) => !e.hidden).map(({ sw: e, i: t }) => ({
 			id: e.id,
-			name: EE(e, t),
+			name: TE(e, t),
 			thumb: this.placeThumb(e)
 		}));
 		this.hud.setPlaces(this.manifest.tour.name, e);
@@ -23580,22 +23556,22 @@ var CE = class e {
 		if (this.destroyed) throw Error("Player has been destroyed");
 	}
 };
-async function wE(e) {
+async function CE(e) {
 	if (!e) throw Error("TourForge.mount: pass `manifestUrl` or `manifest`");
 	let t = await fetch(e, { credentials: "same-origin" });
 	if (!t.ok) throw Error(`manifest fetch failed: HTTP ${t.status} for ${e}`);
 	return ey(await t.json());
 }
-function TE(e, t) {
+function wE(e, t) {
 	let n = typeof document < "u" ? document.baseURI : "http://localhost/", r = t ? new URL(t, n) : new URL(n), i = new URL(e, r).toString();
 	return i.endsWith("/") ? i : `${i}/`;
 }
-function EE(e, t) {
+function TE(e, t) {
 	return e.label || `Point ${String(t + 1).padStart(2, "0")}`;
 }
-var DE = {
+var EE = {
 	version: gE,
-	mount: (e, t) => CE.mount(e, t)
+	mount: (e, t) => SE.mount(e, t)
 };
 //#endregion
-export { Ly as AssetSystem, Ww as DEFAULT_TUNING, DC as DUAL_PROJECTOR_FRAG, EC as DUAL_PROJECTOR_VERT, TC as DepthShellSurface, rb as EASINGS, $y as Engine, fT as HotspotLayer, vT as Hud, fb as LookController, bT as MeasureTool, Uw as MeshSurface, vb as ModeController, jT as NadirPatch, CE as Player, HT as Reticle, lE as RingLayer, uC as SUBDIVISION_TO_DETAIL, sC as SphereSurface, DE as TourForge, eT as TransitionController, gE as VERSION, Sb as aStar, yb as buildAdjacency, ib as clamp, ab as clamp01, AC as createDualProjectorMaterial, Ay as cubemapBytes, eb as easeInOutCubic, tb as easeInOutSine, aC as floorYOf, yT as formatDistance, eC as halfToFloat, Jw as layerMix, ob as lerp, nb as linear, nC as loadDepthCube, tC as makeDepthCubeTexture, Yw as meshReveal, wb as nearestSweepTo, Tb as nextStepToward, Oy as pixelsPerTexel, EE as placeName, _T as popupDocument, Kw as positionEase, xb as reachableFrom, Cb as resolveClickTarget, ky as selectPanoLevel, sb as smoothstep, bb as sweepDistance, qw as textureBlend, Gw as transitionDurationMs };
+export { Ly as AssetSystem, Ww as DEFAULT_TUNING, DC as DUAL_PROJECTOR_FRAG, EC as DUAL_PROJECTOR_VERT, TC as DepthShellSurface, rb as EASINGS, $y as Engine, fT as HotspotLayer, vT as Hud, fb as LookController, bT as MeasureTool, Uw as MeshSurface, vb as ModeController, jT as NadirPatch, SE as Player, HT as Reticle, lE as RingLayer, uC as SUBDIVISION_TO_DETAIL, sC as SphereSurface, EE as TourForge, eT as TransitionController, gE as VERSION, Sb as aStar, yb as buildAdjacency, ib as clamp, ab as clamp01, AC as createDualProjectorMaterial, Ay as cubemapBytes, eb as easeInOutCubic, tb as easeInOutSine, aC as floorYOf, yT as formatDistance, eC as halfToFloat, Jw as layerMix, ob as lerp, nb as linear, nC as loadDepthCube, tC as makeDepthCubeTexture, Yw as meshReveal, wb as nearestSweepTo, Tb as nextStepToward, Oy as pixelsPerTexel, TE as placeName, _T as popupDocument, Kw as positionEase, xb as reachableFrom, Cb as resolveClickTarget, ky as selectPanoLevel, sb as smoothstep, bb as sweepDistance, qw as textureBlend, Gw as transitionDurationMs };
