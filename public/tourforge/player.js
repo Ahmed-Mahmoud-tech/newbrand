@@ -16640,7 +16640,8 @@ var Fv = av([
 	widthM: X().min(.05).max(10).default(.6),
 	name: Y().trim().max(80).optional(),
 	title: Y().max(200).optional(),
-	html: Y().max(2e5).optional()
+	html: Y().max(2e5).optional(),
+	targetSweep: Lv.optional()
 }), Jv = Z({
 	cursorUrl: Y().min(1).optional(),
 	markerUrl: Y().min(1).optional(),
@@ -16743,16 +16744,24 @@ var Yv = Z({
 		});
 	});
 	let i = /* @__PURE__ */ new Set();
-	e.hotspots.forEach((e, n) => {
+	e.hotspots.forEach((e, r) => {
 		i.has(e.id) && t.addIssue({
 			code: "custom",
 			path: [
 				"hotspots",
-				n,
+				r,
 				"id"
 			],
 			message: `duplicate hotspot id "${e.id}"`
-		}), i.add(e.id);
+		}), i.add(e.id), e.targetSweep && !n.has(e.targetSweep) && t.addIssue({
+			code: "custom",
+			path: [
+				"hotspots",
+				r,
+				"targetSweep"
+			],
+			message: `unknown sweep "${e.targetSweep}"`
+		});
 	}), e.reel.forEach((e, r) => {
 		n.has(e.sweep) || t.addIssue({
 			code: "custom",
@@ -23014,7 +23023,20 @@ var SE = class e {
 	openHotspot(e) {
 		this.assertAlive();
 		let t = this.hotspots.get(e);
-		t && (this.emit("hotspotclick", { id: e }), this.opts.hud && t.html?.trim() && this.hud.openPopup(t.title ?? "", t.html));
+		if (!t) return;
+		this.emit("hotspotclick", { id: e });
+		let n = this.linkTarget(t);
+		if (n) {
+			(this.mode === "dollhouse" || n !== this.currentSweep) && this.goToPlace(n);
+			return;
+		}
+		this.opts.hud && t.html?.trim() && this.hud.openPopup(t.title ?? "", t.html);
+	}
+	linkTarget(e) {
+		let t = e.targetSweep;
+		if (!t) return null;
+		let n = this.manifest.sweeps.find((e) => e.id === t);
+		return n && !n.hidden ? t : null;
 	}
 	resolveUrl(e) {
 		return new URL(e, this.assetBase).toString();
@@ -23375,8 +23397,8 @@ var SE = class e {
 		return Math.hypot(a, o) <= this.nadir.radius ? t : null;
 	}
 	clickableHotspot(e) {
-		let t = this.hotspots.pick(e);
-		return t && this.hotspots.get(t)?.html?.trim() ? t : null;
+		let t = this.hotspots.pick(e), n = t ? this.hotspots.get(t) : null;
+		return n && (n.html?.trim() || this.linkTarget(n)) ? n.id : null;
 	}
 	handleHover(e) {
 		let t = this.engine.canvas;

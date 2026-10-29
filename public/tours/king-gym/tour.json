@@ -1,0 +1,1125 @@
+{
+  "version": 3,
+  "tour": {
+    "id": "king-gym",
+    "name": "King Gym",
+    "startSweep": "s_01",
+    "startRotation": [
+      0,
+      -1.832595714594046,
+      0
+    ],
+    "watermark": false
+  },
+  "assetBase": "./",
+  "sweeps": [
+    {
+      "id": "s_01",
+      "position": [
+        0,
+        0.8266180495394475,
+        0
+      ],
+      "yawOffset": -0.8290313946973065,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_01/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "0",
+      "registrationConfidence": 0.1706006076186025,
+      "depth": {
+        "cubemap": "sweeps/s_01/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_02",
+      "position": [
+        2.3090130467372836,
+        1.5630209850929702,
+        0.4059089349468775
+      ],
+      "yawOffset": 2.305795524318354,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_02/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "1",
+      "registrationConfidence": 0.3874737088104697,
+      "depth": {
+        "cubemap": "sweeps/s_02/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_04",
+      "position": [
+        1.7931744505390066,
+        1.6005939758691976,
+        3.5896770922443357
+      ],
+      "yawOffset": -0.9433903028076784,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_04/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "3",
+      "registrationConfidence": 0.2486562280906754,
+      "depth": {
+        "cubemap": "sweeps/s_04/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_05",
+      "position": [
+        -3.0874767236198544,
+        4.196112065185812,
+        2.14331221967867
+      ],
+      "yawOffset": -2.6715666301209917,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_05/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "4",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_05/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_06",
+      "position": [
+        -3.1143860562660417,
+        4.181707736708559,
+        -0.4661186370016899
+      ],
+      "yawOffset": -0.8913922403305348,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_06/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "5",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_06/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_07",
+      "position": [
+        -4.990917424755632,
+        4.172176683283919,
+        -0.4223532560776228
+      ],
+      "yawOffset": -0.9702100665419757,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_07/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "6",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_07/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_09",
+      "position": [
+        -1.5763157839413626,
+        4.205115050646603,
+        -3.276733307387754
+      ],
+      "yawOffset": -1.5577814000799934,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_09/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "8",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_09/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_10",
+      "position": [
+        0.9579133067076754,
+        4.230864262870869,
+        -2.934775091817658
+      ],
+      "yawOffset": -0.9020827732036802,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_10/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "9",
+      "registrationConfidence": 0.808132741294695,
+      "depth": {
+        "cubemap": "sweeps/s_10/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_11",
+      "position": [
+        1.1267656875445144,
+        4.2553732245558855,
+        -5.176805752843078
+      ],
+      "yawOffset": -0.9802587825160427,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_11/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "10",
+      "registrationConfidence": 0.8025239541949053,
+      "depth": {
+        "cubemap": "sweeps/s_11/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_12",
+      "position": [
+        1.5666716460688659,
+        4.2416405270397055,
+        -7.863527459323389
+      ],
+      "yawOffset": -0.9651305601407789,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_12/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "11",
+      "registrationConfidence": 0.4959102594064034,
+      "depth": {
+        "cubemap": "sweeps/s_12/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_13",
+      "position": [
+        1.630107885476433,
+        4.257883876057474,
+        -10.418281855522112
+      ],
+      "yawOffset": -2.382850243453286,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_13/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "12",
+      "registrationConfidence": 0.4360831970086469,
+      "depth": {
+        "cubemap": "sweeps/s_13/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_14",
+      "position": [
+        1.776259333142084,
+        4.248342562837612,
+        -13.082944793680628
+      ],
+      "yawOffset": -2.6817611552353653,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_14/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "13",
+      "registrationConfidence": 0.6758588455246552,
+      "depth": {
+        "cubemap": "sweeps/s_14/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_15",
+      "position": [
+        2.129472311877049,
+        4.237015629687081,
+        -16.12962662136488
+      ],
+      "yawOffset": -2.432447497851832,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_15/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "14",
+      "registrationConfidence": 0.5501285347043702,
+      "depth": {
+        "cubemap": "sweeps/s_15/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_16",
+      "position": [
+        2.329203111864715,
+        4.261649946699098,
+        -19.311373744253952
+      ],
+      "yawOffset": -2.3150977021376953,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_16/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "15",
+      "registrationConfidence": 0.7207291423229727,
+      "depth": {
+        "cubemap": "sweeps/s_16/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_17",
+      "position": [
+        2.4659964662359926,
+        4.2496354918403245,
+        -22.400413321135428
+      ],
+      "yawOffset": -2.3741351564065436,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_17/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "16",
+      "registrationConfidence": 0.8366440757186259,
+      "depth": {
+        "cubemap": "sweeps/s_17/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_18",
+      "position": [
+        2.910789102918675,
+        4.239193190496276,
+        -24.237458095984977
+      ],
+      "yawOffset": -2.493256934649731,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_18/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "17",
+      "registrationConfidence": 0.7791540079457817,
+      "depth": {
+        "cubemap": "sweeps/s_18/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_19",
+      "position": [
+        5.366094018702944,
+        4.200872136839709,
+        -23.962816911642822
+      ],
+      "yawOffset": 2.249922597123061,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_19/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "18",
+      "registrationConfidence": 0.27015657863986914,
+      "depth": {
+        "cubemap": "sweeps/s_19/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_20",
+      "position": [
+        0.09541637024724446,
+        4.22335305060118,
+        -22.24664536063855
+      ],
+      "yawOffset": 0.7159391783380835,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_20/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "19",
+      "registrationConfidence": 0.9418088338396822,
+      "depth": {
+        "cubemap": "sweeps/s_20/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_21",
+      "position": [
+        0.266330718330144,
+        4.240224582840534,
+        -23.505422923576777
+      ],
+      "yawOffset": 0.5738923710362953,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_21/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "20",
+      "registrationConfidence": 0.9413414349146997,
+      "depth": {
+        "cubemap": "sweeps/s_21/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_22",
+      "position": [
+        -1.5334971059151072,
+        4.232758923963152,
+        -22.71748419778892
+      ],
+      "yawOffset": 1.5828012768644957,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_22/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "21",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_22/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_23",
+      "position": [
+        -2.5663567549870554,
+        4.235355928324686,
+        -22.758611090487104
+      ],
+      "yawOffset": 0.5138224644015548,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_23/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "22",
+      "registrationConfidence": 0.9843421360130872,
+      "depth": {
+        "cubemap": "sweeps/s_23/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_24",
+      "position": [
+        -2.6662873561479516,
+        4.236952659361666,
+        -20.667484409943825
+      ],
+      "yawOffset": -0.2184676632753364,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_24/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "23",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_24/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_25",
+      "position": [
+        -2.6563968799879936,
+        4.2535675417830525,
+        -18.013242370080754
+      ],
+      "yawOffset": -0.5727012644167675,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_25/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "24",
+      "registrationConfidence": 0.8829165692918907,
+      "depth": {
+        "cubemap": "sweeps/s_25/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_26",
+      "position": [
+        -2.9090765033946733,
+        4.240985652273286,
+        -15.49013130338128
+      ],
+      "yawOffset": -0.9808422312219602,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_26/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "25",
+      "registrationConfidence": 0.7660668380462725,
+      "depth": {
+        "cubemap": "sweeps/s_26/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_27",
+      "position": [
+        -3.4105062877405166,
+        4.235973639573633,
+        -13.201973126563892
+      ],
+      "yawOffset": -0.8338829742443763,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_27/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "26",
+      "registrationConfidence": 0.579574666978266,
+      "depth": {
+        "cubemap": "sweeps/s_27/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_28",
+      "position": [
+        -0.8832401018897992,
+        4.214632501363942,
+        -12.600491027875568
+      ],
+      "yawOffset": 1.2591951559786754,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_28/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "27",
+      "registrationConfidence": 0.6978265949988315,
+      "depth": {
+        "cubemap": "sweeps/s_28/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_29",
+      "position": [
+        -3.6660472478267927,
+        4.199416484573143,
+        -9.028097535576604
+      ],
+      "yawOffset": 2.0944784831583574,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_29/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "28",
+      "registrationConfidence": 0.3902781023603646,
+      "depth": {
+        "cubemap": "sweeps/s_29/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_30",
+      "position": [
+        -3.781950942505903,
+        4.151958785846906,
+        -6.026710066632631
+      ],
+      "yawOffset": -2.3796279284119515,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_30/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "29",
+      "registrationConfidence": 0.689413414349147,
+      "depth": {
+        "cubemap": "sweeps/s_30/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_31",
+      "position": [
+        -4.462843549919333,
+        4.176115014642769,
+        -3.1532246554011283
+      ],
+      "yawOffset": -0.6725450266657074,
+      "floor": 1,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_31/{level}_face{f}_{x}_{y}.jpg"
+      },
+      "label": "30",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_31/depth_{f}.raw.gz"
+      }
+    }
+  ],
+  "graph": {
+    "edges": [
+      [
+        "s_01",
+        "s_04"
+      ],
+      [
+        "s_01",
+        "s_02"
+      ],
+      [
+        "s_02",
+        "s_10"
+      ],
+      [
+        "s_02",
+        "s_04"
+      ],
+      [
+        "s_05",
+        "s_07"
+      ],
+      [
+        "s_05",
+        "s_06"
+      ],
+      [
+        "s_06",
+        "s_31"
+      ],
+      [
+        "s_06",
+        "s_09"
+      ],
+      [
+        "s_06",
+        "s_30"
+      ],
+      [
+        "s_06",
+        "s_07"
+      ],
+      [
+        "s_07",
+        "s_31"
+      ],
+      [
+        "s_07",
+        "s_09"
+      ],
+      [
+        "s_07",
+        "s_30"
+      ],
+      [
+        "s_09",
+        "s_31"
+      ],
+      [
+        "s_09",
+        "s_11"
+      ],
+      [
+        "s_09",
+        "s_10"
+      ],
+      [
+        "s_09",
+        "s_30"
+      ],
+      [
+        "s_10",
+        "s_11"
+      ],
+      [
+        "s_11",
+        "s_12"
+      ],
+      [
+        "s_12",
+        "s_13"
+      ],
+      [
+        "s_13",
+        "s_28"
+      ],
+      [
+        "s_13",
+        "s_14"
+      ],
+      [
+        "s_14",
+        "s_28"
+      ],
+      [
+        "s_14",
+        "s_15"
+      ],
+      [
+        "s_15",
+        "s_16"
+      ],
+      [
+        "s_16",
+        "s_20"
+      ],
+      [
+        "s_16",
+        "s_17"
+      ],
+      [
+        "s_17",
+        "s_22"
+      ],
+      [
+        "s_17",
+        "s_21"
+      ],
+      [
+        "s_17",
+        "s_20"
+      ],
+      [
+        "s_17",
+        "s_19"
+      ],
+      [
+        "s_17",
+        "s_18"
+      ],
+      [
+        "s_18",
+        "s_21"
+      ],
+      [
+        "s_18",
+        "s_20"
+      ],
+      [
+        "s_18",
+        "s_19"
+      ],
+      [
+        "s_20",
+        "s_24"
+      ],
+      [
+        "s_20",
+        "s_23"
+      ],
+      [
+        "s_20",
+        "s_22"
+      ],
+      [
+        "s_20",
+        "s_21"
+      ],
+      [
+        "s_21",
+        "s_24"
+      ],
+      [
+        "s_21",
+        "s_23"
+      ],
+      [
+        "s_21",
+        "s_22"
+      ],
+      [
+        "s_22",
+        "s_24"
+      ],
+      [
+        "s_22",
+        "s_23"
+      ],
+      [
+        "s_23",
+        "s_24"
+      ],
+      [
+        "s_24",
+        "s_25"
+      ],
+      [
+        "s_25",
+        "s_26"
+      ],
+      [
+        "s_26",
+        "s_28"
+      ],
+      [
+        "s_26",
+        "s_27"
+      ],
+      [
+        "s_27",
+        "s_29"
+      ],
+      [
+        "s_27",
+        "s_28"
+      ],
+      [
+        "s_29",
+        "s_30"
+      ],
+      [
+        "s_30",
+        "s_31"
+      ]
+    ]
+  },
+  "rooms": [],
+  "tags": [],
+  "reel": [],
+  "mesh": {
+    "tier": "A",
+    "surface": "poisson",
+    "lods": [
+      {
+        "lod": 3,
+        "chunks": [
+          "mesh/model.glb.gz"
+        ],
+        "tris": 570968,
+        "bytes": 49988182,
+        "textured": true
+      },
+      {
+        "lod": 0,
+        "chunks": [
+          "mesh/model-preview.glb.gz"
+        ],
+        "tris": 120324,
+        "textured": true,
+        "preview": true,
+        "bytes": 4435208
+      }
+    ],
+    "bounds": {
+      "min": [
+        -8.411189079284668,
+        -1.7197856903076172,
+        -26.867960453033447
+      ],
+      "max": [
+        7.283473968505859,
+        7.802112579345703,
+        6.251644134521484
+      ]
+    }
+  },
+  "hotspots": [
+    {
+      "id": "img_mvtioulu",
+      "anchor": [
+        -2.0910079461024926,
+        2.318634021115589,
+        2.421816776302898
+      ],
+      "normal": [
+        0.6216382790679146,
+        0.7818341175037467,
+        0.04797147803246441
+      ],
+      "imageUrl": "custom/b6d7337e081448bc.png",
+      "widthM": 0.75,
+      "name": "Popup 1",
+      "title": "",
+      "html": "",
+      "targetSweep": "s_05"
+    },
+    {
+      "id": "img_mvtnpwz4",
+      "anchor": [
+        2.6584710820435156,
+        0.2501055804524803,
+        3.58768659931252
+      ],
+      "normal": [
+        -0.9864648717305766,
+        0,
+        -0.1639727320061994
+      ],
+      "imageUrl": "custom/b6d7337e081448bc.png",
+      "widthM": 0.6,
+      "name": "Popup 2",
+      "title": "",
+      "html": "",
+      "targetSweep": "s_04"
+    }
+  ]
+}
