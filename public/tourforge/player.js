@@ -22214,7 +22214,7 @@ var yT = class {
 		}
 		if (this.stopMusic(), e) {
 			let t = new Audio();
-			t.dataset.src = e.url, t.src = e.url, t.loop = e.loop, t.volume = e.volume, t.preload = "auto", t.muted = this.muted, this.audio = t;
+			t.dataset.src = e.url, t.src = e.url, t.loop = e.loop, t.volume = e.volume, t.preload = "none", t.muted = this.muted, this.audio = t;
 			let n = () => t.play().then(() => this.clearUnlock(), () => void 0);
 			n();
 			for (let e of [
