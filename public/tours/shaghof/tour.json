@@ -1,0 +1,1259 @@
+{
+  "version": 3,
+  "tour": {
+    "id": "shaghof",
+    "name": "Shaghof",
+    "startSweep": "s_10",
+    "startRotation": [
+      0,
+      0,
+      0
+    ],
+    "watermark": false
+  },
+  "assetBase": "./",
+  "sweeps": [
+    {
+      "id": "s_01",
+      "position": [
+        0,
+        1.4999999999999987,
+        0
+      ],
+      "yawOffset": -0.15707963267948966,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_01/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "2",
+      "registrationConfidence": 0.36457842675459257,
+      "depth": {
+        "cubemap": "sweeps/s_01/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_03",
+      "position": [
+        0.9350000880435808,
+        1.4999999999999987,
+        1.191418501307653
+      ],
+      "yawOffset": 0.4735065286861584,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_03/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "4",
+      "registrationConfidence": 0.16580310880829016,
+      "depth": {
+        "cubemap": "sweeps/s_03/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_04",
+      "position": [
+        1.9677627006301213,
+        1.4999999999999987,
+        2.0679820279980463
+      ],
+      "yawOffset": 0.48585256217266615,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_04/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "5",
+      "registrationConfidence": 0.1365991521431936,
+      "depth": {
+        "cubemap": "sweeps/s_04/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_05",
+      "position": [
+        2.0453170167972705,
+        1.4999999999999987,
+        3.165255767102535
+      ],
+      "yawOffset": -0.7597867595552952,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_05/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "6",
+      "registrationConfidence": 0.5817239755063589,
+      "depth": {
+        "cubemap": "sweeps/s_05/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_06",
+      "position": [
+        2.8602858326196756,
+        1.4999999999999987,
+        2.4725592545734494
+      ],
+      "yawOffset": 0.3974375956096421,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_06/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "7",
+      "registrationConfidence": 0.40885539331135184,
+      "depth": {
+        "cubemap": "sweeps/s_06/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_07",
+      "position": [
+        2.522738483984243,
+        1.4999999999999987,
+        3.274200325200935
+      ],
+      "yawOffset": 0.4113339872992725,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_07/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "8",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_07/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_09",
+      "position": [
+        -0.6531544060474433,
+        1.4999999999999987,
+        1.0078196098593404
+      ],
+      "yawOffset": 0.881101841228709,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_09/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "10",
+      "registrationConfidence": 0.4107395195478097,
+      "depth": {
+        "cubemap": "sweeps/s_09/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_10",
+      "position": [
+        -1.0889870055422122,
+        1.4999999999999987,
+        2.7655109072761337
+      ],
+      "yawOffset": 1.1717485110662684,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_10/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "11",
+      "registrationConfidence": 0.24399434762129063,
+      "depth": {
+        "cubemap": "sweeps/s_10/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_11",
+      "position": [
+        -1.6903751543660535,
+        1.4999999999999987,
+        4.410566538931221
+      ],
+      "yawOffset": 0.947751238440361,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_11/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "12",
+      "registrationConfidence": 0.209609043805935,
+      "depth": {
+        "cubemap": "sweeps/s_11/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_13",
+      "position": [
+        -2.2544931309517326,
+        1.4999999999999987,
+        0.21306188109328164
+      ],
+      "yawOffset": 0.0026488368183215094,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_13/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "14",
+      "registrationConfidence": 0.5831370701837023,
+      "depth": {
+        "cubemap": "sweeps/s_13/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_14",
+      "position": [
+        -3.3602437125690217,
+        1.4999999999999987,
+        0.24456163767853928
+      ],
+      "yawOffset": -0.6419451951759427,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_14/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "15",
+      "registrationConfidence": 0.6316533207724918,
+      "depth": {
+        "cubemap": "sweeps/s_14/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_15",
+      "position": [
+        -4.466725911481199,
+        1.4999999999999987,
+        2.0074889822517563
+      ],
+      "yawOffset": -0.7508780989886317,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_15/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "16",
+      "registrationConfidence": 0.886481394253415,
+      "depth": {
+        "cubemap": "sweeps/s_15/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_16",
+      "position": [
+        -5.265574099686089,
+        1.4999999999999987,
+        3.4608061826186125
+      ],
+      "yawOffset": -0.8608237192401087,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_16/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "17",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_16/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_17",
+      "position": [
+        -7.098936007423559,
+        1.4999999999999987,
+        2.823393995423323
+      ],
+      "yawOffset": -0.9174379702358619,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_17/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "18",
+      "registrationConfidence": 0.8770607630711258,
+      "depth": {
+        "cubemap": "sweeps/s_17/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_18",
+      "position": [
+        -6.252721336631581,
+        1.4999999999999987,
+        5.078781685083013
+      ],
+      "yawOffset": 0.5803416999640487,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_18/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "19",
+      "registrationConfidence": 0.9726801695713613,
+      "depth": {
+        "cubemap": "sweeps/s_18/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_19",
+      "position": [
+        -7.106816958115758,
+        1.4999999999999987,
+        5.587532031907404
+      ],
+      "yawOffset": -0.24739092864389622,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_19/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "20",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_19/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_21",
+      "position": [
+        -2.308236421152964,
+        1.4999999999999987,
+        6.041353948303743
+      ],
+      "yawOffset": 1.7356137222457884,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_21/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "22",
+      "registrationConfidence": 0.7121997173810646,
+      "depth": {
+        "cubemap": "sweeps/s_21/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_23",
+      "position": [
+        2.844797798096704,
+        1.4999999999999987,
+        3.93033562709966
+      ],
+      "yawOffset": 1.989168071604949,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_23/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "24",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_23/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_24",
+      "position": [
+        3.147836628679297,
+        1.4999999999999987,
+        0.17304142309195059
+      ],
+      "yawOffset": -1.3783735475802832,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_24/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "25",
+      "registrationConfidence": 0.32406971267074897,
+      "depth": {
+        "cubemap": "sweeps/s_24/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_25",
+      "position": [
+        4.719838564321273,
+        1.4999999999999987,
+        0.6908525383995047
+      ],
+      "yawOffset": -0.20750819325855918,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_25/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "26",
+      "registrationConfidence": 0.4955252001884126,
+      "depth": {
+        "cubemap": "sweeps/s_25/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_26",
+      "position": [
+        5.983465262336392,
+        1.4999999999999987,
+        1.395495183944962
+      ],
+      "yawOffset": 0.9337779333507772,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_26/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "27",
+      "registrationConfidence": 0.29674988224211024,
+      "depth": {
+        "cubemap": "sweeps/s_26/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_27",
+      "position": [
+        5.190500274405935,
+        1.4999999999999987,
+        -0.5598402666385495
+      ],
+      "yawOffset": -2.2270036639364346,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_27/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "28",
+      "registrationConfidence": 0.49788035798398494,
+      "depth": {
+        "cubemap": "sweeps/s_27/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_28",
+      "position": [
+        6.666174625488588,
+        1.4999999999999987,
+        -0.11253303510857413
+      ],
+      "yawOffset": -2.2772475392207423,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_28/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "29",
+      "registrationConfidence": 0.12152614225153086,
+      "depth": {
+        "cubemap": "sweeps/s_28/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_30",
+      "position": [
+        -5.518740641433824,
+        1.4999999999999987,
+        -0.6287563198888527
+      ],
+      "yawOffset": 0.8940431978754511,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_30/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "31",
+      "registrationConfidence": 0.15496938294865756,
+      "depth": {
+        "cubemap": "sweeps/s_30/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_31",
+      "position": [
+        -8.103962061505579,
+        1.4999999999999987,
+        -1.4949367012796726
+      ],
+      "yawOffset": 0.8494629631364368,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_31/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "32",
+      "registrationConfidence": 0.13848327837965144,
+      "depth": {
+        "cubemap": "sweeps/s_31/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_32",
+      "position": [
+        -8.754880346540157,
+        1.4999999999999987,
+        -3.2826978403063976
+      ],
+      "yawOffset": 0.9982207422893845,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_32/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "33",
+      "registrationConfidence": 0.11210551106924165,
+      "depth": {
+        "cubemap": "sweeps/s_32/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_33",
+      "position": [
+        -8.162806860359945,
+        1.4999999999999987,
+        -5.607039403700251
+      ],
+      "yawOffset": -0.67047265970966,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_33/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "34",
+      "registrationConfidence": 0.05181347150259067,
+      "depth": {
+        "cubemap": "sweeps/s_33/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_34",
+      "position": [
+        -8.707554625989516,
+        1.4999999999999987,
+        -0.3227378783218096
+      ],
+      "yawOffset": 2.2630320807180535,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_34/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "35",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_34/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_35",
+      "position": [
+        -9.298155550193668,
+        1.4999999999999987,
+        0.7784747826931339
+      ],
+      "yawOffset": 2.4242674948337744,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_35/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "36",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_35/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_36",
+      "position": [
+        -10.37346329533301,
+        1.4999999999999987,
+        0.18825193598073067
+      ],
+      "yawOffset": 0.8041144133025524,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_36/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "37",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_36/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_37",
+      "position": [
+        -9.625795979400133,
+        1.4999999999999987,
+        1.8342518756447377
+      ],
+      "yawOffset": 1.1824189694232379,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_37/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "38",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_37/depth_{f}.raw.gz"
+      }
+    },
+    {
+      "id": "s_38",
+      "position": [
+        -9.7125026738746,
+        1.4999999999999987,
+        3.4797564256462765
+      ],
+      "yawOffset": 0.8738829938423365,
+      "floor": 0,
+      "captureHeight": 1.5,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048,
+          3072
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_38/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "39",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_38/depth_{f}.raw.gz"
+      }
+    }
+  ],
+  "graph": {
+    "edges": [
+      [
+        "s_01",
+        "s_30"
+      ],
+      [
+        "s_01",
+        "s_15"
+      ],
+      [
+        "s_01",
+        "s_14"
+      ],
+      [
+        "s_01",
+        "s_13"
+      ],
+      [
+        "s_01",
+        "s_10"
+      ],
+      [
+        "s_01",
+        "s_09"
+      ],
+      [
+        "s_01",
+        "s_03"
+      ],
+      [
+        "s_01",
+        "s_27"
+      ],
+      [
+        "s_01",
+        "s_25"
+      ],
+      [
+        "s_01",
+        "s_24"
+      ],
+      [
+        "s_03",
+        "s_09"
+      ],
+      [
+        "s_03",
+        "s_04"
+      ],
+      [
+        "s_03",
+        "s_27"
+      ],
+      [
+        "s_03",
+        "s_25"
+      ],
+      [
+        "s_03",
+        "s_24"
+      ],
+      [
+        "s_04",
+        "s_23"
+      ],
+      [
+        "s_04",
+        "s_07"
+      ],
+      [
+        "s_04",
+        "s_06"
+      ],
+      [
+        "s_04",
+        "s_05"
+      ],
+      [
+        "s_05",
+        "s_23"
+      ],
+      [
+        "s_05",
+        "s_07"
+      ],
+      [
+        "s_05",
+        "s_06"
+      ],
+      [
+        "s_06",
+        "s_23"
+      ],
+      [
+        "s_06",
+        "s_07"
+      ],
+      [
+        "s_07",
+        "s_23"
+      ],
+      [
+        "s_09",
+        "s_14"
+      ],
+      [
+        "s_09",
+        "s_13"
+      ],
+      [
+        "s_09",
+        "s_10"
+      ],
+      [
+        "s_09",
+        "s_27"
+      ],
+      [
+        "s_09",
+        "s_25"
+      ],
+      [
+        "s_09",
+        "s_24"
+      ],
+      [
+        "s_10",
+        "s_13"
+      ],
+      [
+        "s_10",
+        "s_11"
+      ],
+      [
+        "s_11",
+        "s_21"
+      ],
+      [
+        "s_13",
+        "s_30"
+      ],
+      [
+        "s_13",
+        "s_15"
+      ],
+      [
+        "s_13",
+        "s_14"
+      ],
+      [
+        "s_13",
+        "s_16"
+      ],
+      [
+        "s_14",
+        "s_30"
+      ],
+      [
+        "s_14",
+        "s_15"
+      ],
+      [
+        "s_15",
+        "s_30"
+      ],
+      [
+        "s_15",
+        "s_18"
+      ],
+      [
+        "s_15",
+        "s_17"
+      ],
+      [
+        "s_15",
+        "s_16"
+      ],
+      [
+        "s_16",
+        "s_19"
+      ],
+      [
+        "s_16",
+        "s_18"
+      ],
+      [
+        "s_16",
+        "s_17"
+      ],
+      [
+        "s_17",
+        "s_19"
+      ],
+      [
+        "s_17",
+        "s_18"
+      ],
+      [
+        "s_18",
+        "s_38"
+      ],
+      [
+        "s_18",
+        "s_37"
+      ],
+      [
+        "s_18",
+        "s_19"
+      ],
+      [
+        "s_19",
+        "s_38"
+      ],
+      [
+        "s_19",
+        "s_37"
+      ],
+      [
+        "s_24",
+        "s_27"
+      ],
+      [
+        "s_24",
+        "s_26"
+      ],
+      [
+        "s_24",
+        "s_25"
+      ],
+      [
+        "s_25",
+        "s_27"
+      ],
+      [
+        "s_25",
+        "s_26"
+      ],
+      [
+        "s_26",
+        "s_28"
+      ],
+      [
+        "s_26",
+        "s_27"
+      ],
+      [
+        "s_27",
+        "s_28"
+      ],
+      [
+        "s_30",
+        "s_31"
+      ],
+      [
+        "s_31",
+        "s_34"
+      ],
+      [
+        "s_31",
+        "s_32"
+      ],
+      [
+        "s_32",
+        "s_33"
+      ],
+      [
+        "s_34",
+        "s_37"
+      ],
+      [
+        "s_34",
+        "s_36"
+      ],
+      [
+        "s_34",
+        "s_35"
+      ],
+      [
+        "s_35",
+        "s_37"
+      ],
+      [
+        "s_35",
+        "s_36"
+      ],
+      [
+        "s_36",
+        "s_37"
+      ],
+      [
+        "s_37",
+        "s_38"
+      ]
+    ]
+  },
+  "rooms": [],
+  "tags": [],
+  "reel": [],
+  "mesh": {
+    "tier": "A",
+    "surface": "poisson",
+    "lods": [
+      {
+        "lod": 3,
+        "chunks": [
+          "mesh/model.glb.gz"
+        ],
+        "tris": 552446,
+        "bytes": 51521424,
+        "textured": true
+      },
+      {
+        "lod": 0,
+        "chunks": [
+          "mesh/model-preview.glb.gz"
+        ],
+        "tris": 107837,
+        "textured": true,
+        "preview": true,
+        "bytes": 4454960
+      }
+    ],
+    "bounds": {
+      "min": [
+        -14.939757347106934,
+        -1.60198974609375,
+        -8.39200496673584
+      ],
+      "max": [
+        8.235791206359863,
+        6.843884468078613,
+        8.562752723693848
+      ]
+    }
+  },
+  "hotspots": [],
+  "customization": {
+    "nadirLink": "https://www.gateverse.net",
+    "northYaw": 0.24027421169904883,
+    "music": {
+      "url": "custom/4b1d231ee8f4e4b5.mp3",
+      "volume": 0.5,
+      "loop": true
+    }
+  }
+}
