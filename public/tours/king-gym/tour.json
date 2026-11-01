@@ -1,12 +1,12 @@
 {
   "version": 3,
   "tour": {
-    "id": "king-gym",
+    "id": "king-gym-2",
     "name": "King Gym",
     "startSweep": "s_01",
     "startRotation": [
       0,
-      -1.832595714594046,
+      -1.6406094968746698,
       0
     ],
     "watermark": false
@@ -17,7 +17,7 @@
       "id": "s_01",
       "position": [
         0,
-        0.8266180495394475,
+        0.8556060096868936,
         0
       ],
       "yawOffset": -0.8290313946973065,
@@ -35,8 +35,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_01/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "0",
-      "registrationConfidence": 0.1706006076186025,
+      "label": "0_compressed",
+      "registrationConfidence": 0.22449443308339015,
       "depth": {
         "cubemap": "sweeps/s_01/depth_{f}.raw.gz"
       }
@@ -44,11 +44,11 @@
     {
       "id": "s_02",
       "position": [
-        2.3090130467372836,
-        1.5630209850929702,
-        0.4059089349468775
+        2.397084335925382,
+        1.6110630348194042,
+        0.41765560751360253
       ],
-      "yawOffset": 2.305795524318354,
+      "yawOffset": 2.303104920826332,
       "floor": 0,
       "captureHeight": 1.5,
       "pano": {
@@ -63,8 +63,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_02/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "1",
-      "registrationConfidence": 0.3874737088104697,
+      "label": "1_compressed",
+      "registrationConfidence": 0.3721881390593047,
       "depth": {
         "cubemap": "sweeps/s_02/depth_{f}.raw.gz"
       }
@@ -72,11 +72,11 @@
     {
       "id": "s_04",
       "position": [
-        1.7931744505390066,
-        1.6005939758691976,
-        3.5896770922443357
+        1.855624627508841,
+        1.6387831074423551,
+        3.7461331309310215
       ],
-      "yawOffset": -0.9433903028076784,
+      "yawOffset": -0.9418705368008715,
       "floor": 0,
       "captureHeight": 1.5,
       "pano": {
@@ -91,8 +91,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_04/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "3",
-      "registrationConfidence": 0.2486562280906754,
+      "label": "3_compressed",
+      "registrationConfidence": 0.26221313337877755,
       "depth": {
         "cubemap": "sweeps/s_04/depth_{f}.raw.gz"
       }
@@ -100,11 +100,11 @@
     {
       "id": "s_05",
       "position": [
-        -3.0874767236198544,
-        4.196112065185812,
-        2.14331221967867
+        -3.308486610992049,
+        4.384445151266539,
+        2.2351771866659416
       ],
-      "yawOffset": -2.6715666301209917,
+      "yawOffset": -2.674342195395964,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -119,7 +119,7 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_05/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "4",
+      "label": "4_compressed",
       "registrationConfidence": 1,
       "depth": {
         "cubemap": "sweeps/s_05/depth_{f}.raw.gz"
@@ -128,11 +128,11 @@
     {
       "id": "s_06",
       "position": [
-        -3.1143860562660417,
-        4.181707736708559,
-        -0.4661186370016899
+        -3.3368223110285076,
+        4.369628338711127,
+        -0.5331163902773269
       ],
-      "yawOffset": -0.8913922403305348,
+      "yawOffset": -0.8945203421244621,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -147,7 +147,7 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_06/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "5",
+      "label": "5_compressed",
       "registrationConfidence": 1,
       "depth": {
         "cubemap": "sweeps/s_06/depth_{f}.raw.gz"
@@ -156,11 +156,11 @@
     {
       "id": "s_07",
       "position": [
-        -4.990917424755632,
-        4.172176683283919,
-        -0.4223532560776228
+        -5.3272106867508215,
+        4.360565013152564,
+        -0.4913664218040977
       ],
-      "yawOffset": -0.9702100665419757,
+      "yawOffset": -0.9736296723308988,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -175,7 +175,7 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_07/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "6",
+      "label": "6_compressed",
       "registrationConfidence": 1,
       "depth": {
         "cubemap": "sweeps/s_07/depth_{f}.raw.gz"
@@ -184,11 +184,11 @@
     {
       "id": "s_09",
       "position": [
-        -1.5763157839413626,
-        4.205115050646603,
-        -3.276733307387754
+        -1.6736406400704809,
+        4.394917848391511,
+        -3.497932428239402
       ],
-      "yawOffset": -1.5577814000799934,
+      "yawOffset": -1.5634436279402921,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -203,7 +203,7 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_09/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "8",
+      "label": "8_compressed",
       "registrationConfidence": 1,
       "depth": {
         "cubemap": "sweeps/s_09/depth_{f}.raw.gz"
@@ -212,11 +212,11 @@
     {
       "id": "s_10",
       "position": [
-        0.9579133067076754,
-        4.230864262870869,
-        -2.934775091817658
+        1.037161056841149,
+        4.419437881879546,
+        -3.103815459906701
       ],
-      "yawOffset": -0.9020827732036802,
+      "yawOffset": -0.9096298762972368,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -231,8 +231,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_10/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "9",
-      "registrationConfidence": 0.808132741294695,
+      "label": "9_compressed",
+      "registrationConfidence": 0.7798227675528289,
       "depth": {
         "cubemap": "sweeps/s_10/depth_{f}.raw.gz"
       }
@@ -240,11 +240,11 @@
     {
       "id": "s_11",
       "position": [
-        1.1267656875445144,
-        4.2553732245558855,
-        -5.176805752843078
+        1.23439946110155,
+        4.449502735772946,
+        -5.4965133956430865
       ],
-      "yawOffset": -0.9802587825160427,
+      "yawOffset": -0.9863365684629697,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -259,8 +259,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_11/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "10",
-      "registrationConfidence": 0.8025239541949053,
+      "label": "10_compressed",
+      "registrationConfidence": 0.8039082026812088,
       "depth": {
         "cubemap": "sweeps/s_11/depth_{f}.raw.gz"
       }
@@ -268,11 +268,11 @@
     {
       "id": "s_12",
       "position": [
-        1.5666716460688659,
-        4.2416405270397055,
-        -7.863527459323389
+        1.7298829209432893,
+        4.436245379383237,
+        -8.366566261795784
       ],
-      "yawOffset": -0.9651305601407789,
+      "yawOffset": -0.9760157184540605,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -287,8 +287,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_12/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "11",
-      "registrationConfidence": 0.4959102594064034,
+      "label": "11_compressed",
+      "registrationConfidence": 0.488525335151102,
       "depth": {
         "cubemap": "sweeps/s_12/depth_{f}.raw.gz"
       }
@@ -296,11 +296,11 @@
     {
       "id": "s_13",
       "position": [
-        1.630107885476433,
-        4.257883876057474,
-        -10.418281855522112
+        1.8198306170427498,
+        4.442416332679494,
+        -11.126486294572658
       ],
-      "yawOffset": -2.382850243453286,
+      "yawOffset": -2.3937586008744263,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -315,8 +315,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_13/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "12",
-      "registrationConfidence": 0.4360831970086469,
+      "label": "12_compressed",
+      "registrationConfidence": 0.40036355373778687,
       "depth": {
         "cubemap": "sweeps/s_13/depth_{f}.raw.gz"
       }
@@ -324,11 +324,11 @@
     {
       "id": "s_14",
       "position": [
-        1.776259333142084,
-        4.248342562837612,
-        -13.082944793680628
+        2.0348049611184393,
+        4.427902733585715,
+        -14.0478219077736
       ],
-      "yawOffset": -2.6817611552353653,
+      "yawOffset": -2.6902151486933885,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -343,8 +343,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_14/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "13",
-      "registrationConfidence": 0.6758588455246552,
+      "label": "13_compressed",
+      "registrationConfidence": 0.6175869120654397,
       "depth": {
         "cubemap": "sweeps/s_14/depth_{f}.raw.gz"
       }
@@ -352,11 +352,11 @@
     {
       "id": "s_15",
       "position": [
-        2.129472311877049,
-        4.237015629687081,
-        -16.12962662136488
+        2.432484436763955,
+        4.411044880438467,
+        -17.285283891576487
       ],
-      "yawOffset": -2.432447497851832,
+      "yawOffset": -2.4397325543560573,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -371,8 +371,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_15/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "14",
-      "registrationConfidence": 0.5501285347043702,
+      "label": "14_compressed",
+      "registrationConfidence": 0.5612360827084754,
       "depth": {
         "cubemap": "sweeps/s_15/depth_{f}.raw.gz"
       }
@@ -380,11 +380,11 @@
     {
       "id": "s_16",
       "position": [
-        2.329203111864715,
-        4.261649946699098,
-        -19.311373744253952
+        2.660401599223637,
+        4.439901108863146,
+        -20.575139723543632
       ],
-      "yawOffset": -2.3150977021376953,
+      "yawOffset": -2.3235845114913425,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -399,8 +399,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_16/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "15",
-      "registrationConfidence": 0.7207291423229727,
+      "label": "15_compressed",
+      "registrationConfidence": 0.6780277209725063,
       "depth": {
         "cubemap": "sweeps/s_16/depth_{f}.raw.gz"
       }
@@ -408,11 +408,11 @@
     {
       "id": "s_17",
       "position": [
-        2.4659964662359926,
-        4.2496354918403245,
-        -22.400413321135428
+        2.8256883352818902,
+        4.423245662775629,
+        -23.781850099283556
       ],
-      "yawOffset": -2.3741351564065436,
+      "yawOffset": -2.383350721751531,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -427,8 +427,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_17/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "16",
-      "registrationConfidence": 0.8366440757186259,
+      "label": "16_compressed",
+      "registrationConfidence": 0.7848216314473984,
       "depth": {
         "cubemap": "sweeps/s_17/depth_{f}.raw.gz"
       }
@@ -436,11 +436,11 @@
     {
       "id": "s_18",
       "position": [
-        2.910789102918675,
-        4.239193190496276,
-        -24.237458095984977
+        3.3110969965893267,
+        4.407791726243901,
+        -25.686999086648687
       ],
-      "yawOffset": -2.493256934649731,
+      "yawOffset": -2.5019121622305884,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -455,8 +455,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_18/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "17",
-      "registrationConfidence": 0.7791540079457817,
+      "label": "17_compressed",
+      "registrationConfidence": 0.7398318563962736,
       "depth": {
         "cubemap": "sweeps/s_18/depth_{f}.raw.gz"
       }
@@ -464,11 +464,11 @@
     {
       "id": "s_19",
       "position": [
-        5.366094018702944,
-        4.200872136839709,
-        -23.962816911642822
+        5.871981513514828,
+        4.391707510832152,
+        -25.42355574961843
       ],
-      "yawOffset": 2.249922597123061,
+      "yawOffset": 2.2428664265287175,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -483,8 +483,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_19/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "18",
-      "registrationConfidence": 0.27015657863986914,
+      "label": "18_compressed",
+      "registrationConfidence": 0.28402635764598955,
       "depth": {
         "cubemap": "sweeps/s_19/depth_{f}.raw.gz"
       }
@@ -492,11 +492,11 @@
     {
       "id": "s_20",
       "position": [
-        0.09541637024724446,
-        4.22335305060118,
-        -22.24664536063855
+        0.33209854945803596,
+        4.400977128601349,
+        -23.645254226744672
       ],
-      "yawOffset": 0.7159391783380835,
+      "yawOffset": 0.7049563224770501,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -511,8 +511,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_20/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "19",
-      "registrationConfidence": 0.9418088338396822,
+      "label": "19_compressed",
+      "registrationConfidence": 0.8925244262667575,
       "depth": {
         "cubemap": "sweeps/s_20/depth_{f}.raw.gz"
       }
@@ -520,11 +520,11 @@
     {
       "id": "s_21",
       "position": [
-        0.266330718330144,
-        4.240224582840534,
-        -23.505422923576777
+        0.5373598443064089,
+        4.413086924037975,
+        -24.951166463253834
       ],
-      "yawOffset": 0.5738923710362953,
+      "yawOffset": 0.5654979240621798,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -539,48 +539,20 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_21/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "20",
-      "registrationConfidence": 0.9413414349146997,
+      "label": "20_compressed",
+      "registrationConfidence": 0.979322881163372,
       "depth": {
         "cubemap": "sweeps/s_21/depth_{f}.raw.gz"
       }
     },
     {
-      "id": "s_22",
-      "position": [
-        -1.5334971059151072,
-        4.232758923963152,
-        -22.71748419778892
-      ],
-      "yawOffset": 1.5828012768644957,
-      "floor": 1,
-      "captureHeight": 1.5,
-      "pano": {
-        "type": "cubemap-tiles",
-        "levels": [
-          512,
-          1024,
-          2048,
-          3072
-        ],
-        "tileSize": 512,
-        "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_22/{level}_face{f}_{x}_{y}.jpg"
-      },
-      "label": "21",
-      "registrationConfidence": 1,
-      "depth": {
-        "cubemap": "sweeps/s_22/depth_{f}.raw.gz"
-      }
-    },
-    {
       "id": "s_23",
       "position": [
-        -2.5663567549870554,
-        4.235355928324686,
-        -22.758611090487104
+        -2.4166033366622486,
+        4.412540232748304,
+        -24.192983750500154
       ],
-      "yawOffset": 0.5138224644015548,
+      "yawOffset": 0.5046307558125966,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -595,8 +567,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_23/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "22",
-      "registrationConfidence": 0.9843421360130872,
+      "label": "22_compressed",
+      "registrationConfidence": 1,
       "depth": {
         "cubemap": "sweeps/s_23/depth_{f}.raw.gz"
       }
@@ -604,11 +576,11 @@
     {
       "id": "s_24",
       "position": [
-        -2.6662873561479516,
-        4.236952659361666,
-        -20.667484409943825
+        -2.5451888065066117,
+        4.411235365616527,
+        -22.02130080354079
       ],
-      "yawOffset": -0.2184676632753364,
+      "yawOffset": -0.2296962025708762,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -623,8 +595,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_24/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "23",
-      "registrationConfidence": 1,
+      "label": "23_compressed",
+      "registrationConfidence": 0.9325153374233128,
       "depth": {
         "cubemap": "sweeps/s_24/depth_{f}.raw.gz"
       }
@@ -632,11 +604,11 @@
     {
       "id": "s_25",
       "position": [
-        -2.6563968799879936,
-        4.2535675417830525,
-        -18.013242370080754
+        -2.559279762807948,
+        4.429783550520574,
+        -19.255623602391157
       ],
-      "yawOffset": -0.5727012644167675,
+      "yawOffset": -0.583462912664154,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -651,8 +623,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_25/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "24",
-      "registrationConfidence": 0.8829165692918907,
+      "label": "24_compressed",
+      "registrationConfidence": 0.8061804135423767,
       "depth": {
         "cubemap": "sweeps/s_25/depth_{f}.raw.gz"
       }
@@ -660,11 +632,11 @@
     {
       "id": "s_26",
       "position": [
-        -2.9090765033946733,
-        4.240985652273286,
-        -15.49013130338128
+        -2.860549152488438,
+        4.412989334968211,
+        -16.62135596964857
       ],
-      "yawOffset": -0.9808422312219602,
+      "yawOffset": -0.990910271924232,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -679,8 +651,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_26/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "25",
-      "registrationConfidence": 0.7660668380462725,
+      "label": "25_compressed",
+      "registrationConfidence": 0.7180186321290616,
       "depth": {
         "cubemap": "sweeps/s_26/depth_{f}.raw.gz"
       }
@@ -688,11 +660,11 @@
     {
       "id": "s_27",
       "position": [
-        -3.4105062877405166,
-        4.235973639573633,
-        -13.201973126563892
+        -3.436559627332094,
+        4.406237355009662,
+        -14.240485142452279
       ],
-      "yawOffset": -0.8338829742443763,
+      "yawOffset": -0.8433763007000161,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -707,8 +679,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_27/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "26",
-      "registrationConfidence": 0.579574666978266,
+      "label": "26_compressed",
+      "registrationConfidence": 0.5916837082481254,
       "depth": {
         "cubemap": "sweeps/s_27/depth_{f}.raw.gz"
       }
@@ -716,11 +688,11 @@
     {
       "id": "s_28",
       "position": [
-        -0.8832401018897992,
-        4.214632501363942,
-        -12.600491027875568
+        -0.7695923318646373,
+        4.39956723498406,
+        -13.532421831838995
       ],
-      "yawOffset": 1.2591951559786754,
+      "yawOffset": 1.2459113649437548,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -735,8 +707,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_28/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "27",
-      "registrationConfidence": 0.6978265949988315,
+      "label": "27_compressed",
+      "registrationConfidence": 0.6625766871165644,
       "depth": {
         "cubemap": "sweeps/s_28/depth_{f}.raw.gz"
       }
@@ -744,11 +716,11 @@
     {
       "id": "s_29",
       "position": [
-        -3.6660472478267927,
-        4.199416484573143,
-        -9.028097535576604
+        -3.8075097818513646,
+        4.358829947114702,
+        -9.65150603872709
       ],
-      "yawOffset": 2.0944784831583574,
+      "yawOffset": 2.0848236443795614,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -763,8 +735,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_29/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "28",
-      "registrationConfidence": 0.3902781023603646,
+      "label": "28_compressed",
+      "registrationConfidence": 0.3994546693933197,
       "depth": {
         "cubemap": "sweeps/s_29/depth_{f}.raw.gz"
       }
@@ -772,11 +744,11 @@
     {
       "id": "s_30",
       "position": [
-        -3.781950942505903,
-        4.151958785846906,
-        -6.026710066632631
+        -3.993588528786271,
+        4.340319683474535,
+        -6.4290681543141
       ],
-      "yawOffset": -2.3796279284119515,
+      "yawOffset": -2.3871309031428702,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -791,8 +763,8 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_30/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "29",
-      "registrationConfidence": 0.689413414349147,
+      "label": "29_compressed",
+      "registrationConfidence": 0.7034764826175869,
       "depth": {
         "cubemap": "sweeps/s_30/depth_{f}.raw.gz"
       }
@@ -800,11 +772,11 @@
     {
       "id": "s_31",
       "position": [
-        -4.462843549919333,
-        4.176115014642769,
-        -3.1532246554011283
+        -4.748333054417871,
+        4.365855150162029,
+        -3.3717775429853796
       ],
-      "yawOffset": -0.6725450266657074,
+      "yawOffset": -0.6790168804191117,
       "floor": 1,
       "captureHeight": 1.5,
       "pano": {
@@ -819,7 +791,7 @@
         "singleTileMaxLevel": 1024,
         "urlTemplate": "sweeps/s_31/{level}_face{f}_{x}_{y}.jpg"
       },
-      "label": "30",
+      "label": "30_compressed",
       "registrationConfidence": 1,
       "depth": {
         "cubemap": "sweeps/s_31/depth_{f}.raw.gz"
@@ -835,10 +807,6 @@
       [
         "s_01",
         "s_02"
-      ],
-      [
-        "s_02",
-        "s_10"
       ],
       [
         "s_02",
@@ -874,11 +842,11 @@
       ],
       [
         "s_07",
-        "s_09"
+        "s_30"
       ],
       [
         "s_07",
-        "s_30"
+        "s_09"
       ],
       [
         "s_09",
@@ -910,10 +878,6 @@
       ],
       [
         "s_13",
-        "s_28"
-      ],
-      [
-        "s_13",
         "s_14"
       ],
       [
@@ -938,7 +902,11 @@
       ],
       [
         "s_17",
-        "s_22"
+        "s_24"
+      ],
+      [
+        "s_17",
+        "s_23"
       ],
       [
         "s_17",
@@ -978,10 +946,6 @@
       ],
       [
         "s_20",
-        "s_22"
-      ],
-      [
-        "s_20",
         "s_21"
       ],
       [
@@ -990,18 +954,6 @@
       ],
       [
         "s_21",
-        "s_23"
-      ],
-      [
-        "s_21",
-        "s_22"
-      ],
-      [
-        "s_22",
-        "s_24"
-      ],
-      [
-        "s_22",
         "s_23"
       ],
       [
@@ -1023,10 +975,6 @@
       [
         "s_26",
         "s_27"
-      ],
-      [
-        "s_27",
-        "s_29"
       ],
       [
         "s_27",
@@ -1054,8 +1002,8 @@
         "chunks": [
           "mesh/model.glb.gz"
         ],
-        "tris": 570968,
-        "bytes": 49988182,
+        "tris": 570594,
+        "bytes": 48311588,
         "textured": true
       },
       {
@@ -1063,63 +1011,71 @@
         "chunks": [
           "mesh/model-preview.glb.gz"
         ],
-        "tris": 120324,
+        "tris": 122904,
         "textured": true,
         "preview": true,
-        "bytes": 4435208
+        "bytes": 4446962
       }
     ],
     "bounds": {
       "min": [
-        -8.411189079284668,
-        -1.7197856903076172,
-        -26.867960453033447
+        -9.079833984375,
+        -1.7074127197265625,
+        -29.273025512695312
       ],
       "max": [
-        7.283473968505859,
-        7.802112579345703,
-        6.251644134521484
+        7.9046478271484375,
+        8.242750644683838,
+        6.4425811767578125
       ]
     }
   },
   "hotspots": [
     {
-      "id": "img_mvtioulu",
+      "id": "img_mvxuopvl",
       "anchor": [
-        -2.0910079461024926,
-        2.318634021115589,
-        2.421816776302898
+        2.746903552666196,
+        0.9531676829536824,
+        3.9974378843732987
       ],
       "normal": [
-        0.6216382790679146,
-        0.7818341175037467,
-        0.04797147803246441
-      ],
-      "imageUrl": "custom/b6d7337e081448bc.png",
-      "widthM": 0.75,
-      "name": "Popup 1",
-      "title": "",
-      "html": "",
-      "targetSweep": "s_05"
-    },
-    {
-      "id": "img_mvtnpwz4",
-      "anchor": [
-        2.6584710820435156,
-        0.2501055804524803,
-        3.58768659931252
-      ],
-      "normal": [
-        -0.9864648717305766,
+        -0.9952462343179124,
         0,
-        -0.1639727320061994
+        -0.09739062108855764
       ],
       "imageUrl": "custom/b6d7337e081448bc.png",
       "widthM": 0.6,
-      "name": "Popup 2",
+      "name": "Popup 1",
       "title": "",
       "html": "",
       "targetSweep": "s_04"
+    },
+    {
+      "id": "img_mvxupyda",
+      "anchor": [
+        -2.228995260728553,
+        2.4091470027299264,
+        2.4452283063140774
+      ],
+      "normal": [
+        0.6177247494038819,
+        0.7855815722790821,
+        0.03574531115316646
+      ],
+      "imageUrl": "custom/b6d7337e081448bc.png",
+      "widthM": 1.05,
+      "name": "Popup 2",
+      "title": "",
+      "html": "",
+      "targetSweep": "s_05"
     }
-  ]
+  ],
+  "customization": {
+    "northYaw": -1.6406094968746696,
+    "music": {
+      "url": "custom/1cf150cab3a7248c.mp3",
+      "volume": 0.5,
+      "loop": true
+    }
+  }
 }
