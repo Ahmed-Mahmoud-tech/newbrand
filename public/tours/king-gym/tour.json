@@ -33,7 +33,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_01/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_01/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "0_compressed",
       "registrationConfidence": 0.22449443308339015,
@@ -61,7 +61,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_02/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_02/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "1_compressed",
       "registrationConfidence": 0.3721881390593047,
@@ -89,7 +89,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_04/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_04/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "3_compressed",
       "registrationConfidence": 0.26221313337877755,
@@ -117,7 +117,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_05/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_05/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "4_compressed",
       "registrationConfidence": 1,
@@ -145,7 +145,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_06/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_06/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "5_compressed",
       "registrationConfidence": 1,
@@ -173,7 +173,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_07/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_07/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "6_compressed",
       "registrationConfidence": 1,
@@ -201,7 +201,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_09/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_09/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "8_compressed",
       "registrationConfidence": 1,
@@ -229,7 +229,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_10/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_10/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "9_compressed",
       "registrationConfidence": 0.7798227675528289,
@@ -257,7 +257,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_11/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_11/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "10_compressed",
       "registrationConfidence": 0.8039082026812088,
@@ -285,7 +285,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_12/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_12/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "11_compressed",
       "registrationConfidence": 0.488525335151102,
@@ -313,7 +313,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_13/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_13/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "12_compressed",
       "registrationConfidence": 0.40036355373778687,
@@ -341,7 +341,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_14/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_14/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "13_compressed",
       "registrationConfidence": 0.6175869120654397,
@@ -369,7 +369,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_15/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_15/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "14_compressed",
       "registrationConfidence": 0.5612360827084754,
@@ -397,7 +397,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_16/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_16/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "15_compressed",
       "registrationConfidence": 0.6780277209725063,
@@ -425,7 +425,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_17/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_17/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "16_compressed",
       "registrationConfidence": 0.7848216314473984,
@@ -453,7 +453,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_18/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_18/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "17_compressed",
       "registrationConfidence": 0.7398318563962736,
@@ -481,7 +481,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_19/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_19/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "18_compressed",
       "registrationConfidence": 0.28402635764598955,
@@ -509,7 +509,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_20/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_20/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "19_compressed",
       "registrationConfidence": 0.8925244262667575,
@@ -537,7 +537,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_21/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_21/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "20_compressed",
       "registrationConfidence": 0.979322881163372,
@@ -565,7 +565,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_23/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_23/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "22_compressed",
       "registrationConfidence": 1,
@@ -593,7 +593,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_24/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_24/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "23_compressed",
       "registrationConfidence": 0.9325153374233128,
@@ -621,7 +621,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_25/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_25/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "24_compressed",
       "registrationConfidence": 0.8061804135423767,
@@ -649,7 +649,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_26/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_26/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "25_compressed",
       "registrationConfidence": 0.7180186321290616,
@@ -677,7 +677,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_27/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_27/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "26_compressed",
       "registrationConfidence": 0.5916837082481254,
@@ -705,7 +705,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_28/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_28/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "27_compressed",
       "registrationConfidence": 0.6625766871165644,
@@ -733,7 +733,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_29/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_29/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "28_compressed",
       "registrationConfidence": 0.3994546693933197,
@@ -761,7 +761,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_30/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_30/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "29_compressed",
       "registrationConfidence": 0.7034764826175869,
@@ -789,7 +789,7 @@
         ],
         "tileSize": 512,
         "singleTileMaxLevel": 1024,
-        "urlTemplate": "sweeps/s_31/{level}_face{f}_{x}_{y}.webp"
+        "urlTemplate": "sweeps/s_31/{level}_face{f}_{x}_{y}.jpg"
       },
       "label": "30_compressed",
       "registrationConfidence": 1,
@@ -1044,7 +1044,7 @@
         -0.09739062108855764
       ],
       "imageUrl": "custom/b6d7337e081448bc.png",
-      "widthM": 0.6,
+      "widthM": 1,
       "name": "Popup 1",
       "title": "",
       "html": "",
@@ -1071,6 +1071,7 @@
     }
   ],
   "customization": {
+    "nadirLink": "https://www.gateverse.net/",
     "northYaw": -1.6406094968746696,
     "music": {
       "url": "custom/1cf150cab3a7248c.mp3",
