@@ -22125,6 +22125,8 @@ var cT = .03, lT = new V(), uT = new V(), dT = new V(), fT = new U(), pT = class
 	soundOff: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 9.5h3.5L12 5.5v13l-4.5-4H4z\"/><path d=\"M16 9.5l5 5M21 9.5l-5 5\"/></svg>",
 	compass: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10.2\"/><g class=\"tf-dial\"><path class=\"tf-north\" d=\"M12 3.6 14.3 12H9.7z\"/><path class=\"tf-south\" d=\"M12 20.4 9.7 12h4.6z\"/><text x=\"12\" y=\"2.9\" font-size=\"3.6\" text-anchor=\"middle\" fill=\"currentColor\" stroke=\"none\" font-weight=\"700\">N</text></g></svg>",
 	places: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3.5\" y=\"4.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"13.5\" y=\"4.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"3.5\" y=\"13.5\" width=\"7\" height=\"6\" rx=\"1.2\"/><rect x=\"13.5\" y=\"13.5\" width=\"7\" height=\"6\" rx=\"1.2\"/></svg>",
+	enterFullscreen: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5\"/></svg>",
+	exitFullscreen: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M9 4v5H4M20 9h-5V4M15 20v-5h5M4 15h5v5\"/></svg>",
 	close: "<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M6 6l12 12M18 6 6 18\"/></svg>"
 }, hT = "tf-hud-style", gT = "\n.tf-overlay{position:absolute;inset:0;pointer-events:none;overflow:hidden;direction:ltr;text-align:left;font:500 14px/1.3 system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;z-index:2}\n.tf-hud-bar{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);display:flex;gap:6px;padding:6px;border-radius:999px;background:rgba(18,20,24,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(0,0,0,.35);pointer-events:auto}\n.tf-hud-bar:empty{display:none}\n.tf-hud-btn{display:inline-flex;align-items:center;gap:6px;height:38px;min-width:38px;padding:0 12px;border:0;border-radius:999px;background:transparent;color:#e9ecef;font:inherit;cursor:pointer;white-space:nowrap}\n.tf-hud-btn:hover{background:rgba(255,255,255,.1)}\n.tf-hud-btn.is-on{background:#fff;color:#111}\n.tf-hud-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}\n.tf-hud-compass{padding:0;width:38px;justify-content:center}\n.tf-hud-compass svg{width:30px;height:30px;stroke-width:1.4}\n.tf-hud-compass .tf-north{fill:#ff5a4f;stroke:none}\n.tf-hud-compass .tf-south{fill:currentColor;stroke:none;opacity:.55}\n.tf-hud-sep{width:1px;margin:6px 2px;background:rgba(255,255,255,.18)}\n.tf-hud-hint{position:absolute;left:50%;bottom:calc(max(16px,env(safe-area-inset-bottom)) + 58px);transform:translateX(-50%);padding:6px 12px;border-radius:999px;background:rgba(18,20,24,.72);color:#fff;font-size:13px;white-space:nowrap}\n.tf-measure-label{position:absolute;left:0;top:0;padding:4px 10px;border-radius:6px;background:#ffd23f;color:#111;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 2px 8px rgba(0,0,0,.35)}\n.tf-measure-label.is-preview{opacity:.85}\n.tf-popup{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(0,0,0,.45);pointer-events:auto}\n.tf-popup-card{position:relative;display:flex;flex-direction:column;width:min(560px,100%);max-height:min(80%,720px);border-radius:14px;background:#fff;color:#111;box-shadow:0 12px 40px rgba(0,0,0,.45);overflow:hidden}\n.tf-popup-head{display:flex;align-items:center;gap:8px;padding:12px 12px 12px 18px;border-bottom:1px solid #eee;font-weight:700;font-size:16px}\n.tf-popup-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-popup-close{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:0;border-radius:999px;background:#3a3a3a;color:#fff;cursor:pointer;padding:0}\n.tf-popup-close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}\n.tf-popup-card.is-sizing{opacity:0}\n.tf-popup-frame{display:block;flex:0 1 auto;width:100%;height:60vh;min-height:0;border:0;background:#fff}\n.tf-places-panel{position:fixed;top:0;right:0;bottom:0;width:min(330px,88%);display:flex;flex-direction:column;background:rgba(14,16,20,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#eef1f4;box-shadow:-8px 0 30px rgba(0,0,0,.35);transform:translateX(105%);transition:transform .25s ease;pointer-events:auto}\n.tf-places-panel.is-open{transform:none}\n.tf-places-head{display:flex;align-items:center;gap:8px;padding:14px 12px 10px 16px;font-weight:700;font-size:15px}\n.tf-places-head span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-places-head small{font-weight:600;font-size:12px;padding:1px 8px;border-radius:999px;background:rgba(255,255,255,.1)}\n.tf-places-grid{flex:1;overflow-y:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;gap:8px;padding:4px 12px 16px}\n.tf-place{display:flex;flex-direction:column;gap:5px;padding:4px 4px 6px;border:1px solid rgba(255,255,255,.1);border-radius:10px;background:rgba(255,255,255,.05);color:inherit;font:inherit;text-align:left;cursor:pointer}\n.tf-place:hover{border-color:rgba(47,212,184,.55);background:rgba(47,212,184,.1)}\n.tf-place.is-on{border-color:#2fd4b8;box-shadow:0 0 0 1px #2fd4b8}\n.tf-place-thumb{position:relative;display:block;aspect-ratio:16/10;border-radius:7px;overflow:hidden;background:rgba(255,255,255,.07)}\n.tf-place-thumb img{width:100%;height:100%;object-fit:cover;display:block;transform:scaleX(-1)}\n.tf-place-no{position:absolute;top:4px;left:4px;padding:1px 6px;border-radius:999px;background:rgba(0,0,0,.62);color:#fff;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums}\n.tf-place.is-on .tf-place-no{background:#2fd4b8;color:#062a24}\n.tf-place-name{padding:0 2px;font-size:11.5px;line-height:1.3;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}\n.tf-loading{position:absolute;left:50%;top:50%;width:30px;height:30px;margin:-15px 0 0 -15px;display:none;pointer-events:none;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}\n.tf-loading.is-on{display:block;animation:tf-fade .25s ease-out}\n.tf-loading::after{content:\"\";position:absolute;inset:0;border-radius:50%;border:2.5px solid rgba(255,255,255,.3);border-top-color:#fff;animation:tf-spin .75s linear infinite}\n@keyframes tf-spin{to{transform:rotate(360deg)}}\n@keyframes tf-fade{from{opacity:0}}\n@media (max-width:520px){.tf-hud-btn .tf-hud-text{display:none}.tf-places-panel{width:100%}}\n";
 function _T(e, t, n) {
@@ -22171,12 +22173,14 @@ var yT = class {
 	placeButtons = /* @__PURE__ */ new Map();
 	currentPlace = null;
 	thumbsLoaded = !1;
+	fullscreenBtn;
+	offFullscreen;
 	constructor(e, t, n) {
 		if (this.el = e, this.opts = t, this.actions = n, !document.getElementById(hT)) {
 			let e = document.createElement("style");
 			e.id = hT, e.textContent = gT, document.head.appendChild(e);
 		}
-		getComputedStyle(e).position === "static" && (e.style.position = "relative"), this.overlay = document.createElement("div"), this.overlay.className = "tf-overlay", e.appendChild(this.overlay), this.loading = document.createElement("div"), this.loading.className = "tf-loading", this.loading.setAttribute("role", "status"), this.loading.setAttribute("aria-label", "Loading"), this.overlay.appendChild(this.loading), this.bar = document.createElement("div"), this.bar.className = "tf-hud-bar", this.insideBtn = _T(mT.inside, "Inside", "Inside view"), this.dollBtn = _T(mT.dollhouse, "Dollhouse", "Dollhouse view"), this.sep = document.createElement("div"), this.sep.className = "tf-hud-sep", this.measureBtn = _T(mT.measure, "Measure", "Measure a distance"), this.musicBtn = _T(mT.soundOn, "", "Mute music"), this.insideBtn.onclick = () => this.actions.setMode("inside"), this.dollBtn.onclick = () => this.actions.setMode("dollhouse"), this.measureBtn.onclick = () => this.actions.setMeasuring(!this.measuring), this.musicBtn.onclick = () => this.toggleMute(), this.compassBtn = _T(mT.compass, "", "Face north"), this.compassBtn.classList.add("tf-hud-compass"), this.compassBtn.onclick = () => this.actions.faceNorth(), this.dial = this.compassBtn.querySelector(".tf-dial"), this.placesBtn = _T(mT.places, "Locations", "Show all locations"), this.placesBtn.onclick = () => this.togglePlaces(), this.placesPanel = document.createElement("div"), this.placesPanel.className = "tf-places-panel", this.placesPanel.setAttribute("role", "dialog"), this.placesPanel.setAttribute("aria-label", "Locations");
+		getComputedStyle(e).position === "static" && (e.style.position = "relative"), this.overlay = document.createElement("div"), this.overlay.className = "tf-overlay", e.appendChild(this.overlay), this.loading = document.createElement("div"), this.loading.className = "tf-loading", this.loading.setAttribute("role", "status"), this.loading.setAttribute("aria-label", "Loading"), this.overlay.appendChild(this.loading), this.bar = document.createElement("div"), this.bar.className = "tf-hud-bar", this.insideBtn = _T(mT.inside, "Inside", "Inside view"), this.dollBtn = _T(mT.dollhouse, "Dollhouse", "Dollhouse view"), this.sep = document.createElement("div"), this.sep.className = "tf-hud-sep", this.measureBtn = _T(mT.measure, "Measure", "Measure a distance"), this.musicBtn = _T(mT.soundOn, "", "Mute music"), this.insideBtn.onclick = () => this.actions.setMode("inside"), this.dollBtn.onclick = () => this.actions.setMode("dollhouse"), this.measureBtn.onclick = () => this.actions.setMeasuring(!this.measuring), this.musicBtn.onclick = () => this.toggleMute(), this.compassBtn = _T(mT.compass, "", "Face north"), this.compassBtn.classList.add("tf-hud-compass"), this.compassBtn.onclick = () => this.actions.faceNorth(), this.dial = this.compassBtn.querySelector(".tf-dial"), this.placesBtn = _T(mT.places, "Locations", "Show all locations"), this.placesBtn.onclick = () => this.togglePlaces(), this.fullscreenBtn = _T(mT.enterFullscreen, "", "Full screen"), this.fullscreenBtn.onclick = () => this.toggleFullscreen(), this.placesPanel = document.createElement("div"), this.placesPanel.className = "tf-places-panel", this.placesPanel.setAttribute("role", "dialog"), this.placesPanel.setAttribute("aria-label", "Locations");
 		let r = document.createElement("div");
 		r.className = "tf-places-head", this.placesTitle = document.createElement("span"), this.placesTitle.textContent = "Locations", this.placesTitle.dir = "auto", this.placesCount = document.createElement("small");
 		let i = document.createElement("button");
@@ -22185,6 +22189,10 @@ var yT = class {
 			e.key === "Escape" && (this.popup ? this.closePopup() : this.placesPanel.classList.contains("is-open") ? this.togglePlaces(!1) : this.measuring && this.actions.setMeasuring(!1));
 		};
 		document.addEventListener("keydown", a), this.offKey = () => document.removeEventListener("keydown", a);
+		let o = () => this.syncFullscreen();
+		document.addEventListener("fullscreenchange", o), document.addEventListener("webkitfullscreenchange", o), this.offFullscreen = () => {
+			document.removeEventListener("fullscreenchange", o), document.removeEventListener("webkitfullscreenchange", o);
+		};
 	}
 	setCapabilities(e) {
 		this.caps = e, this.layout();
@@ -22290,10 +22298,34 @@ var yT = class {
 		e && this.currentPlace && this.placeButtons.get(this.currentPlace)?.scrollIntoView({ block: "nearest" });
 	}
 	dispose() {
-		this.stopMusic(), this.closePopup(), this.offKey(), this.overlay.remove();
+		this.stopMusic(), this.closePopup(), this.offKey(), this.offFullscreen(), this.fullscreenElement() === this.el && this.exitFullscreen(), this.overlay.remove();
 	}
 	toggleMute() {
 		this.muted = !this.muted, this.audio && (this.audio.muted = this.muted, !this.muted && this.audio.paused && this.audio.play().catch(() => void 0)), this.musicBtn.innerHTML = this.muted ? mT.soundOff : mT.soundOn, this.musicBtn.title = this.muted ? "Play music" : "Mute music", this.musicBtn.setAttribute("aria-label", this.musicBtn.title), this.musicBtn.classList.toggle("is-muted", this.muted);
+	}
+	fullscreenElement() {
+		let e = document;
+		return document.fullscreenElement ?? e.webkitFullscreenElement ?? null;
+	}
+	fullscreenSupported() {
+		let e = document;
+		return !!(document.fullscreenEnabled || e.webkitFullscreenEnabled);
+	}
+	exitFullscreen() {
+		let e = document;
+		return document.exitFullscreen ? document.exitFullscreen().catch(() => void 0) : (e.webkitExitFullscreen?.(), Promise.resolve());
+	}
+	toggleFullscreen() {
+		if (this.fullscreenElement()) {
+			this.exitFullscreen();
+			return;
+		}
+		let e = this.el;
+		e.requestFullscreen ? e.requestFullscreen().catch(() => void 0) : e.webkitRequestFullscreen?.();
+	}
+	syncFullscreen() {
+		let e = this.fullscreenElement() === this.el;
+		this.fullscreenBtn.innerHTML = e ? mT.exitFullscreen : mT.enterFullscreen, this.fullscreenBtn.title = e ? "Exit full screen" : "Full screen", this.fullscreenBtn.setAttribute("aria-label", this.fullscreenBtn.title);
 	}
 	stopMusic() {
 		this.clearUnlock(), this.audio &&= (this.audio.pause(), this.audio.removeAttribute("src"), this.audio.load(), null);
@@ -22304,7 +22336,7 @@ var yT = class {
 	layout() {
 		if (!this.opts) return;
 		let e = this.opts.modes !== !1 && this.caps.dollhouse, t = this.opts.measure !== !1 && this.caps.measure, n = this.opts.music !== !1 && this.audio !== null, r = [];
-		this.opts.compass !== !1 && r.push(this.compassBtn), this.opts.places !== !1 && this.places.length > 1 && r.push(this.placesBtn), e && r.push(this.insideBtn, this.dollBtn), t && r.push(this.measureBtn), n && (r.length && r.push(this.sep), r.push(this.musicBtn)), this.bar.replaceChildren(...r);
+		this.opts.compass !== !1 && r.push(this.compassBtn), this.opts.places !== !1 && this.places.length > 1 && r.push(this.placesBtn), e && r.push(this.insideBtn, this.dollBtn), t && r.push(this.measureBtn), n && (r.length && r.push(this.sep), r.push(this.musicBtn)), this.opts.fullscreen !== !1 && this.fullscreenSupported() && (r.length && !n && r.push(this.sep), r.push(this.fullscreenBtn)), this.bar.replaceChildren(...r);
 	}
 };
 //#endregion
