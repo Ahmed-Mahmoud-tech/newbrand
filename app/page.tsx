@@ -4,18 +4,15 @@ import Link from 'next/link'
 
 import { SAME_AS, SITE_URL, TELEPHONE, WHATSAPP_URL } from '@/lib/site'
 import logo from '@/public/images/logo-sm.png'
+import { ADDONS, HOSTING_MONTHLY, PACKAGES, PORTFOLIO, SECTORS } from '@/lib/packages'
 import NavToggle from './components/NavToggle'
-import PriceCalculator from './components/PriceCalculator'
+import Packages from './components/Packages'
+import Portfolio from './components/Portfolio'
 import SocialLinks from './components/SocialLinks'
 
 export const metadata: Metadata = {
     alternates: { canonical: '/' },
 }
-
-/* ─── Virtual tours ─── */
-const TOURS = [
-    { id: 'f959X55n2Jf', title: 'شقة سكنية — سموحة', subtitle: '140 م² · سكني' },
-]
 
 /* ─── JSON-LD schemas ───────────────────────────────────────────────────── */
 const localBusinessSchema = {
@@ -25,14 +22,14 @@ const localBusinessSchema = {
     name: 'GateVerse للجولات الافتراضية',
     alternateName: 'GateVerse Virtual Tours',
     description:
-        'GateVerse تُنتج جولات افتراضية ثلاثية الأبعاد تُمكّن المشترين والمستأجرين من معاينة كل زاوية، قياس المساحات، واستكشاف التفاصيل التقنية — كلها من الموبايل قبل الزيارة الفعلية.',
+        'GateVerse تُنتج جولات افتراضية ثلاثية الأبعاد للعقارات، قاعات المناسبات، الكافيهات والمطاعم، الجيم، الفنادق، السبا، الكيدز إيريا ومساحات العمل — عميلك يعاين كل زاوية من الموبايل قبل الزيارة الفعلية.',
     url: SITE_URL,
     image: `${SITE_URL}/opengraph-image.png`,
     logo: `${SITE_URL}/images/icon-512.png`,
     parentOrganization: { '@id': `${SITE_URL}/#organization` },
     telephone: TELEPHONE,
     email: 'contact@gateverse.net',
-    priceRange: '750–44000 EGP',
+    priceRange: `${PACKAGES[0].price}–${PACKAGES[PACKAGES.length - 1].price} EGP`,
     currenciesAccepted: 'EGP, USD',
     paymentAccepted: 'Cash, Bank Transfer, InstaPay',
     address: {
@@ -58,46 +55,28 @@ const localBusinessSchema = {
         '@type': 'OfferCatalog',
         name: 'Virtual Tour Services',
         itemListElement: [
+            ...PACKAGES.map((p) => ({
+                '@type': 'Offer',
+                name: `${p.name} — جولة افتراضية 3D حتى ${p.upTo} م²`,
+                price: String(p.price),
+                priceCurrency: 'EGP',
+                description: `جولة 3D كاملة 360° لمكان حتى ${p.upTo} م² مع رابط مشاركة وكود تضمين${p.photos ? ` و${p.photos} صورة احترافية` : ''}، واستضافة مجانية ${p.hostingMonths} ${p.hostingMonths === 1 ? 'شهر' : 'شهور'} ثم ${HOSTING_MONTHLY} ج.م شهريًا.`,
+                availability: 'https://schema.org/InStock',
+            })),
             {
                 '@type': 'Offer',
-                name: 'خدمة جولة افتراضية 3D',
-                priceSpecification: [
-                    {
-                        '@type': 'UnitPriceSpecification',
-                        name: 'تصوير عقار (رسوم لمرة واحدة)',
-                        price: '20',
-                        priceCurrency: 'EGP',
-                        unitText: 'م² لأول 130 م²، ثم 15 ج.م حتى 200 م² و12 ج.م بعدها (حد أدنى 1000 ج.م)',
-                    },
-                    {
-                        '@type': 'UnitPriceSpecification',
-                        name: 'استضافة عقار شهرية',
-                        price: '100',
-                        priceCurrency: 'EGP',
-                        billingDuration: 'P1M',
-                        unitText: 'للجولة',
-                    },
-                    {
-                        '@type': 'UnitPriceSpecification',
-                        name: 'تصوير مكان تجاري (رسوم لمرة واحدة)',
-                        price: '20',
-                        priceCurrency: 'EGP',
-                        unitText: 'م² لأول 150 م²، ثم 10 ج.م حتى 400 م² و6 ج.م بعدها، مع سنة استضافة (حد أدنى 1000 ج.م)',
-                    },
-                    {
-                        '@type': 'UnitPriceSpecification',
-                        name: 'تصوير مطبخ',
-                        price: '750',
-                        priceCurrency: 'EGP',
-                        unitText: 'للمطبخ',
-                    },
-                ],
-                description: 'إنتاج واستضافة جولة تفاعلية كاملة مع رابط دائم وكود تضمين.',
-                availability: 'https://schema.org/InStock',
+                name: 'استضافة الجولة الشهرية',
+                priceSpecification: {
+                    '@type': 'UnitPriceSpecification',
+                    price: String(HOSTING_MONTHLY),
+                    priceCurrency: 'EGP',
+                    billingDuration: 'P1M',
+                    unitText: 'للجولة',
+                },
             },
         ],
     },
-    knowsAbout: ['3D Virtual Tours', 'Real Estate Photography', 'Virtual Reality', 'Digital Twin', 'Immersive Tours'],
+    knowsAbout: ['3D Virtual Tours', 'Real Estate Photography', 'Event Venues', 'Restaurants', 'Gyms', 'Hotels', 'Virtual Reality', 'Digital Twin', 'Immersive Tours'],
     sameAs: SAME_AS,
 }
 
@@ -113,12 +92,20 @@ const faqSchema = {
         //         text: 'تبدأ تكلفة الاستضافة والخدمة من $30 شهريًا (أو ما يعادلها بالجنيه المصري عبر InstaPay/تحويل بنكي) لأي عقار بغض النظر عن مساحته، مع خصم خاص عند الاشتراك السنوي ($300/سنوياً).',
         //     },
         // },
+        // {
+        //     '@type': 'Question',
+        //     name: 'ما هي تكلفة الجولة الافتراضية مع GateVerse؟',
+        //     acceptedAnswer: {
+        //         '@type': 'Answer',
+        //         text: `السعر بالباقة حسب مساحة المكان: ${PACKAGES.map((p) => `حتى ${p.upTo} م² بـ ${p.price.toLocaleString('en-US')} ج.م`).join('، ')}. كل باقة فيها استضافة مجانية من شهر لـ 4 شهور، وبعدها ${HOSTING_MONTHLY} ج.م شهريًا. الأماكن الأكبر من 450 م² ليها سعر خاص. وفيه خدمات إضافية: ${ADDONS.map((a) => `${a.name} (${a.price})`).join('، ')}.`,
+        //     },
+        // },
         {
             '@type': 'Question',
-            name: 'ما هي تكلفة الجولة الافتراضية مع GateVerse؟',
+            name: 'هل الجولات الافتراضية للعقارات بس؟',
             acceptedAnswer: {
                 '@type': 'Answer',
-                text: 'السعر حسب مجالك وسعر المتر بيقل كل ما المساحة تكبر. العقارات: 20 ج.م للمتر لأول 130 م² ثم 15 ج.م حتى 200 م² و12 ج.م بعدها (حد أدنى 1,000 ج.م) + استضافة 100 ج.م شهرياً للجولة أو 500 ج.م لـ 10 جولات، مثال: شقة 150 م² = 2,900 ج.م. الأماكن التجارية (قاعات، جيم، سبا، معارض، كافيهات): 20 ج.م للمتر لأول 150 م² ثم 10 ج.م حتى 400 م² و6 ج.م بعدها، وأول سنة استضافة مجاناً. الفنادق تبدأ من 5,000 ج.م، والمطابخ 750 ج.م للمطبخ، واستضافتها في السنة 250 ج.م للجولة أو 500 لـ 10 جولات أو 1,200 لـ 30 جولة.',
+                text: 'لا، بنصوّر أي مكان العميل محتاج يشوفه قبل ما ييجي: شقق وفيلل، قاعات مناسبات، كافيهات ومطاعم، جيم، فنادق، سبا، كيدز إيريا ومساحات عمل. ونقدر نضيف نقاط تفاعلية جوه الجولة للمنيو أو الأسعار أو تفاصيل الأجهزة.',
             },
         },
         {
@@ -151,21 +138,21 @@ const faqSchema = {
 const howToSchema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
-    name: 'خطوات حجز وإنشاء جولة افتراضية لعقارك',
-    description: 'حوّل أي عقار إلى تجربة حضور رقمي ثلاثية الأبعاد: معاينة كاملة من أي مكان، قياسات تفاعلية، ورابط دائم للمشاركة.',
+    name: 'خطوات حجز وإنشاء جولة افتراضية لمكانك',
+    description: 'حوّل أي عقار أو مكان تجاري إلى تجربة حضور رقمي ثلاثية الأبعاد: معاينة كاملة من أي مكان، قياسات تفاعلية، ورابط دائم للمشاركة.',
     totalTime: 'P2D',
     step: [
         {
             '@type': 'HowToStep',
             position: 1,
             name: 'الحجز والتقييم الأول',
-            text: 'تواصل معنا عبر واتساب وزودنا بتفاصيل موقع العقار ومساحته التقريبية لتحديد الموعد المناسب.',
+            text: 'تواصل معنا عبر واتساب وزودنا بنوع المكان وموقعه ومساحته التقريبية لاختيار الباقة وتحديد الموعد المناسب.',
         },
         {
             '@type': 'HowToStep',
             position: 2,
             name: 'جلسة التصوير والمسح الميداني',
-            text: 'يقوم فريقنا بزيارة العقار وإجراء المسح الضوئي الكامل للمساحة، وتستغرق الزيارة من 1 إلى 2 ساعة.',
+            text: 'يقوم فريقنا بزيارة المكان وإجراء المسح الضوئي الكامل للمساحة، وتستغرق الزيارة من 1 إلى 2 ساعة.',
         },
         {
             '@type': 'HowToStep',
@@ -177,7 +164,7 @@ const howToSchema = {
             '@type': 'HowToStep',
             position: 4,
             name: 'استلام الرابط والتضمين',
-            text: 'تستلم رابطًا تفاعلياً دائماً مع كود Embed جاهز للمشاركة والنشر على وسائل التواصل والمواقع العقارية.',
+            text: 'تستلم رابطًا تفاعلياً دائماً مع كود Embed جاهز للمشاركة والنشر على وسائل التواصل وجوجل ماب وموقعك.',
         },
     ],
 }
@@ -203,8 +190,9 @@ export default function HomePage() {
                     </div>
                     <div className="nav-links" role="list">
                         <a href="#benefits" role="listitem">لماذا GateVerse؟</a>
+                        <a href="#sectors" role="listitem">المجالات</a>
                         <a href="#portfolio" role="listitem">أعمالنا</a>
-                        <a href="#pricing" role="listitem">الأسعار</a>
+                        <a href="#pricing" role="listitem">الباقات</a>
                         <a href="#process" role="listitem">كيف نعمل؟</a>
                         <a href="#faq" role="listitem">الأسئلة الشائعة</a>
                     </div>
@@ -221,14 +209,14 @@ export default function HomePage() {
                             <div>
                                 <div className="eyebrow">جولات افتراضية ثلاثية الأبعاد — </div>
                                 <h1 id="hero-heading">
-                                    اعرض عقارك بتقنية 3D.. <span>ودّع المعاينات غير الجادة</span>
+                                    اعرض مكانك بتقنية 3D.. <span>وخلّي عميلك يدخله قبل ما ييجي</span>
                                 </h1>
                                 <p className="lead">
-                                    GateVerse تحوّل الشقق، الفيلل، والمقارات التجارية إلى جولات تفاعلية واقعية بتقنية 3D.
-                                    اسمح لعميلك بمعاينة كل زاوية وقياس المساحات من موبايله قبل الزيارة الفعلية.
+                                    GateVerse تحوّل الشقق والفيلل، قاعات المناسبات، الكافيهات والمطاعم، الجيم، الفنادق والسبا لجولات تفاعلية واقعية.
+                                    عميلك يتجوّل في كل زاوية من موبايله قبل ما يحجز أو يشتري.
                                 </p>
                                 <div className="btn-row">
-                                    <a href="#pricing" className="btn btn-primary">ابدأ الآن</a>
+                                    <a href="#pricing" className="btn btn-primary">شوف الباقات</a>
                                     <a href="#portfolio" className="btn btn-ghost">استعرض نماذج حية</a>
                                 </div>
                                 <div className="hero-stats">
@@ -271,15 +259,15 @@ export default function HomePage() {
                     <div className="wrap">
                         <div className="section-head">
                             <div className="eyebrow">لماذا الجولات الافتراضية؟</div>
-                            <h2 id="benefits-heading">تجربة اقرب ما يكون للواقع تسرّع قرار الشراء</h2>
+                            <h2 id="benefits-heading">تجربة أقرب ما يكون للواقع تسرّع قرار الحجز والشراء</h2>
                             {/* <p>العميل ينفق وقتاً أطول بـ 3 أضعاف في استكشاف العقار عبر الجولة الـ 3D مقارنة بالصور التقليدية.</p> */}
                         </div>
                         <div className="benefits-grid">
                             {[
                                 {
                                     n: '٠١',
-                                    h: 'فلترة المعاينات وترشيد الوقت',
-                                    p: 'يتعرف العميل على كافة التفاصيل والتقسيمات مسبقاً، مما يجعل المعاينة الميدانية مقتصرة على المشترين الجادين فقط.',
+                                    h: 'عملاء جادين ووقت أقل',
+                                    p: 'العميل بيعرف المكان وتفاصيله قبل ما ييجي، فاللي بيتصل أو بيزور بيكون جاهز يحجز أو يشتري، مش جاي يتفرّج.',
                                 },
                                 {
                                     n: '٠٢',
@@ -289,7 +277,7 @@ export default function HomePage() {
                                 {
                                     n: '٠٣',
                                     h: 'إضافة نقاط اهتمام تفاعلية',
-                                    p: 'تضمين تفاصيل الماتريال والماركات: تقدر تحط "نقطة تفاعلية" داخل الجولة؛ لما العميل يضغط عليها يظهرله: نوع الرخام، ماركة أجهزة المطبخ، نوع التكييفات، أو فيديو تشغيلي للأنظمة الذكية',
+                                    p: 'تقدر تحط "نقطة تفاعلية" جوه الجولة؛ لما العميل يضغط عليها يظهرله: المنيو، أسعار الاشتراك، نوع الرخام، ماركة الأجهزة، أو فيديو تعريفي.',
                                 },
                             ].map((b) => (
                                 <article key={b.n} className="benefit-card bracketed">
@@ -304,26 +292,20 @@ export default function HomePage() {
 
                 <div className="wrap"><div className="divider" /></div>
 
-                {/* ── PORTFOLIO ── */}
-                <section id="portfolio" aria-labelledby="portfolio-heading">
+                {/* ── SECTORS ── */}
+                <section id="sectors" aria-labelledby="sectors-heading">
                     <div className="wrap">
                         <div className="section-head">
-                            <div className="eyebrow">مكانك بين اديك</div>
-                            <h2 id="portfolio-heading">استكشف التفاعل والتحرك داخل المساحات بنفسك</h2>
-                            {/* <p>استكشف التفاعل والتحرك داخل المساحات بنفسك.</p> */}
+                            <div className="eyebrow">مش عقارات بس</div>
+                            <h2 id="sectors-heading">أي مكان عميلك محتاج يشوفه قبل ما ييجي</h2>
+                            <p>من الشقة لقاعة الأفراح، ومن الكافيه للفندق: الجولة بتبيع المكان وهو مقفول.</p>
                         </div>
-                        <div>
-                            {TOURS.map((tour) => (
-                                <article key={tour.id} className="tour-card bracketed hideLogo">
-                                    <div className="iframe-wrap">
-                                        <iframe
-                                            src={`https://my.matterport.com/show?play=1&lang=ar&m=${tour.id}`}
-                                            allow="xr-spatial-tracking; gyroscope; accelerometer; magnetometer; fullscreen; encrypted-media; picture-in-picture"
-                                            allowFullScreen
-                                            loading="lazy"
-                                            title={`جولة افتراضية — ${tour.title}`}
-                                        />
-                                    </div>
+                        <div className="sectors-grid">
+                            {SECTORS.map((s) => (
+                                <article key={s.name} className="sector-card bracketed">
+                                    <span className="sector-icon" aria-hidden="true">{s.icon}</span>
+                                    <h3>{s.name}</h3>
+                                    <p>{s.p}</p>
                                 </article>
                             ))}
                         </div>
@@ -332,17 +314,31 @@ export default function HomePage() {
 
                 <div className="wrap"><div className="divider" /></div>
 
-                {/* ── PRICING CALCULATOR ── */}
+                {/* ── PORTFOLIO ── */}
+                <section id="portfolio" aria-labelledby="portfolio-heading" style={{ zIndex: 100, background: '#0b1622' }}>
+                    <div className="wrap">
+                        <div className="section-head">
+                            <div className="eyebrow">مكانك بين اديك</div>
+                            <h2 id="portfolio-heading">من شغلنا: ادخل الجولة بنفسك</h2>
+                            <p>{PORTFOLIO.length} أماكن صورناها: اتفرّج على الفيديوهات، أو ادخل الجولة 3D واتحرك جوه المكان.</p>
+                        </div>
+                        <Portfolio />
+                    </div>
+                </section>
+
+                <div className="wrap"><div className="divider" /></div>
+
+                {/* ── PACKAGES ── */}
                 <section id="pricing" aria-labelledby="pricing-heading">
                     <div className="wrap">
                         <div className="section-head">
-                            <div className="eyebrow">احسب سعرك</div>
-                            <h2 id="pricing-heading">تسعير واضح، بدون مفاجآت</h2>
+                            <div className="eyebrow">الباقات</div>
+                            <h2 id="pricing-heading">باقة على قد مساحتك، بدون مفاجآت</h2>
                             <p>
-                                اختار مجالك: <strong>سعر المتر بيقل كل ما المساحة تكبر</strong> · الأماكن التجارية والفنادق معاها <strong>سنة استضافة مجاناً</strong> · المطابخ <strong>750 ج.م</strong> للمطبخ.
+                                السعر حسب مساحة المكان، وكل باقة فيها <strong>استضافة مجانية</strong>. ضيف اللي محتاجه من الخدمات الإضافية.
                             </p>
                         </div>
-                        <PriceCalculator />
+                        <Packages />
                     </div>
                 </section>
 
@@ -357,7 +353,7 @@ export default function HomePage() {
                         </div>
                         <div className="process-list">
                             {[
-                                { n: '01', h: 'تحديد الموعد', p: 'تواصل معنا عبر واتساب و زودنا بموقع ومساحة العقار لتأكيد الموعد.' },
+                                { n: '01', h: 'اختيار الباقة والموعد', p: 'تواصل معنا عبر واتساب وقولنا نوع المكان وموقعه ومساحته لتأكيد الباقة والموعد.' },
                                 { n: '02', h: 'التصوير الميداني', p: 'يقوم المهندس المختص بمسح المكان كاملاً  (ساعة إلى ساعتين).' },
                                 { n: '03', h: 'المعالجة والرندر', p: 'نبدأ في ضبط الإضاءة، الأبعاد، ومعالجة النموذج ثلاثي الأبعاد.' },
                                 { n: '04', h: 'استلام الجولة', p: 'تستلم رابط الجولة التفاعلي وكود التضمين جاهزاً للاستخدام خلال 48 ساعة.' },
@@ -398,7 +394,7 @@ export default function HomePage() {
                 <div className="wrap footer-row">
                     <div className="footer-brand">
                         <Image src={logo} alt="GateVerse" width={90} />
-                        <p>جولات افتراضية ثلاثية الأبعاد للعقارات — معاينة كاملة وقياسات تفاعلية من الموبايل.</p>
+                        <p>جولات افتراضية ثلاثية الأبعاد للعقارات والقاعات والكافيهات والجيم والفنادق — معاينة كاملة من الموبايل.</p>
                     </div>
                     <div className="footer-social">
                         <span className="field-label">تابعنا</span>

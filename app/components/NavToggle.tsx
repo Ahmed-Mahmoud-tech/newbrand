@@ -3,8 +3,9 @@ import { useState } from 'react'
 
 const NAV_LINKS = [
   { href: '#benefits', label: 'ليه إحنا' },
+  { href: '#sectors', label: 'المجالات' },
   { href: '#portfolio', label: 'شغلنا' },
-  { href: '#pricing', label: 'الأسعار' },
+  { href: '#pricing', label: 'الباقات' },
   { href: '#process', label: 'إزاي بنشتغل' },
   { href: '#faq', label: 'الأسئلة الشائعة' },
 ]
