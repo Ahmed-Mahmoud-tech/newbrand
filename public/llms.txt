@@ -1,43 +1,54 @@
 # GateVerse
 
-> GateVerse (جيت فيرس) is a professional 3D virtual tour service in Egypt, based in Alexandria. It scans apartments, villas and commercial spaces with professional 3D cameras and delivers an interactive tour, with room measurements, on a permanent shareable link within 48 hours of the shoot. Works on any phone, tablet or computer with no app.
+> GateVerse (جيت فيرس) is a 3D virtual tour studio in Alexandria, Egypt. It scans real places with professional 3D cameras and delivers an interactive tour (a "digital twin") with in-tour measurements on a shareable link plus an embed code, within 48 hours of the shoot. Tours open in any browser on phone, tablet or computer, with no app. Prices are fixed packages by area, starting at 950 EGP.
 
-GateVerse helps real estate agents, owners, developers and commercial landlords filter out non-serious viewings: buyers and renters walk through every room and measure spaces from their phone before visiting in person. The website is in Arabic (primary); service is available in Arabic and English.
+GateVerse is not only for real estate. It shoots any place a customer needs to see before they come: apartments, villas and duplexes; event and wedding venues; cafés and restaurants; gyms; hotels; spas; kids areas; and coworking / work spaces. Visitors walk through every room from their phone before they book, buy, rent or visit, so the people who call or come are ready to decide. The website is in Arabic (Egyptian); service is available in Arabic and English.
 
-## Pricing (Egyptian pounds)
+## Packages and prices (Egyptian pounds, EGP)
 
-Prices depend on the type of place, and the rate per m² falls as the area grows (each band of m² at its own rate):
+Every package includes a full 360° 3D tour of the place, a direct share link and an embed code for any website. The price depends on the area of the place:
 
-- Real estate (apartments, villas): 20 EGP/m² up to 130 m², 15 EGP/m² from 131 to 200 m², 12 EGP/m² above 200 m²; minimum 1,000 EGP. Hosting 100 EGP per month per tour, or 500 EGP per month for 10 tours (10% off when paid yearly); the subscription moves to a new unit when one is sold or rented. Example: a 150 m² apartment costs 2,900 EGP shooting + 100 EGP per month.
-- Commercial (wedding halls, gyms, spas, furniture showrooms, shops, kids areas, restaurants, cafés): 20 EGP/m² up to 150 m², 10 EGP/m² from 151 to 400 m², 6 EGP/m² above 400 m²; minimum 1,000 EGP. The first year of hosting is included; renewal 1,200 EGP per year. Example: an 800 m² hall costs 7,900 EGP.
-- Hotels: 13 EGP/m² up to 1,000 m², 8 EGP/m² up to 3,000 m², 5 EGP/m² above (area = the spaces shot); minimum 5,000 EGP; first year of hosting included, then 10% of the shoot per year.
-- Kitchens: 750 EGP per kitchen, 15% off each extra kitchen shot the same day; hosting per year: 250 EGP for one tour, 500 EGP for 10 tours, 1,200 EGP for 30 tours.
-- Payment: cash, bank transfer, InstaPay
+| Package | Area up to | Price | Typical places | Free hosting | Info points inside the tour | Priority delivery |
+|---|---|---|---|---|---|---|
+| Starter (باقة البداية) | 100 m² | 950 EGP | studio, small apartment, café or shop | 1 month | no | no |
+| Bronze (الباقة البرونزية) | 150 m² | 1,950 EGP | apartment, clinic, spa or kids area | 2 months | no | no |
+| Silver (الباقة الفضية) — most requested | 250 m² | 2,950 EGP | duplex, restaurant, gym or work space | 3 months | yes | yes |
+| Gold (الباقة الذهبية) | 450 m² | 4,950 EGP | villa, event venue or large place | 4 months | yes | yes |
+
+- After the free hosting period the tour stays online for 100 EGP per month or 1,000 EGP per year.
+- Places larger than 450 m²: custom quote on WhatsApp.
+- Add-ons: interactive point / pop-up (an image, video or product details inside the tour) 100 EGP per point; still photo 100 EGP; short promo video (ready-made social media reel) 400 EGP; extra floor 400 EGP; tour update if the place changes: 50% of the package price.
+- Payment: cash, bank transfer or InstaPay.
 
 ## What a tour includes
 
-- Immersive 360° scan of the whole space (a "digital twin")
-- Interactive room measurements inside the tour
-- Clickable points of interest (materials, appliance brands, AC type, smart-home videos)
-- A permanent link to share on WhatsApp and social media, plus an embed code (iframe) for any website or property portal
+- Immersive 360° 3D scan of the whole place (a digital twin), with a dollhouse view
+- Interactive measurements inside the tour
+- Optional clickable points of interest: menu, membership prices, marble type, appliance brands, an intro video
+- A permanent link to share on WhatsApp, social media and Google Maps, plus an embed code (iframe) for any website or property portal
 
 ## How it works
 
-1. Booking: send the property location and approximate area on WhatsApp to set an appointment
-2. On-site scan: a GateVerse engineer scans the space (1–2 hours)
+1. Booking: send the type of place, its location and approximate area on WhatsApp to confirm the package and the appointment
+2. On-site scan: a GateVerse engineer scans the whole place (1–2 hours)
 3. Processing: lighting, dimensions and the 3D model are prepared
-4. Delivery: the tour link and embed code are delivered within 48 hours
+4. Delivery: the tour link and embed code are delivered within 48 hours of the shoot
+
+## Work (live tours you can open)
+
+- [The Circle](https://gateverse.net/tour/the-circle): a coworking / work space in Alexandria
+- [King Gym](https://gateverse.net/tour/king-gym): a gym in Alexandria
+- [Shaghof](https://gateverse.net/tour/shaghof): a cultural and art space in Alexandria
 
 ## Who it is for
 
-- Real estate agents and brokers listing properties
-- Owners selling or renting apartments and villas
-- Commercial space owners (offices, shops, clinics)
-- Developers showcasing new projects
+- Real estate agents, brokers, owners and developers listing apartments, villas and duplexes
+- Event and wedding venues, cafés, restaurants, gyms, hotels, spas and kids areas that want customers to see the place before booking
+- Coworking spaces, work spaces and cultural spaces whose members choose their spot from their phone
 
 ## Coverage
 
-Alexandria, Egypt (31.2001, 29.9187), including Smouha, Montaza, Sidi Gaber, Agami, Borg El Arab, Cleopatra and Ibrahimia. Working hours: Sunday–Thursday, 09:00–18:00.
+Alexandria, Egypt (31.2001, 29.9187). Working hours: Sunday–Thursday, 09:00–18:00.
 
 ## Contact and official profiles
 
@@ -50,21 +61,24 @@ Alexandria, Egypt (31.2001, 29.9187), including Smouha, Montaza, Sidi Gaber, Aga
 
 ## Pages
 
-- [Home](https://gateverse.net/): service overview, sample tour, price calculator, process and FAQ
-- [Pricing calculator](https://gateverse.net/#pricing): shooting and hosting cost for any area
-- [Sample tours](https://gateverse.net/#portfolio): live interactive 3D tours
-- [FAQ](https://gateverse.net/#faq): cost, delivery time, technology and device support
+- [Home](https://gateverse.net/): service overview, sectors, live tours, packages, process and FAQ
+- [Packages](https://gateverse.net/#pricing): the four packages and add-ons
+- [Live tours](https://gateverse.net/#portfolio): The Circle, King Gym and Shaghof
+- [FAQ](https://gateverse.net/#faq): price, delivery time, technology, devices
 
 ## FAQ
 
-Q: How much does a virtual tour cost?
-A: It depends on the type of place and its area, and the rate per m² falls as the area grows. A 150 m² apartment is 2,900 EGP once plus 100 EGP/month hosting; commercial spaces start at 1,000 EGP with the first year of hosting included; kitchens are 750 EGP each. The calculator at https://gateverse.net/#pricing gives the exact price.
+Q: How much does a 3D virtual tour cost with GateVerse?
+A: It is a fixed package by area: up to 100 m² 950 EGP, up to 150 m² 1,950 EGP, up to 250 m² 2,950 EGP, up to 450 m² 4,950 EGP. Each includes 1 to 4 months of free hosting, then 100 EGP per month (or 1,000 EGP per year). Larger places get a custom quote.
+
+Q: Is it only for real estate?
+A: No. GateVerse shoots apartments and villas, event venues, cafés and restaurants, gyms, hotels, spas, kids areas and work spaces.
 
 Q: How long does production take?
-A: The finished tour link is delivered within 48 hours of the shoot.
+A: The finished tour link is delivered within 48 hours of the shoot. The on-site scan takes 1–2 hours.
 
-Q: What technology is used?
-A: Professional 3D scanning cameras that produce an interactive digital twin with accurate measurements.
+Q: Does it work on mobile and on websites?
+A: Yes. It runs in the browser on all devices without an app, can be sent on WhatsApp, and can be embedded on any website or property portal.
 
-Q: Does it work on mobile and on property websites?
-A: Yes. It runs in the browser on all devices without an app, and can be embedded on any website or sent on WhatsApp.
+Q: Where does GateVerse work?
+A: In Alexandria, Egypt.

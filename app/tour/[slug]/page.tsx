@@ -4,6 +4,8 @@ import path from 'path'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { PORTFOLIO } from '@/lib/packages'
+
 import TourViewer from './TourViewer'
 
 const TOURS_DIR = path.join(process.cwd(), 'public', 'tours')
@@ -55,8 +57,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params
     const name = tourName(slug)
     if (!name) return { title: 'جولة افتراضية', robots: { index: false } }
-    const title = `${name} — جولة افتراضية`
-    const description = `جولة افتراضية ثلاثية الأبعاد تفاعلية: ${name}. تجوّل في كل زاوية وقِس المساحات من موبايلك — من إنتاج GateVerse.`
+    const kind = PORTFOLIO.find((t) => t.slug === slug)?.kind
+    const title = kind ? `${name} (${kind}) — جولة افتراضية 3D` : `${name} — جولة افتراضية`
+    const description = `جولة افتراضية ثلاثية الأبعاد تفاعلية لـ ${name}${kind ? `، ${kind} في الإسكندرية` : ''}. تجوّل في كل زاوية وقِس المساحات من موبايلك — من إنتاج GateVerse.`
     return {
         title,
         description,

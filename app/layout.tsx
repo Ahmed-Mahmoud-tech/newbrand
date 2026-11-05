@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     authors: [{ name: BRAND, url: SITE_URL }],
     creator: BRAND,
     publisher: BRAND,
-    category: 'Real Estate Photography',
+    category: '3D Virtual Tours',
     formatDetection: { email: false, address: false, telephone: false },
     manifest: '/manifest.webmanifest',
 
@@ -91,14 +91,14 @@ export const metadata: Metadata = {
         siteName: BRAND,
         title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد',
         description:
-            'جولات 3D تفاعلية تُحوّل عقارك لتجربة حضور رقمية — معاينات جادة فقط، قياسات تفاعلية، روابط دائمة، وتوافق مع كل الأجهزة.',
+            'جولات 3D تفاعلية للعقارات، القاعات، الكافيهات والمطاعم، الجيم، الفنادق ومساحات العمل في الإسكندرية — عميلك يدخل المكان من موبايله قبل ما ييجي. باقات من 950 ج.م وتسليم خلال 48 ساعة.',
     },
 
     /* ── Twitter / X card (image comes from app/twitter-image.png) ── */
     twitter: {
         card: 'summary_large_image',
         title: 'GateVerse | جولات افتراضية ثلاثية الأبعاد',
-        description: 'حوّل عقارك لجولة تفاعلية 3D — عميلك يتجوّل ويقيس من موبايله. تسليم خلال 48 ساعة.',
+        description: 'حوّل مكانك لجولة تفاعلية 3D — عميلك يتجوّل ويقيس من موبايله. باقات من 950 ج.م وتسليم خلال 48 ساعة.',
     },
 
     /* ── Crawl directives ── */
@@ -133,7 +133,7 @@ export const metadata: Metadata = {
         /* Dublin Core for entity clarity (LLMO) */
         'DC.language': 'ar',
         'DC.coverage': 'Alexandria, Egypt',
-        'DC.subject': 'Virtual Tours, Real Estate Photography, 3D Tours',
+        'DC.subject': '3D Virtual Tours, Real Estate, Event Venues, Cafes, Restaurants, Gyms, Hotels, Spas, Coworking Spaces',
         'DC.creator': 'GateVerse',
         'DC.type': 'Service',
     },

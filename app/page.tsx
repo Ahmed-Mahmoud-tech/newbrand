@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { SAME_AS, SITE_URL, TELEPHONE, WHATSAPP_URL } from '@/lib/site'
 import logo from '@/public/images/logo-sm.png'
-import { ADDONS, HOSTING_MONTHLY, PACKAGES, PORTFOLIO, SECTORS } from '@/lib/packages'
+import { ADDONS, CUSTOM_QUOTE_FROM, HOSTING_MONTHLY, HOSTING_YEARLY, PACKAGES, PORTFOLIO, SECTORS } from '@/lib/packages'
 import NavToggle from './components/NavToggle'
 import Packages from './components/Packages'
 import Portfolio from './components/Portfolio'
@@ -60,7 +60,7 @@ const localBusinessSchema = {
                 name: `${p.name} — جولة افتراضية 3D حتى ${p.upTo} م²`,
                 price: String(p.price),
                 priceCurrency: 'EGP',
-                description: `جولة 3D كاملة 360° لمكان حتى ${p.upTo} م² مع رابط مشاركة وكود تضمين${p.photos ? ` و${p.photos} صورة احترافية` : ''}، واستضافة مجانية ${p.hostingMonths} ${p.hostingMonths === 1 ? 'شهر' : 'شهور'} ثم ${HOSTING_MONTHLY} ج.م شهريًا.`,
+                description: `جولة 3D كاملة 360° لمكان حتى ${p.upTo} م² (${p.tagline}) مع رابط مشاركة وكود تضمين${p.infoPoints ? ' ونقاط معلومات داخل الجولة' : ''}${p.priority ? ' وأولوية في التنفيذ' : ''}، واستضافة مجانية ${p.hostingMonths === 1 ? 'شهر' : p.hostingMonths === 2 ? 'شهرين' : `${p.hostingMonths} شهور`} ثم ${HOSTING_MONTHLY} ج.م شهريًا أو ${HOSTING_YEARLY.toLocaleString('en-US')} ج.م سنويًا.`,
                 availability: 'https://schema.org/InStock',
             })),
             {
@@ -74,9 +74,20 @@ const localBusinessSchema = {
                     unitText: 'للجولة',
                 },
             },
+            {
+                '@type': 'Offer',
+                name: 'استضافة الجولة السنوية',
+                priceSpecification: {
+                    '@type': 'UnitPriceSpecification',
+                    price: String(HOSTING_YEARLY),
+                    priceCurrency: 'EGP',
+                    billingDuration: 'P1Y',
+                    unitText: 'للجولة',
+                },
+            },
         ],
     },
-    knowsAbout: ['3D Virtual Tours', 'Real Estate Photography', 'Event Venues', 'Restaurants', 'Gyms', 'Hotels', 'Virtual Reality', 'Digital Twin', 'Immersive Tours'],
+    knowsAbout: ['3D Virtual Tours', 'Real Estate Photography', 'Event Venues', 'Cafes', 'Restaurants', 'Gyms', 'Hotels', 'Spas', 'Kids Areas', 'Coworking Spaces', 'Cultural Spaces', 'Virtual Reality', 'Digital Twin', 'Immersive Tours'],
     sameAs: SAME_AS,
 }
 
@@ -92,14 +103,14 @@ const faqSchema = {
         //         text: 'تبدأ تكلفة الاستضافة والخدمة من $30 شهريًا (أو ما يعادلها بالجنيه المصري عبر InstaPay/تحويل بنكي) لأي عقار بغض النظر عن مساحته، مع خصم خاص عند الاشتراك السنوي ($300/سنوياً).',
         //     },
         // },
-        // {
-        //     '@type': 'Question',
-        //     name: 'ما هي تكلفة الجولة الافتراضية مع GateVerse؟',
-        //     acceptedAnswer: {
-        //         '@type': 'Answer',
-        //         text: `السعر بالباقة حسب مساحة المكان: ${PACKAGES.map((p) => `حتى ${p.upTo} م² بـ ${p.price.toLocaleString('en-US')} ج.م`).join('، ')}. كل باقة فيها استضافة مجانية من شهر لـ 4 شهور، وبعدها ${HOSTING_MONTHLY} ج.م شهريًا. الأماكن الأكبر من 450 م² ليها سعر خاص. وفيه خدمات إضافية: ${ADDONS.map((a) => `${a.name} (${a.price})`).join('، ')}.`,
-        //     },
-        // },
+        {
+            '@type': 'Question',
+            name: 'ما هي تكلفة الجولة الافتراضية مع GateVerse؟',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: `السعر بالباقة حسب مساحة المكان: ${PACKAGES.map((p) => `حتى ${p.upTo} م² بـ ${p.price.toLocaleString('en-US')} ج.م`).join('، ')}. كل باقة فيها استضافة مجانية من شهر لـ 4 شهور، وبعدها ${HOSTING_MONTHLY} ج.م شهريًا أو ${HOSTING_YEARLY.toLocaleString('en-US')} ج.م سنويًا. الأماكن الأكبر من ${CUSTOM_QUOTE_FROM} م² ليها سعر خاص. وفيه خدمات إضافية: ${ADDONS.map((a) => `${a.name} (${a.price})`).join('، ')}.`,
+            },
+        },
         {
             '@type': 'Question',
             name: 'هل الجولات الافتراضية للعقارات بس؟',
@@ -130,6 +141,14 @@ const faqSchema = {
             acceptedAnswer: {
                 '@type': 'Answer',
                 text: 'نعم، تعمل الجولات بمرونة كاملة على جميع الأجهزة (موبايل، تابلت، كمبيوتر) بدون الحاجة لتحميل أي تطبيقات، ويمكن تضمينها بسهولة في موقعك أو إرسالها عبر WhatsApp.',
+            },
+        },
+        {
+            '@type': 'Question',
+            name: 'بتصوّروا فين؟',
+            acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'بنصوّر في الإسكندرية، من الأحد للخميس من 9 الصبح لـ 6 المغرب. ابعتلنا لوكيشن المكان ومساحته على واتساب ونأكد الموعد.',
             },
         },
     ],
