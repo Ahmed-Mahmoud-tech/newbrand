@@ -54,6 +54,15 @@ const securityHeaders = [
 const nextConfig = {
     // a stray lockfile higher up the drive otherwise becomes the tracing root
     outputFileTracingRoot: __dirname,
+    // Vercel stores every function's traced files with every deployment. The fs reads below
+    // (public/tours/<slug>/tour.json, player.js) made Next trace the whole public/tours tree
+    // (~750 MB of panoramas and meshes) into the tour page and the admin API, so each deploy
+    // added ~1.5 GB of Functions Storage. Those files are served statically; the functions only
+    // read tour.json and player.js. The admin API is local-only (403 in production).
+    outputFileTracingExcludes: {
+        '/tour/[slug]': ['public/tours/*/sweeps/**', 'public/tours/*/mesh/**', 'public/tours/*/custom/**', 'public/videos/**'],
+        '/api/admin/tours': ['public/**'],
+    },
     poweredByHeader: false,
     reactStrictMode: true,
 
