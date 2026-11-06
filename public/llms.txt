@@ -36,9 +36,9 @@ Every package includes a full 360° 3D tour of the place, a direct share link an
 
 ## Work (live tours you can open)
 
-- [The Circle](https://gateverse.net/tour/the-circle): a coworking / work space in Alexandria
-- [King Gym](https://gateverse.net/tour/king-gym): a gym in Alexandria
-- [Shaghof](https://gateverse.net/tour/shaghof): a cultural and art space in Alexandria
+- [The Circle](https://www.gateverse.net/tour/the-circle): a coworking / work space in Alexandria
+- [King Gym](https://www.gateverse.net/tour/king-gym): a gym in Alexandria
+- [Shaghof](https://www.gateverse.net/tour/shaghof): a cultural and art space in Alexandria
 
 ## Who it is for
 
@@ -52,7 +52,7 @@ Alexandria, Egypt (31.2001, 29.9187). Working hours: Sunday–Thursday, 09:00–
 
 ## Contact and official profiles
 
-- Website: https://gateverse.net
+- Website: https://www.gateverse.net
 - WhatsApp: +20 111 323 2886 (https://wa.me/201113232886)
 - Email: contact@gateverse.net
 - Instagram: https://www.instagram.com/gateverse_tour
@@ -61,10 +61,10 @@ Alexandria, Egypt (31.2001, 29.9187). Working hours: Sunday–Thursday, 09:00–
 
 ## Pages
 
-- [Home](https://gateverse.net/): service overview, sectors, live tours, packages, process and FAQ
-- [Packages](https://gateverse.net/#pricing): the four packages and add-ons
-- [Live tours](https://gateverse.net/#portfolio): The Circle, King Gym and Shaghof
-- [FAQ](https://gateverse.net/#faq): price, delivery time, technology, devices
+- [Home](https://www.gateverse.net/): service overview, sectors, live tours, packages, process and FAQ
+- [Packages](https://www.gateverse.net/#pricing): the four packages and add-ons
+- [Live tours](https://www.gateverse.net/#portfolio): The Circle, King Gym and Shaghof
+- [FAQ](https://www.gateverse.net/#faq): price, delivery time, technology, devices
 
 ## FAQ
 

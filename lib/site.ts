@@ -3,9 +3,13 @@
  * Keep them identical everywhere: search engines and AI assistants cross-check them.
  */
 
-/** Production origin. Override per deploy with NEXT_PUBLIC_SITE_URL (no trailing slash). */
+/**
+ * Production origin. Override per deploy with NEXT_PUBLIC_SITE_URL (no trailing slash).
+ * The host redirects gateverse.net -> www.gateverse.net, so canonical URLs, the sitemap and
+ * JSON-LD must use www: a canonical or sitemap URL that redirects is ignored by search engines.
+ */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://gateverse.net"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.gateverse.net"
 ).replace(/\/+$/, "");
 
 export const BRAND = "GateVerse";
