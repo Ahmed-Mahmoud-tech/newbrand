@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Tajawal, IBM_Plex_Sans_Arabic, IBM_Plex_Mono, El_Messiri } from 'next/font/google'
 
+import Pixels from '@/app/components/Pixels'
 import { BRAND, EMAIL, SAME_AS, SITE_URL, TELEPHONE } from '@/lib/site'
 import './globals.css'
 
@@ -193,6 +194,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             >
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema) }} />
                 {children}
+                <Pixels />
             </body>
         </html>
     )

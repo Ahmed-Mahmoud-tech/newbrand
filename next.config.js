@@ -1,5 +1,10 @@
 const isDev = process.env.NODE_ENV === 'development'
 
+// Hosts of the ad/analytics tags (lib/pixels.ts, loaded on marketing pages only).
+const PIXEL_SCRIPT = 'https://www.googletagmanager.com https://connect.facebook.net https://analytics.tiktok.com'
+const PIXEL_CONNECT = 'https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.facebook.com https://connect.facebook.net https://analytics.tiktok.com https://*.tiktok.com'
+const PIXEL_IMG = 'https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://www.facebook.com https://analytics.tiktok.com'
+
 /**
  * Content-Security-Policy. `'unsafe-inline'` scripts are required by the App Router's inline
  * hydration payload unless every page is rendered per request with a nonce, which would give up
@@ -8,12 +13,12 @@ const isDev = process.env.NODE_ENV === 'development'
 function csp(frameAncestors) {
     return [
         "default-src 'self'",
-        `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
+        `script-src 'self' 'unsafe-inline' ${PIXEL_SCRIPT}${isDev ? " 'unsafe-eval'" : ''}`,
         "style-src 'self' 'unsafe-inline'",
-        "img-src 'self' data: blob:",
+        `img-src 'self' data: blob: ${PIXEL_IMG}`,
         "font-src 'self' data:",
         // the TourForge player fetches tour.json / panoramas from this origin and may use blob: URLs
-        `connect-src 'self' blob: data:${isDev ? ' ws: wss:' : ''}`,
+        `connect-src 'self' blob: data: ${PIXEL_CONNECT}${isDev ? ' ws: wss:' : ''}`,
         "media-src 'self' blob: data:",
         "worker-src 'self' blob:",
         'frame-src https://my.matterport.com https://*.matterport.com',
