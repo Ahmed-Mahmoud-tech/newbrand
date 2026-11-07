@@ -6,7 +6,7 @@
  */
 export const GA_MEASUREMENT_ID = 'G-FXKTFVDNCN' // Google Analytics 4: property "GateVerse", stream "GateVerse Website"
 export const META_PIXEL_ID = '1318222228991031' // Meta (Facebook + Instagram) dataset for the website
-export const TIKTOK_PIXEL_ID = '' // TikTok Ads Manager > Events > Web; fill in when created
+export const TIKTOK_PIXEL_ID = 'DBNDNKRC77UASCMH81S0' // TikTok Events Manager: "GateVerse Website"
 
 /**
  * Tags run only where GateVerse markets itself. Tour pages belong to the client (they are embedded
