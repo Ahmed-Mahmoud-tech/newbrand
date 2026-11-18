@@ -1,84 +1,53 @@
-# GateVerse
+# Gateverse
 
-> GateVerse (جيت فيرس) is a 3D virtual tour studio in Alexandria, Egypt. It scans real places with professional 3D cameras and delivers an interactive tour (a "digital twin") with in-tour measurements on a shareable link plus an embed code, within 48 hours of the shoot. Tours open in any browser on phone, tablet or computer, with no app. Prices are fixed packages by area, starting at 950 EGP.
+> Gateverse (جيت فيرس) is a real estate experience studio based in Alexandria, Egypt. It creates immersive digital experiences that help real estate developers, property marketing companies and architecture firms showcase, present and market their projects: 360° virtual tours of completed properties, 3D architectural walkthroughs, off-plan project experiences, interactive property showrooms, interactive masterplans and digital property presentations. Experiences open in any browser on phones, tablets, computers and large displays, with no app.
 
-GateVerse is not only for real estate. It shoots any place a customer needs to see before they come: apartments, villas and duplexes; event and wedding venues; cafés and restaurants; gyms; hotels; spas; kids areas; and coworking / work spaces. Visitors walk through every room from their phone before they book, buy, rent or visit, so the people who call or come are ready to decide. The website is in Arabic (Egyptian); service is available in Arabic and English.
+The website is in English (https://www.gateverse.net/) and Arabic (https://www.gateverse.net/ar). Service is available in English and Arabic.
 
-## Packages and prices (Egyptian pounds, EGP)
+## Solutions
 
-Every package includes a full 360° 3D tour of the place, a direct share link and an embed code for any website. The price depends on the area of the place:
-
-| Package | Area up to | Price | Typical places | Free hosting | Info points inside the tour | Priority delivery |
-|---|---|---|---|---|---|---|
-| Starter (باقة البداية) | 100 m² | 950 EGP | studio, small apartment, café or shop | 1 month | no | no |
-| Bronze (الباقة البرونزية) | 150 m² | 1,950 EGP | apartment, clinic, spa or kids area | 2 months | no | no |
-| Silver (الباقة الفضية) — most requested | 250 m² | 2,950 EGP | duplex, restaurant, gym or work space | 3 months | yes | yes |
-| Gold (الباقة الذهبية) | 450 m² | 4,950 EGP | villa, event venue or large place | 4 months | yes | yes |
-
-- After the free hosting period the tour stays online for 100 EGP per month or 1,000 EGP per year.
-- Places larger than 450 m²: custom quote on WhatsApp.
-- Add-ons: interactive point / pop-up (an image, video or product details inside the tour) 100 EGP per point; still photo 100 EGP; short promo video (ready-made social media reel) 400 EGP; extra floor 400 EGP; tour update if the place changes: 50% of the package price.
-- Payment: cash, bank transfer or InstaPay.
-
-## What a tour includes
-
-- Immersive 360° 3D scan of the whole place (a digital twin), with a dollhouse view
-- Interactive measurements inside the tour
-- Optional clickable points of interest: menu, membership prices, marble type, appliance brands, an intro video
-- A permanent link to share on WhatsApp, social media and Google Maps, plus an embed code (iframe) for any website or property portal
-
-## How it works
-
-1. Booking: send the type of place, its location and approximate area on WhatsApp to confirm the package and the appointment
-2. On-site scan: a GateVerse engineer scans the whole place (1–2 hours)
-3. Processing: lighting, dimensions and the 3D model are prepared
-4. Delivery: the tour link and embed code are delivered within 48 hours of the shoot
-
-## Work (live tours you can open)
-
-- [The Circle](https://www.gateverse.net/tour/the-circle): a coworking / work space in Alexandria
-- [King Gym](https://www.gateverse.net/tour/king-gym): a gym in Alexandria
-- [Shaghof](https://www.gateverse.net/tour/shaghof): a cultural and art space in Alexandria
+- [360° Virtual Property Tours](https://www.gateverse.net/solutions/360-virtual-tours): on-site 360° capture of completed apartments, villas, show units, commercial units and amenities, published as a navigable tour with a permanent share link, an embed code, optional information points, in-tour contact buttons (WhatsApp, call, website) and a private statistics page (views, button taps, information points opened). Standard tours are delivered within 48 hours of the capture session.
+- [3D Architectural Walkthroughs](https://www.gateverse.net/solutions/3d-walkthroughs): guided walkthrough videos, interactive 360° viewpoints and still renders produced from the client's 3D models or CAD plans, for launches, investor presentations, design review and sales centres.
+- [Off-Plan Project Experiences](https://www.gateverse.net/solutions/off-plan-experiences): render-based 360° experiences of units, amenities and views for projects that are still on paper or under construction.
+- [Interactive Property Showrooms](https://www.gateverse.net/solutions/interactive-showrooms): a digital showroom of units, specifications and finishing options, captured on site or rendered from design files, for sales centres, client meetings and remote buyers.
+- [Interactive Masterplans](https://www.gateverse.net/solutions/interactive-masterplans): masterplans as interactive maps of phases, buildings and amenities, linked to the 360°, off-plan and walkthrough experiences behind them.
+- Digital Property Presentations: presentation-ready packages of walkthrough video, stills and interactive links for sales decks, websites and campaigns.
 
 ## Who it is for
 
-- Real estate agents, brokers, owners and developers listing apartments, villas and duplexes
-- Event and wedding venues, cafés, restaurants, gyms, hotels, spas and kids areas that want customers to see the place before booking
-- Coworking spaces, work spaces and cultural spaces whose members choose their spot from their phone
+Real estate developers; property marketing companies; architecture and design studios; residential, commercial and luxury property developers; hospitality and resort developers presenting real estate projects.
+
+## How a project works
+
+1. Discovery: understand the property, project and marketing objectives.
+2. Content collection: photography, 360° captures, architectural plans or 3D renders.
+3. Experience production: build the immersive digital experience.
+4. Review and refinement: review with the client and apply agreed revisions.
+5. Launch: deliver a shareable experience ready for websites, campaigns and sales presentations.
+
+## Pricing
+
+Project solutions are customised according to project scale, content requirements and interactive features, and are quoted per project ([request a proposal](https://www.gateverse.net/contact)).
+
+For single completed spaces in Alexandria there are fixed entry-level 360° packages by area ([entry-level packages](https://www.gateverse.net/pricing)): up to 100 m² 950 EGP, up to 150 m² 1,950 EGP, up to 250 m² 2,950 EGP, up to 450 m² 4,950 EGP, each with 1 to 4 months of hosting included, then 100 EGP per month or 1,000 EGP per year. Larger spaces are quoted individually.
+
+## Work
+
+- [Concept apartment](https://www.gateverse.net/portfolio#concept): an interactive render-based 360° experience of a CG apartment (a concept demonstration, not a client project), based on "Apartamento" by SrMonteiro, CC BY 4.0.
+- [The Circle](https://www.gateverse.net/tour/the-circle): live 360° tour of a workspace in Alexandria, captured on site.
+- [Shaghof](https://www.gateverse.net/tour/shaghof): live 360° tour of a cultural venue in Alexandria, captured on site.
+- [King Gym](https://www.gateverse.net/tour/king-gym): live 360° tour of a fitness facility in Alexandria, captured on site.
 
 ## Coverage
 
-Alexandria, Egypt (31.2001, 29.9187). Working hours: Sunday–Thursday, 09:00–18:00.
+Based in Alexandria, Egypt, where on-site capture is carried out; capture elsewhere is discussed per project. Render-based work (off-plan experiences, 3D walkthroughs, interactive masterplans) is produced from project files and can serve developers in Egypt, Saudi Arabia, the United Arab Emirates and beyond. Working hours: Sunday to Thursday, 09:00 to 18:00 (Cairo time).
 
 ## Contact and official profiles
 
 - Website: https://www.gateverse.net
+- Project inquiry form: https://www.gateverse.net/contact
 - WhatsApp: +20 111 323 2886 (https://wa.me/201113232886)
 - Email: contact@gateverse.net
 - Instagram: https://www.instagram.com/gateverse_tour
 - Facebook: https://www.facebook.com/people/Gateverse/61594652920757/
 - TikTok: https://www.tiktok.com/@gateverse_tour
-
-## Pages
-
-- [Home](https://www.gateverse.net/): service overview, sectors, live tours, packages, process and FAQ
-- [Packages](https://www.gateverse.net/#pricing): the four packages and add-ons
-- [Live tours](https://www.gateverse.net/#portfolio): The Circle, King Gym and Shaghof
-- [FAQ](https://www.gateverse.net/#faq): price, delivery time, technology, devices
-
-## FAQ
-
-Q: How much does a 3D virtual tour cost with GateVerse?
-A: It is a fixed package by area: up to 100 m² 950 EGP, up to 150 m² 1,950 EGP, up to 250 m² 2,950 EGP, up to 450 m² 4,950 EGP. Each includes 1 to 4 months of free hosting, then 100 EGP per month (or 1,000 EGP per year). Larger places get a custom quote.
-
-Q: Is it only for real estate?
-A: No. GateVerse shoots apartments and villas, event venues, cafés and restaurants, gyms, hotels, spas, kids areas and work spaces.
-
-Q: How long does production take?
-A: The finished tour link is delivered within 48 hours of the shoot. The on-site scan takes 1–2 hours.
-
-Q: Does it work on mobile and on websites?
-A: Yes. It runs in the browser on all devices without an app, can be sent on WhatsApp, and can be embedded on any website or property portal.
-
-Q: Where does GateVerse work?
-A: In Alexandria, Egypt.

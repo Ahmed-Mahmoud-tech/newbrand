@@ -14,7 +14,18 @@ type Win = {
 }
 const win = () => window as unknown as Win
 
-/** A tap on WhatsApp or the phone number is the lead GateVerse's ads optimise for. */
+/**
+ * A confirmed lead: the inquiry form was stored (called only after the server says so). Meta and
+ * TikTok get their standard lead events; WhatsApp/phone taps below stay "Contact".
+ */
+export function trackLead(method: 'form') {
+    const w = win()
+    w.gtag?.('event', 'generate_lead', { method })
+    w.fbq?.('track', 'Lead', { content_name: method })
+    w.ttq?.track('SubmitForm', { content_name: method })
+}
+
+/** A tap on WhatsApp or the phone number is the lead Gateverse's ads optimise for. */
 function leadMethod(href: string): string | null {
     if (href.startsWith('https://wa.me/') || href.startsWith('https://api.whatsapp.com/')) return 'whatsapp'
     if (href.startsWith('tel:')) return 'phone'

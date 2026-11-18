@@ -21,7 +21,8 @@ function csp(frameAncestors) {
         `connect-src 'self' blob: data: ${PIXEL_CONNECT}${isDev ? ' ws: wss:' : ''}`,
         "media-src 'self' blob: data:",
         "worker-src 'self' blob:",
-        'frame-src https://my.matterport.com https://*.matterport.com',
+        // 'self': the portfolio page embeds this site's own tour pages (app/_site/TourEmbed.tsx)
+        "frame-src 'self' https://my.matterport.com https://*.matterport.com",
         `frame-ancestors ${frameAncestors}`,
         "object-src 'none'",
         "base-uri 'self'",
@@ -70,6 +71,9 @@ const nextConfig = {
     },
     poweredByHeader: false,
     reactStrictMode: true,
+    // The site has several root layouts (app/(en), app/(ar)/ar, app/(tools)); unmatched URLs render
+    // app/global-not-found.tsx, which brings its own <html>.
+    experimental: { globalNotFound: true },
 
     async headers() {
         return [

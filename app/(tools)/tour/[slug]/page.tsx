@@ -59,13 +59,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     if (!name) return { title: 'جولة افتراضية', robots: { index: false } }
     const kind = PORTFOLIO.find((t) => t.slug === slug)?.kind
     const title = kind ? `${name} (${kind}) — جولة افتراضية 3D` : `${name} — جولة افتراضية`
-    const description = `جولة افتراضية ثلاثية الأبعاد تفاعلية لـ ${name}${kind ? `، ${kind} في الإسكندرية` : ''}. تجوّل في كل زاوية وقِس المساحات من موبايلك — من إنتاج GateVerse.`
+    const description = `جولة افتراضية ثلاثية الأبعاد تفاعلية لـ ${name}${kind ? `، ${kind} في الإسكندرية` : ''}. تجوّل في كل زاوية وقِس المساحات من موبايلك — من إنتاج Gateverse.`
     return {
         title,
         description,
         alternates: { canonical: `/tour/${slug}` },
-        openGraph: { type: 'website', url: `/tour/${slug}`, siteName: 'GateVerse', locale: 'ar_EG', title, description },
-        twitter: { card: 'summary_large_image', title, description },
+        // The share image is set explicitly: this route group's root layout is not app/, so the
+        // app-root opengraph-image.png is not attached on its own.
+        openGraph: { type: 'website', url: `/tour/${slug}`, siteName: 'Gateverse', locale: 'ar_EG', title, description, images: ['/opengraph-image.png'] },
+        twitter: { card: 'summary_large_image', title, description, images: ['/opengraph-image.png'] },
     }
 }
 

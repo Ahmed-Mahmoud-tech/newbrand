@@ -12,12 +12,28 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://www.gateverse.net"
 ).replace(/\/+$/, "");
 
-export const BRAND = "GateVerse";
+export const BRAND = "Gateverse";
+export const DESCRIPTOR = "Immersive Real Estate Experiences";
+export const DESCRIPTOR_AR = "تجارب عقارية تفاعلية غامرة";
 
 export const WHATSAPP_NUMBER = "201113232886";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const TELEPHONE = "+20-111-323-2886";
 export const EMAIL = "contact@gateverse.net";
+
+/** Where the studio is based (on-site capture is arranged from here). */
+export const BASE_CITY = { en: "Alexandria, Egypt", ar: "الإسكندرية، مصر" } as const;
+
+/** The pre-filled first WhatsApp message for a project enquiry. */
+export const WHATSAPP_MESSAGE = {
+  en: "Hello Gateverse, I'm interested in creating an immersive experience for my real estate project. I'd like to discuss the available solutions.",
+  ar: "مرحبًا Gateverse، أرغب في إنشاء تجربة تفاعلية غامرة لمشروعي العقاري، وأود مناقشة الحلول المتاحة.",
+} as const;
+
+/** wa.me link with a pre-filled message. */
+export function whatsappLink(text: string): string {
+  return `${WHATSAPP_URL}?text=${encodeURIComponent(text)}`;
+}
 
 export const SOCIAL_LINKS = [
   {
