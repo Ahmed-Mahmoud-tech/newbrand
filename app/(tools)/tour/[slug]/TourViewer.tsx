@@ -13,6 +13,7 @@ import { track, trackViewOnce } from './track'
 interface TourForgePlayer {
     destroy(): void
     on(type: 'hotspotclick', cb: (e: { id: string }) => void): () => void
+    on(type: 'vrchange', cb: (e: { presenting: boolean }) => void): () => void
 }
 interface TourForgeModule {
     TourForge: {
@@ -65,6 +66,9 @@ export default function TourViewer({ slug, name, playerVersion }: { slug: string
     const [stage, setStage] = useState<Stage>('player')
     const [shown, setShown] = useState(0)
     const [loaderGone, setLoaderGone] = useState(false)
+    // VR on: the page's own overlays would sit over the eye views (iPhone has no element full
+    // screen, so they stay on screen there)
+    const [inVR, setInVR] = useState(false)
     // where the bar is heading; `shown` eases toward it every frame
     const target = useRef(0)
 
@@ -132,6 +136,7 @@ export default function TourViewer({ slug, name, playerVersion }: { slug: string
                     // session, and every popup opened. destroy() drops the listener.
                     trackViewOnce(slug)
                     p.on('hotspotclick', ({ id }) => track(slug, 'popup', id))
+                    p.on('vrchange', ({ presenting }) => setInVR(presenting))
                     target.current = 1
                     setStage('ready')
                     setState('ready')
@@ -177,7 +182,7 @@ export default function TourViewer({ slug, name, playerVersion }: { slug: string
     return (
         <div style={{ position: 'fixed', inset: 0, background: '#000' }}>
             <div ref={ref} style={{ position: 'absolute', inset: 0 }} aria-label={name} />
-            <Link
+            {!inVR && <Link
                 href="/"
                 style={{
                     position: 'absolute',
@@ -200,8 +205,8 @@ export default function TourViewer({ slug, name, playerVersion }: { slug: string
             >
                 <Image src={logo} alt="GateVerse" width={56} height={28} priority />
                 <span style={{ padding: '0.25rem 0.5rem 0', textTransform: 'capitalize' }}>{name}</span>
-            </Link>
-            {state === 'ready' && <ContactBar slug={slug} name={name} />}
+            </Link>}
+            {state === 'ready' && !inVR && <ContactBar slug={slug} name={name} />}
             {!loaderGone && (
                 <TourLoader
                     name={name}
