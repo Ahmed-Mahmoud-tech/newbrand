@@ -1,0 +1,1413 @@
+{
+  "version": 3,
+  "tour": {
+    "id": "apartment-model-2",
+    "name": "Apartment Model",
+    "startSweep": "s_03",
+    "startRotation": [
+      0,
+      2.164208272472969,
+      0
+    ],
+    "watermark": false
+  },
+  "assetBase": "./",
+  "sweeps": [
+    {
+      "id": "s_00",
+      "position": [
+        -0.8111,
+        1.395,
+        2.9058
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_00/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_00/depth_{f}.raw.gz"
+      },
+      "floorY": -0.002
+    },
+    {
+      "id": "s_01",
+      "position": [
+        -2.5511,
+        1.395,
+        2.9158
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_01/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.001",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_01/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_02",
+      "position": [
+        -2.5511,
+        1.395,
+        1.1158
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_02/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.002",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_02/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_03",
+      "position": [
+        -0.9411,
+        1.395,
+        1.1158
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_03/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.003",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_03/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_04",
+      "position": [
+        -4.3411,
+        1.395,
+        1.1258
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_04/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.004",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_04/depth_{f}.raw.gz"
+      },
+      "floorY": 0
+    },
+    {
+      "id": "s_05",
+      "position": [
+        -4.9411,
+        1.395,
+        1.6358
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_05/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.005",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_05/depth_{f}.raw.gz"
+      },
+      "floorY": 0.007
+    },
+    {
+      "id": "s_06",
+      "position": [
+        -4.9411,
+        1.395,
+        3.5358
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_06/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.006",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_06/depth_{f}.raw.gz"
+      },
+      "floorY": 0.008
+    },
+    {
+      "id": "s_07",
+      "position": [
+        -6.1911,
+        1.395,
+        3.5358
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_07/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.007",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_07/depth_{f}.raw.gz"
+      },
+      "floorY": 0.001
+    },
+    {
+      "id": "s_08",
+      "position": [
+        -6.1911,
+        1.395,
+        1.6158
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_08/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.008",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_08/depth_{f}.raw.gz"
+      },
+      "floorY": 0.001
+    },
+    {
+      "id": "s_09",
+      "position": [
+        -4.3411,
+        1.395,
+        -2.6342
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_09/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.009",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_09/depth_{f}.raw.gz"
+      },
+      "floorY": -0.002
+    },
+    {
+      "id": "s_10",
+      "position": [
+        -4.3411,
+        1.395,
+        -0.5642
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_10/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.010",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_10/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_11",
+      "position": [
+        -4.3411,
+        1.395,
+        -4.4542
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_11/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.011",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_11/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_12",
+      "position": [
+        -5.9711,
+        1.395,
+        -4.4542
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_12/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.012",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_12/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_13",
+      "position": [
+        -3.1611,
+        1.395,
+        -4.4542
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_13/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.013",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_13/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_14",
+      "position": [
+        -2.2811,
+        1.395,
+        -4.4542
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_14/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.014",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_14/depth_{f}.raw.gz"
+      },
+      "floorY": 0
+    },
+    {
+      "id": "s_15",
+      "position": [
+        -2.2811,
+        1.395,
+        -5.8842
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_15/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.015",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_15/depth_{f}.raw.gz"
+      },
+      "floorY": 0.008
+    },
+    {
+      "id": "s_16",
+      "position": [
+        -0.1011,
+        1.395,
+        -5.8842
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_16/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.016",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_16/depth_{f}.raw.gz"
+      },
+      "floorY": 0.004
+    },
+    {
+      "id": "s_17",
+      "position": [
+        -0.1011,
+        1.395,
+        -4.4942
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_17/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.017",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_17/depth_{f}.raw.gz"
+      },
+      "floorY": 0.008
+    },
+    {
+      "id": "s_18",
+      "position": [
+        -5.4911,
+        1.395,
+        -0.5642
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_18/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.018",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_18/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_19",
+      "position": [
+        -0.8111,
+        1.395,
+        -2.9442
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_19/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.019",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_19/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_20",
+      "position": [
+        -3.2211,
+        1.395,
+        -1.2542
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_20/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.020",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_20/depth_{f}.raw.gz"
+      },
+      "floorY": 0.002
+    },
+    {
+      "id": "s_21",
+      "position": [
+        -3.2211,
+        1.395,
+        -2.9442
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_21/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.021",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_21/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    },
+    {
+      "id": "s_22",
+      "position": [
+        -0.8111,
+        1.395,
+        -1.3242
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_22/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.022",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_22/depth_{f}.raw.gz"
+      },
+      "floorY": 0.009
+    },
+    {
+      "id": "s_23",
+      "position": [
+        -5.5011,
+        1.395,
+        -2.1542
+      ],
+      "yawOffset": 0,
+      "floor": 0,
+      "captureHeight": 1.3951573371887207,
+      "pano": {
+        "type": "cubemap-tiles",
+        "levels": [
+          512,
+          1024,
+          2048
+        ],
+        "tileSize": 512,
+        "singleTileMaxLevel": 1024,
+        "urlTemplate": "sweeps/s_23/{level}_face{f}_{x}_{y}.webp"
+      },
+      "label": "Camera.023",
+      "registrationConfidence": 1,
+      "depth": {
+        "cubemap": "sweeps/s_23/depth_{f}.raw.gz"
+      },
+      "floorY": -0.001
+    }
+  ],
+  "graph": {
+    "edges": [
+      [
+        "s_00",
+        "s_01"
+      ],
+      [
+        "s_00",
+        "s_02"
+      ],
+      [
+        "s_00",
+        "s_03"
+      ],
+      [
+        "s_00",
+        "s_04"
+      ],
+      [
+        "s_00",
+        "s_05"
+      ],
+      [
+        "s_00",
+        "s_07"
+      ],
+      [
+        "s_00",
+        "s_08"
+      ],
+      [
+        "s_01",
+        "s_02"
+      ],
+      [
+        "s_01",
+        "s_03"
+      ],
+      [
+        "s_01",
+        "s_04"
+      ],
+      [
+        "s_01",
+        "s_05"
+      ],
+      [
+        "s_01",
+        "s_06"
+      ],
+      [
+        "s_01",
+        "s_07"
+      ],
+      [
+        "s_01",
+        "s_08"
+      ],
+      [
+        "s_02",
+        "s_03"
+      ],
+      [
+        "s_02",
+        "s_04"
+      ],
+      [
+        "s_02",
+        "s_05"
+      ],
+      [
+        "s_02",
+        "s_06"
+      ],
+      [
+        "s_02",
+        "s_07"
+      ],
+      [
+        "s_02",
+        "s_08"
+      ],
+      [
+        "s_03",
+        "s_04"
+      ],
+      [
+        "s_03",
+        "s_05"
+      ],
+      [
+        "s_03",
+        "s_06"
+      ],
+      [
+        "s_03",
+        "s_07"
+      ],
+      [
+        "s_03",
+        "s_08"
+      ],
+      [
+        "s_04",
+        "s_05"
+      ],
+      [
+        "s_04",
+        "s_06"
+      ],
+      [
+        "s_04",
+        "s_07"
+      ],
+      [
+        "s_04",
+        "s_08"
+      ],
+      [
+        "s_04",
+        "s_09"
+      ],
+      [
+        "s_04",
+        "s_10"
+      ],
+      [
+        "s_04",
+        "s_11"
+      ],
+      [
+        "s_05",
+        "s_06"
+      ],
+      [
+        "s_05",
+        "s_07"
+      ],
+      [
+        "s_05",
+        "s_08"
+      ],
+      [
+        "s_05",
+        "s_09"
+      ],
+      [
+        "s_05",
+        "s_10"
+      ],
+      [
+        "s_05",
+        "s_11"
+      ],
+      [
+        "s_06",
+        "s_07"
+      ],
+      [
+        "s_06",
+        "s_08"
+      ],
+      [
+        "s_06",
+        "s_09"
+      ],
+      [
+        "s_06",
+        "s_10"
+      ],
+      [
+        "s_07",
+        "s_08"
+      ],
+      [
+        "s_07",
+        "s_10"
+      ],
+      [
+        "s_09",
+        "s_10"
+      ],
+      [
+        "s_09",
+        "s_11"
+      ],
+      [
+        "s_09",
+        "s_19"
+      ],
+      [
+        "s_09",
+        "s_21"
+      ],
+      [
+        "s_09",
+        "s_23"
+      ],
+      [
+        "s_10",
+        "s_11"
+      ],
+      [
+        "s_10",
+        "s_18"
+      ],
+      [
+        "s_11",
+        "s_12"
+      ],
+      [
+        "s_11",
+        "s_13"
+      ],
+      [
+        "s_11",
+        "s_14"
+      ],
+      [
+        "s_11",
+        "s_17"
+      ],
+      [
+        "s_11",
+        "s_20"
+      ],
+      [
+        "s_12",
+        "s_13"
+      ],
+      [
+        "s_12",
+        "s_14"
+      ],
+      [
+        "s_12",
+        "s_17"
+      ],
+      [
+        "s_12",
+        "s_21"
+      ],
+      [
+        "s_12",
+        "s_22"
+      ],
+      [
+        "s_13",
+        "s_14"
+      ],
+      [
+        "s_13",
+        "s_16"
+      ],
+      [
+        "s_13",
+        "s_17"
+      ],
+      [
+        "s_14",
+        "s_15"
+      ],
+      [
+        "s_14",
+        "s_16"
+      ],
+      [
+        "s_14",
+        "s_17"
+      ],
+      [
+        "s_15",
+        "s_16"
+      ],
+      [
+        "s_15",
+        "s_17"
+      ],
+      [
+        "s_16",
+        "s_17"
+      ],
+      [
+        "s_19",
+        "s_20"
+      ],
+      [
+        "s_19",
+        "s_21"
+      ],
+      [
+        "s_19",
+        "s_22"
+      ],
+      [
+        "s_20",
+        "s_21"
+      ],
+      [
+        "s_20",
+        "s_22"
+      ],
+      [
+        "s_21",
+        "s_22"
+      ],
+      [
+        "s_21",
+        "s_23"
+      ]
+    ]
+  },
+  "rooms": [],
+  "tags": [],
+  "reel": [],
+  "mesh": {
+    "tier": "A",
+    "surface": "poisson",
+    "lods": [
+      {
+        "lod": 3,
+        "chunks": [
+          "mesh/model.glb.gz"
+        ],
+        "tris": 583315,
+        "bytes": 22480671,
+        "textured": true
+      },
+      {
+        "lod": 0,
+        "chunks": [
+          "mesh/model-preview.glb.gz"
+        ],
+        "tris": 87494,
+        "textured": true,
+        "preview": true,
+        "bytes": 2247787
+      }
+    ],
+    "bounds": {
+      "min": [
+        -6.799942493438721,
+        -0.0059108734130859375,
+        -6.26207160949707
+      ],
+      "max": [
+        0.2725839614868164,
+        2.516355514526367,
+        4.3565874099731445
+      ]
+    }
+  },
+  "floorPlan": {
+    "floors": [
+      {
+        "floor": 0,
+        "y": 0,
+        "rings": [
+          [
+            [
+              0.099,
+              -6.157
+            ],
+            [
+              -2.381,
+              -6.157
+            ],
+            [
+              -2.461,
+              -6.137
+            ],
+            [
+              -2.461,
+              -5.057
+            ],
+            [
+              -3.861,
+              -4.978
+            ],
+            [
+              -6.661,
+              -4.978
+            ],
+            [
+              -6.661,
+              -3.858
+            ],
+            [
+              -4.981,
+              -3.858
+            ],
+            [
+              -4.901,
+              -3.778
+            ],
+            [
+              -4.902,
+              -2.618
+            ],
+            [
+              -4.982,
+              -2.578
+            ],
+            [
+              -4.982,
+              -3.418
+            ],
+            [
+              -6.381,
+              -3.418
+            ],
+            [
+              -6.681,
+              -3.418
+            ],
+            [
+              -6.682,
+              -0.978
+            ],
+            [
+              -6.022,
+              -0.978
+            ],
+            [
+              -5.942,
+              -0.898
+            ],
+            [
+              -5.982,
+              -0.778
+            ],
+            [
+              -6.262,
+              -0.778
+            ],
+            [
+              -6.262,
+              0.462
+            ],
+            [
+              -5.082,
+              0.462
+            ],
+            [
+              -5.082,
+              -0.058
+            ],
+            [
+              -4.982,
+              -0.098
+            ],
+            [
+              -4.902,
+              -0.018
+            ],
+            [
+              -4.902,
+              0.582
+            ],
+            [
+              -4.982,
+              0.682
+            ],
+            [
+              -6.382,
+              0.682
+            ],
+            [
+              -6.382,
+              1.242
+            ],
+            [
+              -6.582,
+              1.242
+            ],
+            [
+              -6.583,
+              3.622
+            ],
+            [
+              -6.343,
+              3.702
+            ],
+            [
+              -6.343,
+              4.202
+            ],
+            [
+              -4.543,
+              4.202
+            ],
+            [
+              -3.703,
+              4.222
+            ],
+            [
+              -3.463,
+              4.222
+            ],
+            [
+              -3.463,
+              3.262
+            ],
+            [
+              -3.383,
+              3.182
+            ],
+            [
+              -2.543,
+              3.183
+            ],
+            [
+              -0.303,
+              3.183
+            ],
+            [
+              0.097,
+              3.183
+            ],
+            [
+              0.098,
+              2.303
+            ],
+            [
+              -0.502,
+              2.303
+            ],
+            [
+              -0.582,
+              2.223
+            ],
+            [
+              -0.582,
+              0.943
+            ],
+            [
+              -0.302,
+              0.743
+            ],
+            [
+              -0.302,
+              0.183
+            ],
+            [
+              -1.542,
+              0.183
+            ],
+            [
+              -1.622,
+              0.423
+            ],
+            [
+              -2.142,
+              0.423
+            ],
+            [
+              -2.142,
+              0.743
+            ],
+            [
+              -2.222,
+              0.823
+            ],
+            [
+              -3.782,
+              0.822
+            ],
+            [
+              -3.882,
+              0.742
+            ],
+            [
+              -3.882,
+              -2.538
+            ],
+            [
+              -3.822,
+              -2.618
+            ],
+            [
+              -3.662,
+              -2.538
+            ],
+            [
+              -3.662,
+              -0.458
+            ],
+            [
+              -0.502,
+              -0.457
+            ],
+            [
+              -0.502,
+              -1.797
+            ],
+            [
+              0.098,
+              -1.797
+            ],
+            [
+              0.099,
+              -2.937
+            ],
+            [
+              0.099,
+              -3.577
+            ],
+            [
+              -2.961,
+              -3.578
+            ],
+            [
+              -2.961,
+              -3.178
+            ],
+            [
+              -3.781,
+              -3.178
+            ],
+            [
+              -3.881,
+              -3.258
+            ],
+            [
+              -3.881,
+              -4.258
+            ],
+            [
+              -3.741,
+              -4.338
+            ],
+            [
+              -3.661,
+              -4.138
+            ],
+            [
+              -3.461,
+              -4.138
+            ],
+            [
+              -3.381,
+              -3.858
+            ],
+            [
+              0.099,
+              -3.857
+            ],
+            [
+              0.099,
+              -5.137
+            ],
+            [
+              0.099,
+              -5.137
+            ]
+          ],
+          [
+            [
+              -4.982,
+              -1.978
+            ],
+            [
+              -4.902,
+              -1.898
+            ],
+            [
+              -4.902,
+              -0.778
+            ],
+            [
+              -5.062,
+              -0.658
+            ],
+            [
+              -5.782,
+              -0.658
+            ],
+            [
+              -5.782,
+              -0.838
+            ],
+            [
+              -5.082,
+              -0.838
+            ],
+            [
+              -5.082,
+              -1.938
+            ]
+          ]
+        ],
+        "edited": true
+      }
+    ]
+  },
+  "hotspots": [
+    {
+      "id": "img_mwmeox8x",
+      "anchor": [
+        -6.668938524123803,
+        1.5833853845403134,
+        2.3942963389464484
+      ],
+      "normal": [
+        0.9998594703469011,
+        0,
+        -0.01676423447742742
+      ],
+      "imageUrl": "custom/b27553eec2224343.png",
+      "widthM": 0.6,
+      "name": "Popup 1",
+      "title": "You can add any type of content ",
+      "html": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>Content Placeholder</title>\n  <style>\n    * {\n      box-sizing: border-box;\n      margin: 0;\n      padding: 0;\n    }\n\n    html, body {\n      width: 100%;\n      height: 100%;\n      font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Inter, sans-serif;\n      background-color: #121316;\n      color: #e4e4e7;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      padding: 16px;\n      overflow: hidden;\n    }\n\n    .placeholder-box {\n      width: 100%;\n      height: 100%;\n      border: 2px dashed rgba(201, 161, 91, 0.45);\n      border-radius: 12px;\n      background: radial-gradient(circle at center, rgba(201, 161, 91, 0.06) 0%, rgba(18, 19, 22, 0.9) 100%);\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: center;\n      text-align: center;\n      padding: 24px;\n      transition: all 0.25s ease;\n    }\n\n    .placeholder-box:hover {\n      border-color: #c9a15b;\n      background: radial-gradient(circle at center, rgba(201, 161, 91, 0.12) 0%, rgba(18, 19, 22, 0.95) 100%);\n    }\n\n    .icon-wrapper {\n      width: 56px;\n      height: 56px;\n      border-radius: 50%;\n      background-color: rgba(201, 161, 91, 0.12);\n      border: 1px solid rgba(201, 161, 91, 0.35);\n      display: flex;\n      align-items: center;\n      justify-content: center;\n      margin-bottom: 16px;\n      color: #c9a15b;\n    }\n\n    h2 {\n      font-size: 1.15rem;\n      font-weight: 600;\n      letter-spacing: 0.3px;\n      margin-bottom: 8px;\n      color: #fafafa;\n    }\n\n    p {\n      font-size: 0.875rem;\n      color: #a1a1aa;\n      max-width: 340px;\n      line-height: 1.5;\n      margin-bottom: 18px;\n    }\n\n    .badges {\n      display: flex;\n      flex-wrap: wrap;\n      gap: 8px;\n      justify-content: center;\n    }\n\n    .badge {\n      font-size: 0.72rem;\n      font-weight: 500;\n      padding: 4px 10px;\n      border-radius: 999px;\n      background-color: rgba(255, 255, 255, 0.05);\n      border: 1px solid rgba(255, 255, 255, 0.1);\n      color: #d4d4d8;\n    }\n  </style>\n</head>\n<body>\n  <div class=\"placeholder-box\">\n    <div class=\"icon-wrapper\">\n      <svg width=\"26\" height=\"26\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n        <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" ry=\"2\"></rect>\n        <line x1=\"12\" y1=\"8\" x2=\"12\" y2=\"16\"></line>\n        <line x1=\"8\" y1=\"12\" x2=\"16\" y2=\"12\"></line>\n      </svg>\n    </div>\n    <h2>Dynamic Content Area</h2>\n    <p>This space is ready to display any embedded media, interactive widget, web page, or custom content.</p>\n    <div class=\"badges\">\n      <span class=\"badge\">Webpages</span>\n      <span class=\"badge\">Video &amp; Media</span>\n      <span class=\"badge\">Forms</span>\n      <span class=\"badge\">3D / Maps</span>\n    </div>\n  </div>\n</body>\n</html>"
+    }
+  ],
+  "customization": {
+    "nadirUrl": "custom/dfa434f4efddcd56.png",
+    "nadirLink": "https://gateverse.net/",
+    "music": {
+      "url": "custom/6502f94c565d42b0.mp3",
+      "volume": 0.5,
+      "loop": true
+    }
+  }
+}

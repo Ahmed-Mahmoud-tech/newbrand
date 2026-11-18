@@ -1,0 +1,678 @@
+{
+  "source": "model",
+  "sweeps": [
+    {
+      "index": 0,
+      "sweep_id": "s_00",
+      "file": "Camera.webp",
+      "status": "registered",
+      "position": [
+        -0.8111,
+        1.395,
+        2.9058
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 1,
+      "sweep_id": "s_01",
+      "file": "Camera.001.webp",
+      "status": "registered",
+      "position": [
+        -2.5511,
+        1.395,
+        2.9158
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 2,
+      "sweep_id": "s_02",
+      "file": "Camera.002.webp",
+      "status": "registered",
+      "position": [
+        -2.5511,
+        1.395,
+        1.1158
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 3,
+      "sweep_id": "s_03",
+      "file": "Camera.003.webp",
+      "status": "registered",
+      "position": [
+        -0.9411,
+        1.395,
+        1.1158
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 4,
+      "sweep_id": "s_04",
+      "file": "Camera.004.webp",
+      "status": "registered",
+      "position": [
+        -4.3411,
+        1.395,
+        1.1258
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0088
+    },
+    {
+      "index": 5,
+      "sweep_id": "s_05",
+      "file": "Camera.005.webp",
+      "status": "registered",
+      "position": [
+        -4.9411,
+        1.395,
+        1.6358
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0088
+    },
+    {
+      "index": 6,
+      "sweep_id": "s_06",
+      "file": "Camera.006.webp",
+      "status": "registered",
+      "position": [
+        -4.9411,
+        1.395,
+        3.5358
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0088
+    },
+    {
+      "index": 7,
+      "sweep_id": "s_07",
+      "file": "Camera.007.webp",
+      "status": "registered",
+      "position": [
+        -6.1911,
+        1.395,
+        3.5358
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 8,
+      "sweep_id": "s_08",
+      "file": "Camera.008.webp",
+      "status": "registered",
+      "position": [
+        -6.1911,
+        1.395,
+        1.6158
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 9,
+      "sweep_id": "s_09",
+      "file": "Camera.009.webp",
+      "status": "registered",
+      "position": [
+        -4.3411,
+        1.395,
+        -2.6342
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 10,
+      "sweep_id": "s_10",
+      "file": "Camera.010.webp",
+      "status": "registered",
+      "position": [
+        -4.3411,
+        1.395,
+        -0.5642
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 11,
+      "sweep_id": "s_11",
+      "file": "Camera.011.webp",
+      "status": "registered",
+      "position": [
+        -4.3411,
+        1.395,
+        -4.4542
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 12,
+      "sweep_id": "s_12",
+      "file": "Camera.012.webp",
+      "status": "registered",
+      "position": [
+        -5.9711,
+        1.395,
+        -4.4542
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 13,
+      "sweep_id": "s_13",
+      "file": "Camera.013.webp",
+      "status": "registered",
+      "position": [
+        -3.1611,
+        1.395,
+        -4.4542
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 14,
+      "sweep_id": "s_14",
+      "file": "Camera.014.webp",
+      "status": "registered",
+      "position": [
+        -2.2811,
+        1.395,
+        -4.4542
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0095
+    },
+    {
+      "index": 15,
+      "sweep_id": "s_15",
+      "file": "Camera.015.webp",
+      "status": "registered",
+      "position": [
+        -2.2811,
+        1.395,
+        -5.8842
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0095
+    },
+    {
+      "index": 16,
+      "sweep_id": "s_16",
+      "file": "Camera.016.webp",
+      "status": "registered",
+      "position": [
+        -0.1011,
+        1.395,
+        -5.8842
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0095
+    },
+    {
+      "index": 17,
+      "sweep_id": "s_17",
+      "file": "Camera.017.webp",
+      "status": "registered",
+      "position": [
+        -0.1011,
+        1.395,
+        -4.4942
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0095
+    },
+    {
+      "index": 18,
+      "sweep_id": "s_18",
+      "file": "Camera.018.webp",
+      "status": "registered",
+      "position": [
+        -5.4911,
+        1.395,
+        -0.5642
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    },
+    {
+      "index": 19,
+      "sweep_id": "s_19",
+      "file": "Camera.019.webp",
+      "status": "registered",
+      "position": [
+        -0.8111,
+        1.395,
+        -2.9442
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0114
+    },
+    {
+      "index": 20,
+      "sweep_id": "s_20",
+      "file": "Camera.020.webp",
+      "status": "registered",
+      "position": [
+        -3.2211,
+        1.395,
+        -1.2542
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0114
+    },
+    {
+      "index": 21,
+      "sweep_id": "s_21",
+      "file": "Camera.021.webp",
+      "status": "registered",
+      "position": [
+        -3.2211,
+        1.395,
+        -2.9442
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0114
+    },
+    {
+      "index": 22,
+      "sweep_id": "s_22",
+      "file": "Camera.022.webp",
+      "status": "registered",
+      "position": [
+        -0.8111,
+        1.395,
+        -1.3242
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": 0.0114
+    },
+    {
+      "index": 23,
+      "sweep_id": "s_23",
+      "file": "Camera.023.webp",
+      "status": "registered",
+      "position": [
+        -5.5011,
+        1.395,
+        -2.1542
+      ],
+      "yaw_offset": 0.0,
+      "confidence": 1.0,
+      "floor": 0,
+      "floor_y": -0.0002
+    }
+  ],
+  "graph": {
+    "edges": [
+      [
+        "s_00",
+        "s_01"
+      ],
+      [
+        "s_00",
+        "s_02"
+      ],
+      [
+        "s_00",
+        "s_03"
+      ],
+      [
+        "s_00",
+        "s_04"
+      ],
+      [
+        "s_00",
+        "s_05"
+      ],
+      [
+        "s_00",
+        "s_07"
+      ],
+      [
+        "s_00",
+        "s_08"
+      ],
+      [
+        "s_01",
+        "s_02"
+      ],
+      [
+        "s_01",
+        "s_03"
+      ],
+      [
+        "s_01",
+        "s_04"
+      ],
+      [
+        "s_01",
+        "s_05"
+      ],
+      [
+        "s_01",
+        "s_06"
+      ],
+      [
+        "s_01",
+        "s_07"
+      ],
+      [
+        "s_01",
+        "s_08"
+      ],
+      [
+        "s_02",
+        "s_03"
+      ],
+      [
+        "s_02",
+        "s_04"
+      ],
+      [
+        "s_02",
+        "s_05"
+      ],
+      [
+        "s_02",
+        "s_06"
+      ],
+      [
+        "s_02",
+        "s_07"
+      ],
+      [
+        "s_02",
+        "s_08"
+      ],
+      [
+        "s_03",
+        "s_04"
+      ],
+      [
+        "s_03",
+        "s_05"
+      ],
+      [
+        "s_03",
+        "s_06"
+      ],
+      [
+        "s_03",
+        "s_07"
+      ],
+      [
+        "s_03",
+        "s_08"
+      ],
+      [
+        "s_04",
+        "s_05"
+      ],
+      [
+        "s_04",
+        "s_06"
+      ],
+      [
+        "s_04",
+        "s_07"
+      ],
+      [
+        "s_04",
+        "s_08"
+      ],
+      [
+        "s_04",
+        "s_09"
+      ],
+      [
+        "s_04",
+        "s_10"
+      ],
+      [
+        "s_04",
+        "s_11"
+      ],
+      [
+        "s_05",
+        "s_06"
+      ],
+      [
+        "s_05",
+        "s_07"
+      ],
+      [
+        "s_05",
+        "s_08"
+      ],
+      [
+        "s_05",
+        "s_09"
+      ],
+      [
+        "s_05",
+        "s_10"
+      ],
+      [
+        "s_05",
+        "s_11"
+      ],
+      [
+        "s_06",
+        "s_07"
+      ],
+      [
+        "s_06",
+        "s_08"
+      ],
+      [
+        "s_06",
+        "s_09"
+      ],
+      [
+        "s_06",
+        "s_10"
+      ],
+      [
+        "s_07",
+        "s_08"
+      ],
+      [
+        "s_07",
+        "s_10"
+      ],
+      [
+        "s_09",
+        "s_10"
+      ],
+      [
+        "s_09",
+        "s_11"
+      ],
+      [
+        "s_09",
+        "s_19"
+      ],
+      [
+        "s_09",
+        "s_21"
+      ],
+      [
+        "s_09",
+        "s_23"
+      ],
+      [
+        "s_10",
+        "s_11"
+      ],
+      [
+        "s_10",
+        "s_18"
+      ],
+      [
+        "s_11",
+        "s_12"
+      ],
+      [
+        "s_11",
+        "s_13"
+      ],
+      [
+        "s_11",
+        "s_14"
+      ],
+      [
+        "s_11",
+        "s_17"
+      ],
+      [
+        "s_11",
+        "s_20"
+      ],
+      [
+        "s_12",
+        "s_13"
+      ],
+      [
+        "s_12",
+        "s_14"
+      ],
+      [
+        "s_12",
+        "s_17"
+      ],
+      [
+        "s_12",
+        "s_21"
+      ],
+      [
+        "s_12",
+        "s_22"
+      ],
+      [
+        "s_13",
+        "s_14"
+      ],
+      [
+        "s_13",
+        "s_16"
+      ],
+      [
+        "s_13",
+        "s_17"
+      ],
+      [
+        "s_14",
+        "s_15"
+      ],
+      [
+        "s_14",
+        "s_16"
+      ],
+      [
+        "s_14",
+        "s_17"
+      ],
+      [
+        "s_15",
+        "s_16"
+      ],
+      [
+        "s_15",
+        "s_17"
+      ],
+      [
+        "s_16",
+        "s_17"
+      ],
+      [
+        "s_19",
+        "s_20"
+      ],
+      [
+        "s_19",
+        "s_21"
+      ],
+      [
+        "s_19",
+        "s_22"
+      ],
+      [
+        "s_20",
+        "s_21"
+      ],
+      [
+        "s_20",
+        "s_22"
+      ],
+      [
+        "s_21",
+        "s_22"
+      ],
+      [
+        "s_21",
+        "s_23"
+      ]
+    ]
+  },
+  "suggestedFixes": []
+}

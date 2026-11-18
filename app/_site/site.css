@@ -433,10 +433,9 @@ button {
   flex: none;
 }
 
-.wordmark svg {
-  width: 26px;
-  height: 26px;
-  color: var(--bronze-light);
+.wordmark__mark {
+  width: auto;
+  height: 34px;
 }
 
 .wordmark__text {
@@ -446,8 +445,8 @@ button {
 }
 
 .wordmark__name {
-  font: 600 15px/1 var(--font-sans), sans-serif;
-  letter-spacing: 0.34em;
+  width: auto;
+  height: 22px;
 }
 
 .wordmark__descriptor {

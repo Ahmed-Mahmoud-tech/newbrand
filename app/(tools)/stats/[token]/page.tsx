@@ -45,7 +45,7 @@ export default async function StatsPage({ params, searchParams }: { params: Prom
         <main className={styles.page}>
             <header className={styles.head}>
                 <Link href="/" className={styles.brand}>
-                    <Image src={logo} alt="GateVerse" width={52} height={34} priority />
+                    <Image src={logo} alt="GateVerse" width={68} height={34} priority />
                 </Link>
                 <div>
                     <p className={styles.eyebrow}>إحصائيات جولاتك</p>

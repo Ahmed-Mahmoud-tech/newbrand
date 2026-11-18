@@ -198,7 +198,7 @@ export default function TourViewer({ slug, name, playerVersion }: { slug: string
                     fontSize: 14,
                 }}
             >
-                <Image src={logo} alt="GateVerse" width={43} height={28} priority />
+                <Image src={logo} alt="GateVerse" width={56} height={28} priority />
                 <span style={{ padding: '0.25rem 0.5rem 0', textTransform: 'capitalize' }}>{name}</span>
             </Link>
             {state === 'ready' && <ContactBar slug={slug} name={name} />}
